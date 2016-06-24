@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb://localhost/api_learn3';
+var dbURI = 'mongodb://localhost/followdata';
 
 mongoose.connect(dbURI);
 
