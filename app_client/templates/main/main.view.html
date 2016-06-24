@@ -1,0 +1,48 @@
+<navigation></navigation>
+<!--TOP-->
+
+<div class="carousel-holder">
+	<carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+	  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+	    <img ng-src="{{slide.image}}" style="margin:auto;">
+	  </slide>
+	</carousel>
+</div>
+
+<!--MIDDLE-->
+
+<div class="main-view-middle">
+
+	<div class="main-view-font-holder">
+
+		<div class ="main-start-button" ng-controller="TabCtrl">
+
+			<div 
+				 ng-click="go(tabs[1].route)"
+                 active="tabs[1].active"
+                 id = "main-start-button" 
+                 class="map-button">SELECT ° ' ''
+             </div>
+
+
+
+		</div>
+
+			<p> 
+			Followband represents the places we've been, the places we will go and the<br/> and the adventures worth following. 
+		</p>
+		
+	</div>
+</div>
+
+<!--BOTTOM-->
+
+<div class="image-holder">
+	<div ng-repeat="image in underImageHolder"  class="image-container">
+
+		<img ng-src="{{image.id}}"></img>
+		<div class="image-text">
+			<h3>{{image.desc}}</h3>
+		</div>
+	</div>
+</div>

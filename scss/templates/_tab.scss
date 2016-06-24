@@ -1,0 +1,109 @@
+/* Push the main viewport a little bit down */
+.main-viewport {
+  margin-top: 50px;
+}
+
+.tabs-holder {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 199;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  padding-bottom: 10px;
+  overflow: visible;
+  width: 100vw;
+  background-color: white;
+  align-items: center;
+}
+
+.nav-tabs {
+  border-bottom: 0px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover #line1 {
+  stroke: #eeeeee;
+  -webkit-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -moz-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -o-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}
+
+.button:hover #line2 {
+  stroke: #eeeeee;
+  -webkit-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -moz-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -o-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}
+
+.button:hover #line3 {
+  stroke: #eeeeee;
+  -webkit-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -moz-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -o-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}
+
+.button:hover #line4 {
+  stroke: #eeeeee;
+  -webkit-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -moz-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -o-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}
+
+#prof_button {
+  margin-right: 30px;
+}
+
+.button:hover #prof_line1 {
+  stroke: #eeeeee;
+  -webkit-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -moz-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -o-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}
+
+.button:hover #prof_line2 {
+  stroke: #eeeeee;
+  -webkit-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -moz-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -o-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}
+
+.button:hover #prof_line3 {
+  stroke: #eeeeee;
+  -webkit-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -moz-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  -o-transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
+  transition: all 100ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}
+
+.svg_buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-text {
+  font-size: 28px;
+  margin: 0px;
+}
+
+.background-image {
+  background-image: url("../images/bg2.png");
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.tabs-logo-img{
+  max-width: 50px;
+  max-height: 50px;
+}

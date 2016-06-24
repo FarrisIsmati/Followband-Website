@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="followapp" >
   <head>
 
     <!--Frameworks & Libraries-->
     <link data-require="bootstrap-css@3.0.3" data-semver="3.0.3" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
-    <script data-require="angular.js@*" data-semver="1.2.16" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script data-require="angular.js@*" data-semver="1.2.16" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script data-require="angular-ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.js"></script>
@@ -20,10 +20,13 @@
 
     <!--JavaScript Files-->
     <script src="app.js"></script>
+    <script src="templates/map/map.controller.js"></script>
+    <script src="templates/main/main.controller.js"></script>
+    <script src="templates/tabs/tabs.controller.js"></script>
 
     </head>
 
-    <body ng-app="FollowApp" class="container">
+    <body class="container">
         
        <ui-view class="main-view"></ui-view>
 
