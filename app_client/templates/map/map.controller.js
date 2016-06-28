@@ -6,8 +6,6 @@ var app = angular.module("followapp.MapCtrl", []);
 
 app.controller('MapCtrl', function($scope){
 
-	console.log('I am workin mapctrl')
-
 	var origY = 38.433708;
 	var origX = -78.898537;
 
@@ -27,7 +25,8 @@ app.controller('MapCtrl', function($scope){
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
-	var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
+	//Initialize map
+	//var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
 
 	var myLatLng = new google.maps.LatLng(origY, origX);
 

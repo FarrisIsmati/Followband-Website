@@ -1,33 +1,34 @@
 // buttons
 
+
+
 // Tab Buttons
-.nav-tabs>li>a {
-  color: black;
-  border-radius: 0px;
-  margin: 0px;
-  border: 0px;
-}
 
-.nav-tabs>li>a:hover {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  margin: 0px;
-  -webkit-transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
-  -moz-transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
-  -o-transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
-  transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
-}
+  .nav-tabs>li>a{
+    & {
+      color: $charcol;
+      border-radius: 0px;
+      margin: 0px;
+      border: 0px;
+    }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
-  color: white;
-  cursor: pointer;
-  border: 0px;
-  background-color: black;
-  border: 0px;
-  margin: 0px;
-  -webkit-transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
-  -moz-transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
-  -o-transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575);
-  transition: all 1000ms cubic-bezier(0.220, 0.990, 0.110, 0.575); 
-}
+    &:hover {
+      cursor: pointer;
+      background-color: $charcol;
+      color: white;
+      margin: 0px;
+      @include animation(1000ms);
+    }
+  }
+
+  .nav-tabs>li.active>a{
+      &, &:hover, &:focus {
+      color: white;
+      cursor: pointer;
+      border: 0px;
+      background-color: $charcol;
+      border: 0px;
+      margin: 0px;
+      @include animation(1000ms);
+    }
+  }

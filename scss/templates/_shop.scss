@@ -1,0 +1,178 @@
+// Shop
+
+.shop-view-holder{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	font-family: 'lato', sans-serif;
+
+}
+
+.shop-navbar-holder {
+  	margin: 0 !important;
+  	height: 100%;
+  	width: 15%;
+  	display: flex;
+  	margin: 15px;
+  	flex-direction: column;
+	font-size: 34px;
+}
+
+.shop-navbar-content-holder {
+	padding-top: 1em;
+	padding-left: 20px;
+}
+
+.shop-navbar-static-text {
+	font-size: 38px;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+
+#shop-navbar-blackline{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: black;
+	color: black;
+	width: 100%;
+	height: 10px;
+}
+/*
+#shop-navbar-blackline::after{
+	content: "° ' ''  ° ' ''  ° ' ''";
+	color: black;
+}
+*/
+
+.shop-navbar-button {
+	font-style: bold;
+	color: #0d0d0d;
+}
+
+.shop-navbar-button:hover{
+	cursor: pointer;
+	background: linear-gradient(to right, white 90%, black 10%);
+}
+
+.shop-navbar-button:active{
+
+}
+
+.shop-navbar-bracelet-content{
+    opacity: 0; 
+    height: 0;
+    overflow: hidden;
+}
+
+.shop-navbar-bracelet-content-visible{
+	opacity: 1;
+    height: 100%;
+}
+
+.shop-navbar-bracelet-content-visible p{
+	font-size: 24px;
+}
+
+.shop-navbar-bracelet-content-visible p:hover{
+	color: black;
+	background-color: #d9d9d9;
+	cursor: pointer;
+}
+
+.shop-navbar-bracelet-content-visible p:hover::after{
+	content: "° ' ''";
+}
+
+.shop-navbar-bracelet-content-text {
+
+}
+
+.shop-navbar-bracelet-content-text-active {
+	background-color: #d9d9d9;
+	color: black;
+}
+
+.shop-navbar-bracelet-content-text-active::after {
+	content: "° ' ''";
+}
+
+	
+.shop-content-holder {
+	width: 100%;
+	height: 100%;
+	padding-left: 3em;
+	padding-top: 3em;
+	display: flex;
+}
+
+.shop-content-main-holder {
+	max-width: 750px;
+}
+
+.shop-content-main-image-holder{
+}
+
+.shop-content-main-image{
+  	max-height: 450px;
+}
+
+.shop-content-main-image-small-holder{
+	display: flex;
+	flex-direction: row;
+	border-top: solid;
+    border-width: 5px;
+}
+
+.shop-content-main-image-small{
+
+}
+
+
+
+
+.shop-content-main-description-holder{
+
+}
+
+.shop-content-main-description-object{
+	font-size: 42px;
+}
+
+.shop-content-main-description-details{
+	font-size: 24px;
+}
+
+.shop-content-rightbar-holder{
+	padding-left: 3em;
+
+}
+
+.shop-content-rightbar-size-holder {
+	padding-top: 1em;
+}
+
+.shop-content-rightbar-size-selector-holder{
+	display: flex;
+}
+
+.shop-content-rightbar-size-selector{
+	text-align: center;
+	vertical-align: middle;
+	font-size: 18px;
+	margin: 3px;
+	width: 60px;
+	height: 35px;
+	border: solid;
+}
+
+.shop-content-rightbar-size-selector:hover{
+	color: #a6a6a6;
+	cursor: pointer;
+	border-color: #a6a6a6;
+}
+
+.shop-content-rightbar-cart-holder{
+	padding-top: 1em;
+
+}

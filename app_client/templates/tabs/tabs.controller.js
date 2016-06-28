@@ -4,13 +4,8 @@
 var app = angular.module("followapp.TabCtrl", ["ngAnimate"]);
 
 app.controller("TabCtrl", function($rootScope, $scope, $state) {
-		console.log('i am workin TabCtrl');		
-		
-		$scope.cart = 'images/cart.png'
 
-		$scope.shop = function(){
-			console.log('we shopping?')
-		}
+		$scope.cart = 'images/cart.png'
 
 		$scope.go = function(route){
 			console.log('goooo')
@@ -22,16 +17,16 @@ app.controller("TabCtrl", function($rootScope, $scope, $state) {
 		};
 
 		$scope.tabs = [
-			{ heading: "main", route:"main", active:false },
-			{ heading: "map", route:"map", active:false },
-			{ heading: "shop", route:"shop", active:false },
-			{ heading: "about", route:"about", active:false },
-			{ heading: "social", route:"social", active:false },
-			{ heading: "stories", route:"story", active:false }
+			{ heading: "main", route:"tab.main", active:false },
+			{ heading: "map", route:"tab.map", active:false },
+			{ heading: "shop", route:"tab.shop", active:false }
+			//{ heading: "about", route:"tab.about", active:false },
+			//{ heading: "social", route:"tab.social", active:false },
+			//{ heading: "stories", route:"tab.story", active:false }
 		];
 
-		$scope.seperateTabs = { heading: "cart", route:"cart", active:false }
-		$scope.seperateTabs2 = { heading: "profile", routeLogin:"profile", active:false}
+		$scope.seperateTabs = { heading: "cart", route:"tab.cart", active:false }
+		$scope.seperateTabs2 = { heading: "register", routeLogin:"tab.register", active:false}
 
 		$scope.$on("$stateChangeSuccess", function() {
 			$scope.tabs.forEach(function(tab) {

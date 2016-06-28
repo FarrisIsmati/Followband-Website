@@ -4,7 +4,6 @@
 var app = angular.module("followapp.MainCtrl", ["ngAnimate"]);
 
 app.controller('MainCtrl', function($scope){
-	console.log('i am workin mainctrl');
   $scope.myInterval = 20000;
   $scope.noWrapSlides = false;
   $scope.active = 0;

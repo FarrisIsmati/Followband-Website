@@ -1,0 +1,6 @@
+@mixin animation($length) {
+	-webkit-transition: all $length cubic-bezier(0.220, 0.990, 0.110, 0.575);
+    -moz-transition: all $length cubic-bezier(0.220, 0.990, 0.110, 0.575);
+    -o-transition: all $length cubic-bezier(0.220, 0.990, 0.110, 0.575);
+    transition: all $length cubic-bezier(0.220, 0.990, 0.110, 0.575); 
+}

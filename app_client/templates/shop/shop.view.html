@@ -1,0 +1,121 @@
+<div class="shop-view-holder">
+
+	<div class="shop-navbar-holder">
+		<div class="shop-navbar-content-holder">
+			<div class="shop-navbar-static-text">
+				bracelets
+			</div>
+
+			<div id="shop-navbar-blackline"></div>
+
+			<div ng-repeat="b in menuButtons">
+
+            	<div ng-click="b.isActive=!b.isActive" class="shop-navbar-button">{{b.header}}</div>
+
+	            <div class="shop-navbar-bracelet-content" ng-class="{'shop-navbar-bracelet-content-visible': b.isActive}">
+
+	            	<p class="shop-navbar-bracelet-content-text" ng-class="{'shop-navbar-bracelet-content-text-active': s.isActive}" ng-click="s.isActive=!s.isActive; activeSelect(s)" ng-repeat="s in b.subGroup">{{s.name}}</p>
+
+				</div>
+
+            </div>
+ 
+		</div>
+
+	</div>
+
+	<div class="shop-content-holder">
+
+
+		<div class="shop-content-main-holder">
+
+			<div class="shop-content-main-image-holder">
+
+				<img class="shop-content-main-image" ng-src="http://placehold.it/750x450">
+
+				<div class="shop-content-main-image-small-holder">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+				</div>
+
+			</div>
+
+			<div class="shop-content-main-description-holder">
+
+				<h1 class="shop-content-main-description-object">{{activeData().name}}</h1>
+
+				<div class="shop-content-main-description-details">
+
+					<p>{{activeData().description}}</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="shop-content-rightbar-holder">
+
+			<div class="shop-content-rightbar-price">
+
+				<p>${{activeData().price}}</p>
+
+			</div>
+
+			<div class="shop-content-rightbar-size-holder">
+
+				<p>size</p>
+
+				<div class="shop-content-rightbar-size-selector-holder">
+
+					<div class="shop-content-rightbar-size-selector">S</div>
+
+					<div class="shop-content-rightbar-size-selector">M</div>
+
+					<div class="shop-content-rightbar-size-selector">L</div>
+
+				</div>
+
+			</div>
+
+			<div class="shop-content-rightbar-cart-holder">
+
+				<p>quantity</p>
+
+				<div class="dropdown">
+
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+					<span class="caret"></span></button>
+
+					<ul class="dropdown-menu">
+
+						<li>1</li>
+					    <li>2</li>
+					    <li>3</li>
+					    <li>4</li>
+					    <li>5</li>
+					    <li>6</li>
+					    <li>7</li>
+					    <li>8</li>
+					    <li>9</li>
+
+					  </ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

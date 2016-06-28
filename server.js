@@ -6,6 +6,7 @@ var passportLocal 	= require("passport-local").Strategy;
 var mongoose 		= require("mongoose");
 var logger 			= require('morgan');
 var path 			= require('path');
+var flash 			= require('connect-flash');
 
 var app 			= express();
 
@@ -27,12 +28,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'app_client')));
+app.use(flash());
 
 // [SH] Initialise Passport before using the route middleware
 app.use(passport.initialize());
 
 // [SH] Use the API routes when path starts with /api
-app.use('/api', routesAPI);
+app.use('/', routesAPI);
+app.use(function(req, res) {
+    res.sendfile(__dirname + '/app_client/index.html');
+});
 
 app.listen(port);
 console.log('Flying on port: ' + port);
