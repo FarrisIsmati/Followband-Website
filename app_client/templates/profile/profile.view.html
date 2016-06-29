@@ -8,12 +8,12 @@
 		<form  ng-submit="onSubmitLogin()">
 	        <div class="form-group">
 	            <label>Email</label>
-	            <input type="text" class="form-control" name="email"placeholder="Enter email" ng-model="credentialsLog.email">
+	            <input type="text" class="form-control" name="email"placeholder="Enter email" ng-model="credentialsLog.email" required>
 	        </div>
 
 	        <div class="form-group">
 	            <label>Password</label>
-	            <input type="password" class="form-control" name="password"ng-model="credentialsLog.password">
+	            <input type="password" class="form-control" name="password"ng-model="credentialsLog.password" required>
 	        </div>
 
 	        <button type="submit" class="btn btn-warning btn-lg">Login</button>
@@ -28,20 +28,20 @@
 	<form ng-submit="onSubmitRegister()">
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="credentialsReg.email">
+            <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="credentialsReg.email" required>
         </div>
         <div class="form-group">
 	        <label>Name</label>
-	        <input type="text" class="form-control" name="name" placeholder="Name" ng-model="credentialsReg.name">
+	        <input type="text" class="form-control" name="name" placeholder="Name" ng-model="credentialsReg.name" required>
 	    </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="credentialsReg.password">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="credentialsReg.password" required>
         </div>
 
        	<div class="form-group">
 	        <label>Confirm Password</label>
-	        <input type="password" class="form-control" name="passwordconfirm" placeholder="Password" ng-model="credentialsReg.passwordconfirm">
+	        <input type="password" class="form-control" name="passwordconfirm" placeholder="Password" ng-model="credentialsReg.passwordconfirm" required>
 	    </div>
 
         <button type="submit" class="btn btn-warning btn-lg">Signup</button>

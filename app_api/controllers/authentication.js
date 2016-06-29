@@ -16,7 +16,10 @@ module.exports.register = function(req, res) {
   // }
   User.findOne({ email: req.body.email }, function (err, user) {
     if (user){
-      res.status(404).json({hey: 'lol'});
+
+      console.log('This user ' + req.body.email + ' already exists ::: Error authentication.js');
+      res.status(404).json({problem: 'This user ' + req.body.email + ' already exists'});
+
     } else {
         var user = new User();
 
@@ -32,6 +35,7 @@ module.exports.register = function(req, res) {
           res.json({
             "token" : token
           });
+          console.log('Created new user ' + req.body.email);
         });
     }
   });
@@ -51,6 +55,7 @@ module.exports.login = function(req, res) {
 
     // If Passport throws/catches an error
     if (err) {
+      console.log('There was an error ' + err);
       res.status(404).json(err);
       return;
     }
@@ -62,9 +67,11 @@ module.exports.login = function(req, res) {
       res.json({
         "token" : token
       });
+      console.log('User ' + user.email + ' logged in');
     } else {
       // If user is not found
-      res.status(401).json(info);
+      console.log('Incorrect username or password');
+      res.status(401).json({problem: 'Incorrect username or password'});
     }
   })(req, res);
 

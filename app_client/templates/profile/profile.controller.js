@@ -43,8 +43,12 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
     };
 
     $scope.onSubmitRegister = function () {
-      console.log($scope.credentialsReg)
+      //If passwords don't match end func
+      //If user already exists return error
+      //All fields required handled in the view
 
+      //Need
+      //Passwords must meet min requirements
       if ($scope.credentialsReg.password != $scope.credentialsReg.passwordconfirm) {
         console.log('passwords dont match');
         return
@@ -52,7 +56,7 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
         console.log('Submitting registration');
         auth.register($scope.credentialsReg)
           .error(function(err){
-            alert('err');
+            alert(err.problem);
         })
         .then(function(){
           $location.path('/tab/main');
@@ -64,7 +68,7 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
     $scope.onSubmitLogin = function () {
         auth.login($scope.credentialsLog)
         .error(function(err){
-          alert(err);
+          alert(err.problem);
           return
         })
         .then(function(){

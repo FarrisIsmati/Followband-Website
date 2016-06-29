@@ -43,7 +43,6 @@ var app = angular.module("followapp.authService", []);
     };
 
     var register = function(user) {
-      console.log(user)
       return $http.post('/tab/register', user).success(function(data){
         saveToken(data.token);
       });
