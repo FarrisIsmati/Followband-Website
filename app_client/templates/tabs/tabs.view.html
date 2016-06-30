@@ -17,19 +17,17 @@
     </div>
 
     <div class="svg_buttons">
-
-        <div ng-controller="ProfileCtrl" ng-click="go(seperateTabs2.routeLogin)" class="button" id="prof_button" active="seperateTabs2.activeLogin">
-            <svg id="prof_line1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="24px" height="32px" viewBox="0 0 24 32" enable-background="new 0 0 24 32" xml:space="preserve">
-              <path id="prof_line2" fill="none" stroke="#000000" stroke-miterlimit="10" d="M1.057 30.908c0 0 1.004-18.297 6.731-18.297l0.587-0.001c0 0-8.375-10.82 3.625-10.82"/>
-              <path id="prof_line3" fill="none" stroke="#000000" stroke-miterlimit="10" d="M22.817 30.908c0 0-1.005-18.297-6.731-18.297l-0.492-0.001c0 0 8.406-10.82-3.594-10.82"/>
-              <!--
-              <ellipse id="prof_line4" ng-show="isLoggedIn()" ry="0.28509" rx="0.28509" id="svg_5" cy="5.59849" cx="9.55523" stroke-width="3" stroke="#000000" fill="#000000"/>
-              <ellipse id="prof_line5" ng-show="isLoggedIn()" id="svg_6" ry="0.28509" rx="0.28509" cy="5.67767" cx="14.30673" stroke-width="3" stroke="#000000" fill="#000000"/>
-              <path id="prof_line6" ng-show="isLoggedIn()" transform="rotate(5 12.533578872680721,22.190052032470707) " d="m8.35159,19.4727c0.35715,1.15295 0.60702,2.01689 0.93694,2.76922c0.38087,0.8685 0.82256,1.67603 1.52497,2.21802c0.6621,0.51088 1.6584,0.74184 2.51462,0.61072c0.88633,-0.13573 1.59659,-0.80353 1.95002,-1.61378c0.36401,-0.83451 0.47973,-1.64959 0.71714,-2.54688l0.28395,-0.7857l0.43634,-0.85097" id="svg_24" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="none"/>
-              <path id="prof_line7" ng-show="isLoggedIn()" d="m10.08323,9.75862c0.56747,0.64997 1.2755,1.15234 2.13287,1.13947l0.65687,-0.49086l0.25119,-0.79221" id="svg_30" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#000000" fill="none"/>
-              -->
+        <div ng-controller="ProfileCtrl" class="button dropdown"  id="prof_button">
+          <svg id="prof_line1" type="button"  data-toggle="dropdown" id="Layer_1" x="0px" y="0px" width="24px" height="32px" viewBox="0 0 24 32" enable-background="new 0 0 24 32" xml:space="preserve" class="dropdown-toggle" type="button" data-toggle="dropdown">
+            <path id="prof_line2" fill="none" stroke="#000000" stroke-miterlimit="10" d="M1.057 30.908c0 0 1.004-18.297 6.731-18.297l0.587-0.001c0 0-8.375-10.82 3.625-10.82"/>
+            <path id="prof_line3" fill="none" stroke="#000000" stroke-miterlimit="10" d="M22.817 30.908c0 0-1.005-18.297-6.731-18.297l-0.492-0.001c0 0 8.406-10.82-3.594-10.82"/>
             </svg>
-        </div>
+            <ul class="dropdown-menu">
+              <li><a ng-click="go(seperateTabs3.route)" active="seperateTabs3.active" >profile</a></li>
+              <li><a ng-click="go(seperateTabs2.routeLogin)" active="seperateTabs2.activeLogin">login</a></li>
+              <li><a ng-click="logout()">logout</a></li>
+            </ul>
+          </div>
 
         <div class="button" ng-click="go(seperateTabs.route)" active="seperateTabs.active" >
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

@@ -113,13 +113,14 @@ body {
   border-width: 6px;
   border-style: solid;
   border-color: #0d0d0d;
-  padding: 5px;
+  padding: 15px;
   padding-left: 20px;
   padding-right: 20px; }
 
 #main-start-button:hover {
   position: relative;
-  background-color: #d9d9d9;
+  color: #eeeeee;
+  border-color: #eeeeee;
   -webkit-transition: all 500ms cubic-bezier(0.22, 0.99, 0.11, 0.975);
   -moz-transition: all 500ms cubic-bezier(0.22, 0.99, 0.11, 0.975);
   -o-transition: all 500ms cubic-bezier(0.22, 0.99, 0.11, 0.975);
@@ -134,7 +135,7 @@ body {
 
 /*
   font-size: 78px;
-  padding: 10px;
+  padding: 40px;
   padding-left: 25px;
   padding-right: 25px;
   */
@@ -565,5 +566,20 @@ body {
   -moz-transition: all 1000ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 1000ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 1000ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
+
+.dropdown-menu {
+  min-width: 0px;
+  left: -30px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #ccc; }
+  .dropdown-menu > li > a:hover {
+    background-color: #323232;
+    color: #ffffff;
+    -webkit-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
+    -moz-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
+    -o-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
+    transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 
 /*# sourceMappingURL=application.css.map */

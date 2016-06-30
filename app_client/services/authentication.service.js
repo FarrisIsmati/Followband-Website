@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
 
 var app = angular.module("followapp.authService", []);
@@ -62,6 +64,18 @@ var app = angular.module("followapp.authService", []);
       
     };
 
+    //Checks to see if password contains at least 1 lower and upper case a number and a minimum of 7 characters
+    var passwordCompatible = function(password) {
+      var re_num = /(?=.*[0-9])/.test(password);
+      var re_low = /(?=.*[a-z])/.test(password);
+      var re_up = /(?=.*[A-Z])/.test(password);
+
+      if ((password.indexOf(' ') <= 0) && (re_num) && (re_low) && (re_up) && (password.length > 6)){
+        return true;
+      }
+      return false;
+    };
+
     return {
           currentUser : currentUser,
           saveToken : saveToken,
@@ -69,7 +83,8 @@ var app = angular.module("followapp.authService", []);
           isLoggedIn : isLoggedIn,
           register : register,
           login : login,
-          logout : logout
+          logout : logout,
+          passwordCompatible : passwordCompatible
     };
   }
 

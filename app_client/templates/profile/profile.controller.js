@@ -52,7 +52,8 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
       if ($scope.credentialsReg.password != $scope.credentialsReg.passwordconfirm) {
         console.log('passwords dont match');
         return
-      } else {
+      } 
+      if (auth.passwordCompatible($scope.credentialsReg.password)){
         console.log('Submitting registration');
         auth.register($scope.credentialsReg)
           .error(function(err){
@@ -61,8 +62,10 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
         .then(function(){
           $location.path('/tab/main');
         });
+      } else {
+        console.log('password doesnt meet requirements');
+        return 
       }
-
     };
 
     $scope.onSubmitLogin = function () {
