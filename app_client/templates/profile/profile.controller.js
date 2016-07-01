@@ -8,24 +8,25 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
     var auth = authService;
 
     //Need to figure out how to move isLoggedIn an logout to the services
-    // $scope.isLoggedIn = function() {
-    //   var token = auth.getToken();
-    //   var payload;
+    $scope.isLoggedIn = function() {
+      var token = auth.getToken();
+      var payload;
 
-    //   if(token){
-    //     payload = token.split('.')[1];
-    //     payload = $window.atob(payload);
-    //     payload = JSON.parse(payload);
+      if(token){
+        payload = token.split('.')[1];
+        payload = $window.atob(payload);
+        payload = JSON.parse(payload);
 
-    //     return payload.exp > Date.now() / 1000;
-    //   } else {
-    //     return false;
-    //   }
-    // };
+        return payload.exp > Date.now() / 1000;
+      } else {
+        return false;
+      }
+    };
 
     $scope.logout = function() {
       if (auth.isLoggedIn()){
         console.log('Loging out');
+        $location.path('/tab/main');
         $window.localStorage.removeItem('mean-token');
       }
     };

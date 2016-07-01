@@ -43,7 +43,8 @@
     	console.log(next.url);
       if (next.url === '/userprof' && !auth.isLoggedIn()) {
       	console.log('user not authorized')
-        $window.location.assign('/tab/main');
+      	angularEvent.preventDefault()
+        //$window.location.assign('/tab/main');
       }
     });
   };

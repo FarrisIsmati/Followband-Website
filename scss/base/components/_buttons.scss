@@ -33,6 +33,68 @@
     }
   }
 
+// Tab SVG Buttons
+
+.button:hover {
+  & {
+  cursor: pointer;
+  }
+
+  & #line1 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #line2 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #line3 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #line4 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #prof_line1 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #prof_line2 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #prof_line3 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #prof_line4 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #prof_line5 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #prof_line6 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+  & #prof_line7 {
+  stroke: #eeeeee;
+  @include animation(100ms);
+  }
+}
+
+#prof_button {
+  margin-right: 30px;
+}
+
+.svg_buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
 // Dropdown Menu Buttons
 
 .dropdown-menu{
@@ -48,3 +110,50 @@
     @include animation(200ms);
   }
 }
+
+// Navbar Buttons
+
+.navbar-button {
+  &{font-style: bold;
+  color: #0d0d0d;
+  }
+  &:hover{
+  cursor: pointer;
+  background: linear-gradient(to right, white 90%, black 10%);
+  }
+}
+
+.navbar-bracelet-content{
+    opacity: 0; 
+    height: 0;
+    overflow: hidden;
+}
+
+.navbar-bracelet-content-visible{
+  & {
+    opacity: 1;
+    height: 100%;
+  }
+  & p {
+    font-size: 24px;
+  }
+  & p:hover {
+    color: black;
+    background-color: #d9d9d9;
+    cursor: pointer;
+  }
+  & p:hover::after {
+    content: "' ''";
+  }
+}
+
+.navbar-bracelet-content-text-active {
+  &{
+    background-color: #d9d9d9;
+    color: black;
+    }
+  &::after {
+    content: "' ''";
+  }
+}
+

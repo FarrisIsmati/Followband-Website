@@ -1,20 +1,20 @@
 <div class="shop-view-holder">
 
-	<div class="shop-navbar-holder">
-		<div class="shop-navbar-content-holder">
-			<div class="shop-navbar-static-text">
+	<div class="navbar-holder">
+		<div class="navbar-content-holder">
+			<div class="navbar-static-text">
 				bracelets
 			</div>
 
-			<div id="shop-navbar-blackline"></div>
+			<div id="navbar-blackline"></div>
 
 			<div ng-repeat="b in menuButtons">
 
-            	<div ng-click="b.isActive=!b.isActive" class="shop-navbar-button">{{b.header}}</div>
+            	<div ng-click="b.isActive=!b.isActive" class="navbar-button">{{b.header}}</div>
 
-	            <div class="shop-navbar-bracelet-content" ng-class="{'shop-navbar-bracelet-content-visible': b.isActive}">
+	            <div class="navbar-bracelet-content" ng-class="{'navbar-bracelet-content-visible': b.isActive}">
 
-	            	<p class="shop-navbar-bracelet-content-text" ng-class="{'shop-navbar-bracelet-content-text-active': s.isActive}" ng-click="s.isActive=!s.isActive; activeSelect(s)" ng-repeat="s in b.subGroup">{{s.name}}</p>
+	            	<p class="navbar-bracelet-content-text" ng-class="{'navbar-bracelet-content-text-active': s.isActive}" ng-click="s.isActive=!s.isActive; activeSelect(s)" ng-repeat="s in b.subGroup">{{s.name}}</p>
 
 				</div>
 

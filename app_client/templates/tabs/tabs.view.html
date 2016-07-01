@@ -23,9 +23,9 @@
             <path id="prof_line3" fill="none" stroke="#000000" stroke-miterlimit="10" d="M22.817 30.908c0 0-1.005-18.297-6.731-18.297l-0.492-0.001c0 0 8.406-10.82-3.594-10.82"/>
             </svg>
             <ul class="dropdown-menu">
-              <li><a ng-click="go(seperateTabs3.route)" active="seperateTabs3.active" >profile</a></li>
-              <li><a ng-click="go(seperateTabs2.routeLogin)" active="seperateTabs2.activeLogin">login</a></li>
-              <li><a ng-click="logout()">logout</a></li>
+              <li><a ng-show="isLoggedIn()" ng-click="go(seperateTabs3.route)" active="seperateTabs3.active" >profile</a></li>
+              <li><a ng-hide="isLoggedIn()" ng-click="go(seperateTabs2.routeLogin)" active="seperateTabs2.activeLogin">login</a></li>
+              <li><a ng-show="isLoggedIn()" ng-click="logout()">logout</a></li>
             </ul>
           </div>
 

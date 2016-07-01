@@ -8,9 +8,11 @@ app.controller('UserProfCtrl', function($scope, $location, dataService){
    
     var data = dataService;
 
+    $scope.user
+
     data.getProfile()
       .success(function(data) {
-        //vm.user = data;
+      	$scope.user = data
       })
       .error(function (e) {
         console.log(e);
