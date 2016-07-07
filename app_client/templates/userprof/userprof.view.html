@@ -1,6 +1,6 @@
 <div class="view-body">
 
-	<div class="navbar-holder">
+	<div class="navbar-holder-profile">
 
 		<div class="navbar-content-holder">
 			<div class="navbar-static-text">
@@ -24,17 +24,35 @@
 	</div>
 
 
-	<div>
+	<div class="userprofile-content">
 
+		<h1>name</h1>
+		<div class="two-row">
 		<p>{{user.name}}</p>
+		<button type="button" class="btn btn-warning userprofile-btn">change</button>
+		</div>
+
+		<h1>email</h1>
+		<div class="two-row">
 		<p>{{user.email}}</p>
-		<p>change password</p>
+		<button type="button" class="btn btn-warning userprofile-btn">change</button>
+		</div>
+
+		<div class="two-row">
+		<button type="button" class="btn btn-warning userprofile-btn-pass">change password</button>
+		</div>
 
 		<p>_______________________</p>
 
+		<div class="two-row">
 		<p>billing method</p>
+		<button type="button" class="btn btn-warning userprofile-btn">change</button>
+		</div>
 
+		<div class="two-row">
 		<p>shipping method</p>
+		<button type="button" class="btn btn-warning userprofile-btn">change</button>
+		</div>
 	</div>
 
 

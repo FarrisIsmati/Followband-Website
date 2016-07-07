@@ -1,7 +1,7 @@
 'use strict';
 (function(){
 
-var app = angular.module("followapp.MainCtrl", ["ngAnimate"]);
+var app = angular.module("followapp.MainCtrl", []);
 
 app.controller('MainCtrl', function($scope){
   $scope.myInterval = 20000;
@@ -22,10 +22,7 @@ app.controller('MainCtrl', function($scope){
     $scope.addSlide(i);
   }
 
-  $scope.underImageHolder = [{'id':'../../images/t1.jpg', 'desc':'refined elegance'},{'id':'../../images/t2.jpg', 'desc':'essential quality'},{'id':'../../images/t3.jpg', 'desc':'simple curiosity'},
-  							{'id':'../../images/t4.jpg', 'desc':'unmatched vision'},{'id':'../../images/t5.jpg', 'desc':'playful balance'},{'id':'../../images/t6.jpg', 'desc':'bold craftsmanship'},
-                {'id':'../../images/t7.jpg', 'desc':'honed beauty'}, {'id':'../../images/t8.jpg', 'desc':'fresh twist'}, {'id':'../../images/t9.jpg', 'desc':'warm fit'}]
-
+  $scope.imagesRow1 = [{'id':'../../images/row11.jpg', 'desc':'follow stories'}, {'id':'../../images/row12.jpg', 'desc':'follow products'}, {'id':'../../images/row13.jpg', 'desc':'follow media'}]
 })
 
 }());

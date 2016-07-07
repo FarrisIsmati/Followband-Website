@@ -1,46 +1,77 @@
 
 <!--TOP-->
+<div class="button-carousel-wrapper">
+	<div class ="main-start-button" ng-controller="TabCtrl">
 
-<div class="carousel-holder">
-	<carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-	  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-	    <img ng-src="{{slide.image}}" style="margin:auto;">
-	  </slide>
-	</carousel>
+	<div ng-click="go(tabs[1].route)"
+	     active="tabs[1].active"
+	     id = "main-start-button" 
+	     class="map-button">
+	     follow
+	</div> <!--° ' ''-->
+
+	</div>
+
+	<div class="carousel-holder">
+
+		<carousel active="active" interval="15000" no-wrap="noWrapSlides">
+
+		  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+		    <img ng-src="{{slide.image}}" style="width:100vw;">
+		  </slide>
+		</carousel>
+	</div>
 </div>
 
 <!--MIDDLE-->
 
-<div class="main-view-middle">
-
-	<div class="main-view-font-holder">
-
-		<div class ="main-start-button" ng-controller="TabCtrl">
-
-			<div 
-				 ng-click="go(tabs[1].route)"
-                 active="tabs[1].active"
-                 id = "main-start-button" 
-                 class="map-button">SELECT ° ' ''
-             </div>
-
-		</div>
-
-			<p> 
-			Followband represents the places we've been, the places we will go and the<br/> and the adventures worth following. 
-		</p>
-		
-	</div>
+<div class="main-view-text-holder">
+	<p class="main-view-font1">
+		what are<br>we about
+	</p>
+	<p class="main-view-font2"> 
+		followband represents the places we've <br> been, the places we will go and the <br>adventures worth following 
+	</p>
+	
 </div>
-
-<!--BOTTOM-->
 
 <div class="image-holder">
-	<div ng-repeat="image in underImageHolder"  class="image-container">
-
-		<img ng-src="{{image.id}}"></img>
+	<div ng-repeat="image in imagesRow1"  class="image-container">
 		<div class="image-text">
-			<h3>{{image.desc}}</h3>
+			<h1>{{image.desc}}</h1>
+		</div>
+		<img ng-src="{{image.id}}"></img>
+	</div>
+	<!--
+	<div class="carousel-bottom-holder">
+		<div class="carousel-holder">
+
+			<carousel active="active" interval="10000" no-wrap="noWrapSlides">
+
+			  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+			    <img id="bottom-left-carousel" ng-src="{{slide.image}}">
+			  </slide>
+			</carousel>
+		</div>
+
+		<div class="carousel-bottom-holder-right">
+
+			<carousel active="active" interval="11000" no-wrap="noWrapSlides">
+
+			  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+			    <img id="bottom-right-carousel" ng-src="{{slide.image}}" >
+			  </slide>
+			</carousel>
+
+			<carousel active="active" interval="11000" no-wrap="noWrapSlides">
+
+			  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+			    <img id="bottom-right-carousel-lower" ng-src="{{slide.image}}" >
+			  </slide>
+			</carousel>
 		</div>
 	</div>
+	-->
 </div>
+<!--BOTTOM-->
+<footer></footer>

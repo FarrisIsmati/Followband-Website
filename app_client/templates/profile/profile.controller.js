@@ -4,7 +4,7 @@
 
 var app = angular.module("followapp.ProfileCtrl", []);
 
-app.controller('ProfileCtrl', function($scope, $http, $window, $location, authService){
+app.controller('ProfileCtrl', function($scope, $http, $window, $location, $rootScope, authService){
     var auth = authService;
 
     //Need to figure out how to move isLoggedIn an logout to the services
@@ -61,13 +61,21 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
             alert(err.problem);
         })
         .then(function(){
-          $location.path('/tab/main');
+          $location.path('/tab/userprof');
         });
       } else {
         console.log('password doesnt meet requirements');
         return 
       }
     };
+
+    var history = [];
+
+    $rootScope.$on('$stateChangeSuccess', function() {
+        //if length of history > 5 then remove
+        history.push($location.$$path);
+        console.log(history);
+    });
 
     $scope.onSubmitLogin = function () {
         auth.login($scope.credentialsLog)
@@ -76,9 +84,11 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, authSe
           return
         })
         .then(function(){
-          $location.path('/tab/main');
+          $location.path('tab/main');
         });
     };
+
+
 
   });
 

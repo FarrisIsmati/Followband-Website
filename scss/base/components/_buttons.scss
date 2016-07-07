@@ -17,7 +17,7 @@
       background-color: $charcol;
       color: white;
       margin: 0px;
-      @include animation(1000ms);
+      @include animation(500ms);
     }
   }
 
@@ -29,7 +29,7 @@
       background-color: $charcol;
       border: 0px;
       margin: 0px;
-      @include animation(1000ms);
+      @include animation(500ms);
     }
   }
 
@@ -157,3 +157,58 @@
   }
 }
 
+
+
+// Main Start button
+
+.main-start-button {
+  @include fontSelect(lato, sans-serif);
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  margin-left: -15vw;
+  align-content: center;
+}
+
+
+#main-start-button {
+  &{
+    position: absolute;
+    bottom: 125px;
+    text-align: center;
+    z-index: 99;
+    font-size: 74px;
+    width: 15vw;
+    color: $offWhite;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    -webkit-text-stroke-width: 1px;
+    background-color: rgba(0,0,0,0);
+    border-radius: 4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: $offWhite;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    }
+    &:hover{
+    color: $offWhite;
+    -webkit-text-fill-color: $offWhite;
+    -webkit-text-stroke-width: 1px;
+    @include animation(200ms);
+    }
+    &:active{
+    }
+}
+
+// Userprofile buttons
+.userprofile-btn{
+  &{
+  font-size: 18px;
+  margin-left: 1em;}
+  &-pass{
+  margin-left: 0px;
+  font-size: 18px;
+  }
+}

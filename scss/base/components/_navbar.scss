@@ -1,13 +1,16 @@
 // Common Navbar elements
 
 .navbar-holder {
-  	margin: 0 !important;
+&{	margin: 0 !important;
   	height: 100%;
   	width: 15%;
   	display: flex;
   	margin: 15px;
   	flex-direction: column;
-	font-size: 34px;
+	font-size: 34px;}
+  	&-profile{
+  	width: 14%;
+  	}
 }
 
 .navbar-content-holder {

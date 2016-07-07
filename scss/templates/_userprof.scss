@@ -1,3 +1,13 @@
 // user profile
 
+.userprofile-content{
+	padding-left: 3em;
+	padding-top: 3em;
+}
 
+.two-row{
+	@include font(lato);
+	font-size:28px;
+	display:flex;
+	margin-bottom: 2em;
+}

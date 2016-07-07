@@ -4,3 +4,34 @@
     -o-transition: all $length cubic-bezier(0.220, 0.990, 0.110, 0.575);
     transition: all $length cubic-bezier(0.220, 0.990, 0.110, 0.575); 
 }
+
+@mixin animate-Linear($length) {
+    -webkit-transition: all $length cubic-bezier(0.5, 0.5, 0.5, 0.5);
+    -moz-transition: all $length cubic-bezier(0.5, 0.5, 0.5, 0.5);
+    -o-transition: all $length cubic-bezier(0.5, 0.5, 0.5, 0.5);
+    transition: all $length cubic-bezier(0.5, 0.5, 0.5, 0.5); 
+}
+
+@mixin animate-ease($length) {
+    -webkit-transition: all $length cubic-bezier(.2,.01,.63,.98);
+    -moz-transition: all $length cubic-bezier(.2,.01,.63,.98);
+    -o-transition: all $length cubic-bezier(.2,.01,.63,.98);
+    transition: all $length cubic-bezier(.2,.01,.63,.98); 
+}
+
+@mixin noselect() {
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;   
+  -khtml-user-select: none;    
+  -moz-user-select: none;      
+  -ms-user-select: none;      
+  user-select: none;           
+}
+
+@mixin font($font){
+	font-family: $font, sans-serif;
+}
+
+@mixin fontSelect($font, $type){
+  font-family: $font, $type;
+}
