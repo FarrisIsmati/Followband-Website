@@ -28,6 +28,8 @@ module.exports.register = function(req, res) {
 
         user.setPassword(req.body.password);
 
+        user.getDate(); 
+
         user.save(function(err) {
           var token;
           token = user.generateJWT();

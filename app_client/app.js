@@ -20,8 +20,7 @@
 				.state("tab.map",
 				{ url: "/map",
 				templateUrl: "templates/map/map.view.html", 
-				controller: "MapCtrl",
-				activetab: false })
+				controller: "MapCtrl"})
 				.state("tab.shop",
 				{ url: "/shop",
 				templateUrl: "templates/shop/shop.view.html",

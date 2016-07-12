@@ -23,6 +23,8 @@ app.controller("TabCtrl", function($rootScope, $scope, $state, authService) {
 			//{ heading: "social", route:"tab.social", active:false },
 			//{ heading: "stories", route:"tab.story", active:false }
 		];
+
+		
 		$scope.seperateTabs3 = { heading: "userprof", route:"tab.userprof", active:false};
 		$scope.seperateTabs = { heading: "cart", route:"tab.cart", active:false };
 		$scope.seperateTabs2 = { heading: "register", routeLogin:"tab.register", active:false}

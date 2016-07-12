@@ -1,13 +1,12 @@
 
 <!--TOP-->
 <div class="button-carousel-wrapper">
-	<div class ="main-start-button" ng-controller="TabCtrl">
+	<div class ="main-start-button-holder" ng-controller="TabCtrl">
 
 	<div ng-click="go(tabs[1].route)"
 	     active="tabs[1].active"
-	     id = "main-start-button" 
-	     class="map-button">
-	     follow
+	     class="main-start-button">
+	     BEGIN
 	</div> <!--° ' ''-->
 
 	</div>
@@ -25,53 +24,151 @@
 
 <!--MIDDLE-->
 
-<div class="main-view-text-holder">
-	<p class="main-view-font1">
-		what are<br>we about
-	</p>
-	<p class="main-view-font2"> 
-		followband represents the places we've <br> been, the places we will go and the <br>adventures worth following 
-	</p>
-	
+<div class="main-middle-background">
+	<div class="main-middle-text-holder">
+		<div class="main-middle-text-holder-header">
+			<h1>WHAT ARE WE ABOUT</h1>
+		</div>
+		<div class="main-middle-text-holder-steps">
+			<div id="step-first">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 300 300" enable-background="new 0 0 300 300">
+				  <g id="Layer_1" display="none">
+				    <circle display="inline" fill="#EBECED" cx="156.143" cy="174.54" r="29.383"/>
+				    <circle display="inline" fill="#EBECED" cx="156.143" cy="87.212" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="136.409" cy="89.025" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="116.675" cy="92.118" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="97.271" cy="97.079" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="78.62" cy="108.286" r="11.706"/>
+				    <circle display="inline" fill="#EBECED" cx="175.876" cy="89.024" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="195.61" cy="92.117" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="214.886" cy="97.079" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="233.404" cy="108.567" r="11.706"/>
+				    <circle display="inline" fill="#3E3E3B" cx="66.476" cy="131.376" r="13.88"/>
+				    <path display="inline" fill="#3E3E3B" d="M261.56 130.151c0 7.668-6.213 13.884-13.879 13.884s-13.881-6.216-13.881-13.884c0-7.664 6.215-13.88 13.881-13.88S261.56 122.487 261.56 130.151z"/>
+				    <path display="inline" fill="#3E3E3B" d="M225.211 178.235c0 10.975-8.891 19.869-19.86 19.869 -10.971 0-19.864-8.895-19.864-19.869 0-10.966 8.894-19.862 19.864-19.862C216.32 158.373 225.211 167.27 225.211 178.235z"/>
+				    <path display="inline" fill="#4C586F" d="M94.981 159.536c0 9.039-7.324 16.367-16.36 16.367 -9.037 0-16.363-7.328-16.363-16.367 0-9.034 7.326-16.361 16.363-16.361C87.658 143.175 94.981 150.502 94.981 159.536z"/>
+				    <path display="inline" fill="#3E3E3B" d="M126.296 178.236c0 10.101-8.184 18.288-18.281 18.288 -10.098 0-18.285-8.188-18.285-18.288 0-10.094 8.187-18.283 18.285-18.283C118.112 159.953 126.296 168.143 126.296 178.236z"/>
+				    <path display="inline" fill="#4C586F" d="M251.857 157.995c0 9.039-7.323 16.367-16.36 16.367s-16.363-7.328-16.363-16.367c0-9.034 7.326-16.361 16.363-16.361S251.857 148.961 251.857 157.995z"/>
+				  </g>
+				  <g id="Layer_2">
+				    <circle fill="#3E3E3B" cx="156.474" cy="163.54" r="29.383"/>
+				    <circle fill="#3E3E3B" cx="156.474" cy="76.212" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="136.74" cy="78.025" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="117.006" cy="81.118" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="97.603" cy="86.079" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="78.951" cy="97.286" r="11.706"/>
+				    <circle fill="#3E3E3B" cx="176.208" cy="78.024" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="195.941" cy="81.117" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="215.217" cy="86.079" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="233.735" cy="97.567" r="11.706"/>
+				    <circle fill="#3E3E3B" cx="66.807" cy="120.376" r="13.88"/>
+				    <path fill="#3E3E3B" d="M261.891 119.151c0 7.668-6.213 13.884-13.879 13.884s-13.881-6.216-13.881-13.884c0-7.664 6.215-13.88 13.881-13.88S261.891 111.487 261.891 119.151z"/>
+				    <path fill="#3E3E3B" d="M225.542 167.235c0 10.975-8.891 19.869-19.86 19.869 -10.971 0-19.864-8.895-19.864-19.869 0-10.966 8.894-19.862 19.864-19.862C216.651 147.373 225.542 156.27 225.542 167.235z"/>
+				    <path fill="#3E3E3B" d="M95.313 148.536c0 9.039-7.324 16.367-16.36 16.367 -9.037 0-16.363-7.328-16.363-16.367 0-9.034 7.326-16.361 16.363-16.361C87.989 132.175 95.313 139.502 95.313 148.536z"/>
+				    <path fill="#3E3E3B" d="M126.627 167.236c0 10.101-8.184 18.288-18.281 18.288 -10.098 0-18.285-8.188-18.285-18.288 0-10.094 8.187-18.283 18.285-18.283C118.443 148.953 126.627 157.143 126.627 167.236z"/>
+				    <path fill="#3E3E3B" d="M252.188 146.995c0 9.039-7.323 16.367-16.36 16.367s-16.363-7.328-16.363-16.367c0-9.034 7.326-16.361 16.363-16.361S252.188 137.961 252.188 146.995z"/>
+				  </g>
+				</svg>
+				<h1>START A JOURNEY</h1>
+				<p>start a journey whether it be near or far</p>
+			</div>
+			<div id="step-middle">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 300 300" enable-background="new 0 0 300 300">
+				  <g id="Layer_1" display="none">
+				    <circle display="inline" fill="#EBECED" cx="156.143" cy="174.54" r="29.383"/>
+				    <circle display="inline" fill="#EBECED" cx="156.143" cy="87.212" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="136.409" cy="89.025" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="116.675" cy="92.118" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="97.271" cy="97.079" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="78.62" cy="108.286" r="11.706"/>
+				    <circle display="inline" fill="#EBECED" cx="175.876" cy="89.024" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="195.61" cy="92.117" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="214.886" cy="97.079" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="233.404" cy="108.567" r="11.706"/>
+				    <circle display="inline" fill="#3E3E3B" cx="66.476" cy="131.376" r="13.88"/>
+				    <path display="inline" fill="#3E3E3B" d="M261.56 130.151c0 7.668-6.213 13.884-13.879 13.884s-13.881-6.216-13.881-13.884c0-7.664 6.215-13.88 13.881-13.88S261.56 122.487 261.56 130.151z"/>
+				    <path display="inline" fill="#3E3E3B" d="M225.211 178.235c0 10.975-8.891 19.869-19.86 19.869 -10.971 0-19.864-8.895-19.864-19.869 0-10.966 8.894-19.862 19.864-19.862C216.32 158.373 225.211 167.27 225.211 178.235z"/>
+				    <path display="inline" fill="#4C586F" d="M94.981 159.536c0 9.039-7.324 16.367-16.36 16.367 -9.037 0-16.363-7.328-16.363-16.367 0-9.034 7.326-16.361 16.363-16.361C87.658 143.175 94.981 150.502 94.981 159.536z"/>
+				    <path display="inline" fill="#3E3E3B" d="M126.296 178.236c0 10.101-8.184 18.288-18.281 18.288 -10.098 0-18.285-8.188-18.285-18.288 0-10.094 8.187-18.283 18.285-18.283C118.112 159.953 126.296 168.143 126.296 178.236z"/>
+				    <path display="inline" fill="#4C586F" d="M251.857 157.995c0 9.039-7.323 16.367-16.36 16.367s-16.363-7.328-16.363-16.367c0-9.034 7.326-16.361 16.363-16.361S251.857 148.961 251.857 157.995z"/>
+				  </g>
+				  <g id="Layer_2">
+				    <circle fill="#3E3E3B" cx="156.474" cy="163.54" r="29.383"/>
+				    <circle fill="#3E3E3B" cx="156.474" cy="76.212" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="136.74" cy="78.025" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="117.006" cy="81.118" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="97.603" cy="86.079" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="78.951" cy="97.286" r="11.706"/>
+				    <circle fill="#3E3E3B" cx="176.208" cy="78.024" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="195.941" cy="81.117" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="215.217" cy="86.079" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="233.735" cy="97.567" r="11.706"/>
+				    <circle fill="#3E3E3B" cx="66.807" cy="120.376" r="13.88"/>
+				    <path fill="#3E3E3B" d="M261.891 119.151c0 7.668-6.213 13.884-13.879 13.884s-13.881-6.216-13.881-13.884c0-7.664 6.215-13.88 13.881-13.88S261.891 111.487 261.891 119.151z"/>
+				    <path fill="#3E3E3B" d="M225.542 167.235c0 10.975-8.891 19.869-19.86 19.869 -10.971 0-19.864-8.895-19.864-19.869 0-10.966 8.894-19.862 19.864-19.862C216.651 147.373 225.542 156.27 225.542 167.235z"/>
+				    <path fill="#3E3E3B" d="M95.313 148.536c0 9.039-7.324 16.367-16.36 16.367 -9.037 0-16.363-7.328-16.363-16.367 0-9.034 7.326-16.361 16.363-16.361C87.989 132.175 95.313 139.502 95.313 148.536z"/>
+				    <path fill="#3E3E3B" d="M126.627 167.236c0 10.101-8.184 18.288-18.281 18.288 -10.098 0-18.285-8.188-18.285-18.288 0-10.094 8.187-18.283 18.285-18.283C118.443 148.953 126.627 157.143 126.627 167.236z"/>
+				    <path fill="#3E3E3B" d="M252.188 146.995c0 9.039-7.323 16.367-16.36 16.367s-16.363-7.328-16.363-16.367c0-9.034 7.326-16.361 16.363-16.361S252.188 137.961 252.188 146.995z"/>
+				  </g>
+				</svg>
+				<h1>SHARE A JOURNEY</h1>
+				<p>share your journey with a stranger</br> or someone
+					close by passing</br> down your band</p>
+			</div>
+			<div id="step-last">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 300 300" enable-background="new 0 0 300 300">
+				  <g id="Layer_1" display="none">
+				    <circle display="inline" fill="#EBECED" cx="156.143" cy="174.54" r="29.383"/>
+				    <circle display="inline" fill="#EBECED" cx="156.143" cy="87.212" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="136.409" cy="89.025" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="116.675" cy="92.118" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="97.271" cy="97.079" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="78.62" cy="108.286" r="11.706"/>
+				    <circle display="inline" fill="#EBECED" cx="175.876" cy="89.024" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="195.61" cy="92.117" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="214.886" cy="97.079" r="9.867"/>
+				    <circle display="inline" fill="#EBECED" cx="233.404" cy="108.567" r="11.706"/>
+				    <circle display="inline" fill="#3E3E3B" cx="66.476" cy="131.376" r="13.88"/>
+				    <path display="inline" fill="#3E3E3B" d="M261.56 130.151c0 7.668-6.213 13.884-13.879 13.884s-13.881-6.216-13.881-13.884c0-7.664 6.215-13.88 13.881-13.88S261.56 122.487 261.56 130.151z"/>
+				    <path display="inline" fill="#3E3E3B" d="M225.211 178.235c0 10.975-8.891 19.869-19.86 19.869 -10.971 0-19.864-8.895-19.864-19.869 0-10.966 8.894-19.862 19.864-19.862C216.32 158.373 225.211 167.27 225.211 178.235z"/>
+				    <path display="inline" fill="#4C586F" d="M94.981 159.536c0 9.039-7.324 16.367-16.36 16.367 -9.037 0-16.363-7.328-16.363-16.367 0-9.034 7.326-16.361 16.363-16.361C87.658 143.175 94.981 150.502 94.981 159.536z"/>
+				    <path display="inline" fill="#3E3E3B" d="M126.296 178.236c0 10.101-8.184 18.288-18.281 18.288 -10.098 0-18.285-8.188-18.285-18.288 0-10.094 8.187-18.283 18.285-18.283C118.112 159.953 126.296 168.143 126.296 178.236z"/>
+				    <path display="inline" fill="#4C586F" d="M251.857 157.995c0 9.039-7.323 16.367-16.36 16.367s-16.363-7.328-16.363-16.367c0-9.034 7.326-16.361 16.363-16.361S251.857 148.961 251.857 157.995z"/>
+				  </g>
+				  <g id="Layer_2">
+				    <circle fill="#3E3E3B" cx="156.474" cy="163.54" r="29.383"/>
+				    <circle fill="#3E3E3B" cx="156.474" cy="76.212" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="136.74" cy="78.025" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="117.006" cy="81.118" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="97.603" cy="86.079" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="78.951" cy="97.286" r="11.706"/>
+				    <circle fill="#3E3E3B" cx="176.208" cy="78.024" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="195.941" cy="81.117" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="215.217" cy="86.079" r="9.867"/>
+				    <circle fill="#3E3E3B" cx="233.735" cy="97.567" r="11.706"/>
+				    <circle fill="#3E3E3B" cx="66.807" cy="120.376" r="13.88"/>
+				    <path fill="#3E3E3B" d="M261.891 119.151c0 7.668-6.213 13.884-13.879 13.884s-13.881-6.216-13.881-13.884c0-7.664 6.215-13.88 13.881-13.88S261.891 111.487 261.891 119.151z"/>
+				    <path fill="#3E3E3B" d="M225.542 167.235c0 10.975-8.891 19.869-19.86 19.869 -10.971 0-19.864-8.895-19.864-19.869 0-10.966 8.894-19.862 19.864-19.862C216.651 147.373 225.542 156.27 225.542 167.235z"/>
+				    <path fill="#3E3E3B" d="M95.313 148.536c0 9.039-7.324 16.367-16.36 16.367 -9.037 0-16.363-7.328-16.363-16.367 0-9.034 7.326-16.361 16.363-16.361C87.989 132.175 95.313 139.502 95.313 148.536z"/>
+				    <path fill="#3E3E3B" d="M126.627 167.236c0 10.101-8.184 18.288-18.281 18.288 -10.098 0-18.285-8.188-18.285-18.288 0-10.094 8.187-18.283 18.285-18.283C118.443 148.953 126.627 157.143 126.627 167.236z"/>
+				    <path fill="#3E3E3B" d="M252.188 146.995c0 9.039-7.323 16.367-16.36 16.367s-16.363-7.328-16.363-16.367c0-9.034 7.326-16.361 16.363-16.361S252.188 137.961 252.188 146.995z"/>
+				  </g>
+				</svg>
+				<h1>REPEAT</h1>
+				<p>repeat the cycle</p>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="image-holder">
-	<div ng-repeat="image in imagesRow1"  class="image-container">
-		<div class="image-text">
-			<h1>{{image.desc}}</h1>
-		</div>
-		<img ng-src="{{image.id}}"></img>
+<div class="main-middle-picture-holder">
+	<img ng-src="http://placehold.it/850x600"></img>
+	<div class="main-middle-picture-holder-sub">
+		<img ng-src="http://placehold.it/300x300"></img>
+		<img ng-src="http://placehold.it/300x300"></img>
 	</div>
-	<!--
-	<div class="carousel-bottom-holder">
-		<div class="carousel-holder">
-
-			<carousel active="active" interval="10000" no-wrap="noWrapSlides">
-
-			  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-			    <img id="bottom-left-carousel" ng-src="{{slide.image}}">
-			  </slide>
-			</carousel>
-		</div>
-
-		<div class="carousel-bottom-holder-right">
-
-			<carousel active="active" interval="11000" no-wrap="noWrapSlides">
-
-			  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-			    <img id="bottom-right-carousel" ng-src="{{slide.image}}" >
-			  </slide>
-			</carousel>
-
-			<carousel active="active" interval="11000" no-wrap="noWrapSlides">
-
-			  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-			    <img id="bottom-right-carousel-lower" ng-src="{{slide.image}}" >
-			  </slide>
-			</carousel>
-		</div>
-	</div>
-	-->
 </div>
+
+
 <!--BOTTOM-->
 <footer></footer>

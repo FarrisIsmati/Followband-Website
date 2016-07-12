@@ -9,15 +9,48 @@ var userSchema = new Schema({
 	email: {
 		type: String,
 		unique: true,
-		required: false
+		required: true
 	},
 	name: {
 		type: String,
+		required: true
+	},
+	// billing: {
+	// 	billingInf: [{ 
+	// 		card: String USE STRIPE METHOD TO STORE
+	// }],
+	// 	required: false
+	// }
+	shipping: {
+		shippingAddress: [{addressLine1: String, addressLine2: String,
+			city: String, country: String, state: String,
+			zip: Number, }],
 		required: false
 	},
+	dateCreated: {
+		type: Date,
+		required: true
+	},
+	orderHistory: {
+		type: [],
+		required: false
+	},
+	cart: {
+		type: [],
+		required: false
+	},
+
 	hash: String,
 	salt: String
 })
+
+// Use stripe
+// userSchema.methods.storeCreditCard = function(password){
+// };
+userSchema.methods.getDate = function(){
+	var creationDate = new Date();
+  	this.dateCreated = creationDate.setDate(creationDate.getDate());
+};
 
 userSchema.methods.setPassword = function(password){
   this.salt = crypto.randomBytes(16).toString('hex');

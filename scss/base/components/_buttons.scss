@@ -6,7 +6,7 @@
 
   .nav-tabs>li>a{
     & {
-      color: $charcol;
+      color: $tabColor;
       border-radius: 0px;
       margin: 0px;
       border: 0px;
@@ -14,10 +14,10 @@
 
     &:hover {
       cursor: pointer;
-      background-color: $charcol;
+      background-color: $tabColor;
       color: white;
       margin: 0px;
-      @include animation(500ms);
+      @include animate-Linear(200ms);
     }
   }
 
@@ -26,10 +26,10 @@
       color: white;
       cursor: pointer;
       border: 0px;
-      background-color: $charcol;
+      background-color: $tabColor;
       border: 0px;
       margin: 0px;
-      @include animation(500ms);
+      @include animation(200ms);
     }
   }
 
@@ -105,7 +105,7 @@
   border-right: 0px;
   border-bottom: 1px solid #ccc;
   &>li>a:hover{
-    background-color: $charcol;
+    background-color: $tabColor;
     color: $white;
     @include animation(200ms);
   }
@@ -143,7 +143,7 @@
     cursor: pointer;
   }
   & p:hover::after {
-    content: "' ''";
+    content: "";
   }
 }
 
@@ -153,7 +153,7 @@
     color: black;
     }
   &::after {
-    content: "' ''";
+    content: "";
   }
 }
 
@@ -161,42 +161,31 @@
 
 // Main Start button
 
-.main-start-button {
-  @include fontSelect(lato, sans-serif);
+.main-start-button-holder {
+  @include fontSelect(Montserrat, sans-serif);
+  width: 100vw;
   font-weight: 300;
   display: flex;
   justify-content: center;
-  margin-left: -15vw;
-  align-content: center;
+  position: absolute;
+  z-index: 99;
+  bottom: 12vh;
 }
 
-
-#main-start-button {
+.main-start-button {
   &{
-    position: absolute;
-    bottom: 125px;
     text-align: center;
-    z-index: 99;
-    font-size: 74px;
-    width: 15vw;
-    color: $offWhite;
-    -webkit-text-fill-color: rgba(0,0,0,0);
-    -webkit-text-stroke-width: 1px;
+    font-size: 56px;
+    color: white;
     background-color: rgba(0,0,0,0);
-    border-radius: 4px;
-    border-width: 4px;
-    border-style: solid;
-    border-color: $offWhite;
-    padding: 15px;
+    @include borderCreate(0px, 4px, solid, white);
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 0px;
     }
     &:hover{
-    color: $offWhite;
-    -webkit-text-fill-color: $offWhite;
-    -webkit-text-stroke-width: 1px;
-    @include animation(200ms);
+    cursor: pointer;
     }
     &:active{
     }

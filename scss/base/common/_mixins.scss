@@ -35,3 +35,15 @@
 @mixin fontSelect($font, $type){
   font-family: $font, $type;
 }
+
+@mixin borderCreate($radius, $width, $style, $color){
+  border-radius: $radius;
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+}
+
+@mixin leftRightMargins($left, $right){
+  margin-left: $left;
+  margin-right: $right;
+}
