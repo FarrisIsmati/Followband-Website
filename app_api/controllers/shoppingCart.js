@@ -11,11 +11,17 @@ module.exports.createCart = function(req, res) {
 
   if (!req.payload._id) {
     res.status(401).json({
-      "message" : "UnauthorizedError: private profile"
+      "message" : "UnauthorizedError: private cart"
     });
   } else {
     var user = User.findById(req.payload._id)
     req.user.data.cart = cart;
+
+    //This part will be the entered data from adding a product to the
+    //cart
+    cart.product = req.body.product;
+    cart.quantity = req.body.quantity;
+
     req.user.save(function(error, user){
     if (error){
       return res.

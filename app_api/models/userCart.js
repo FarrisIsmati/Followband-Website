@@ -11,7 +11,7 @@ var cartSchmea = new Schema({
 	},
 	product: {
 		type: mongoose.Schema.Types.ObjectId
-		required: true
+		required: false //should be true
 	}
 	quantity: {
 		type: Number,

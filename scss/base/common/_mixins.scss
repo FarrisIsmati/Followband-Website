@@ -47,3 +47,13 @@
   margin-left: $left;
   margin-right: $right;
 }
+
+@mixin underlineAfter($height, $width, $margin, $color){
+  content: "";
+  display: block;
+  height: $height;
+  width: $width;
+  margin: $margin auto 0;
+  background-color: $color;
+}
+

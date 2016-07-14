@@ -3,7 +3,7 @@
 
 	var app = angular.module("followapp", [
 	 	"ui.router", "ui.bootstrap", "followapp.TabCtrl",
-	 	"followapp.MapCtrl", "followapp.MainCtrl", "followapp.ShopCtrl", "followapp.ProfileCtrl", "followapp.UserProfCtrl", "followapp.authService", "followapp.dataService" ]);
+	 	"followapp.MapCtrl", "followapp.MainCtrl", "followapp.ShopCtrl", "followapp.ProfileCtrl", "followapp.UserProfCtrl", "followapp.authService", "followapp.dataService", "followapp.mapService" ]);
 
 	app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
 

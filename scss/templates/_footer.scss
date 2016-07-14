@@ -5,3 +5,106 @@
 	height: 40vh;
 	width: 100vw;
 }
+
+.footer-text{
+	&{
+		@include leftRightMargins(10vw, 10vw);
+		display: flex;
+		justify-content: space-around;
+		padding-top: 5vh;
+	}
+
+	&-product{
+		&{
+
+		}
+		& h1{
+			&{
+				@include fontSelect(Roboto Condensed, sans-serif);
+				font-size: 25px;
+			}
+			&::after{
+			    @include underlineAfter(7px, 150px, 20px, $underLine);
+		  	}	
+		}
+		& p{
+			font-size: 20px;
+			@include fontSelect(lato, sans-serif);
+		}
+		& p:hover{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+	}
+
+	&-company{
+		&{
+
+		}
+		& h1{
+			&{
+				@include fontSelect(Roboto Condensed, sans-serif);
+				font-size: 25px;
+			}
+			&::after{
+			    @include underlineAfter(7px, 150px, 20px, $underLine);
+		  	}	
+		}
+		& p{
+			font-size: 20px;
+			@include fontSelect(lato, sans-serif);
+		}
+		& p:hover{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+
+	&-contact{
+		&{
+		
+		}
+		& h1{
+			&{
+				@include fontSelect(Roboto Condensed, sans-serif);
+				font-size: 25px;
+			}
+			&::after{
+			    @include underlineAfter(7px, 150px, 20px, $underLine);
+		  	}	
+		}
+		& p{
+			font-size: 20px;
+			@include fontSelect(lato, sans-serif);
+		}
+		& p:hover{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+
+	&-social{
+		&{
+
+		}
+		& h1{
+			&{
+				@include fontSelect(Roboto Condensed, sans-serif);
+				font-size: 25px;
+			}
+			&::after{
+			    @include underlineAfter(7px, 150px, 20px, $underLine);
+		  	}	
+		}
+		& p{
+			font-size: 20px;
+			@include fontSelect(lato, sans-serif);
+		}
+		& p:hover{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+	}
+}
