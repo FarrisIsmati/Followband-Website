@@ -8,7 +8,7 @@
 
 .footer-text{
 	&{
-		@include leftRightMargins(10vw, 10vw);
+		@include leftRightMargins(20vw, 20vw);
 		display: flex;
 		justify-content: space-around;
 		padding-top: 5vh;

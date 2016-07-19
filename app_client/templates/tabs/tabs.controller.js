@@ -31,6 +31,7 @@ app.controller("TabCtrl", function($rootScope, $scope, $state, authService) {
 
 		$scope.$on("$stateChangeSuccess", function() {
 			$scope.tabs.forEach(function(tab) {
+				//console.log(tab);
 				tab.active = $scope.active(tab.route);
 			});
 		});

@@ -212,7 +212,7 @@ body {
   text-align: center;
   width: 100vw;
   height: 90vh;
-  box-shadow: 2px 2px 10px grey;
+  /*box-shadow: 2px 2px 10px grey; */
   position: relative; }
 
 #map_canvas {
@@ -220,6 +220,23 @@ body {
   position: relative;
   width: 100%;
   height: 100%; }
+
+.map-coords-display-holder {
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  color: white; }
+.map-coords-display-holder p {
+  letter-spacing: 13px;
+  font-size: 1.1em;
+  font-family: lucidia, serif; }
+.map-coords-display-holder p span {
+  padding-left: 20px;
+  font-size: 1em !important;
+  font-family: lato, sans-serif; }
 
 .map-text-holder {
   z-index: 1;
@@ -294,7 +311,7 @@ body {
   z-index: 199;
   display: flex;
   justify-content: space-around;
-  font-family: Montserrat, sans-serif;
+  font-family: lato, sans-serif;
   font-size: 28px;
   padding-bottom: 0px;
   max-height: 8vh;
@@ -404,8 +421,8 @@ body {
   width: 100vw; }
 
 .footer-text {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   display: flex;
   justify-content: space-around;
   padding-top: 5vh; }
@@ -477,94 +494,131 @@ body {
 .nav-tabs > li > a {
   color: #3e3e3b;
   border-radius: 0px;
-  margin: 0px;
-  border: 0px; }
+  margin-bottom: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+  border: 0px;
+  -webkit-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98); }
+.nav-tabs > li > a::after {
+  content: "";
+  height: 6px;
+  background-color: #18A6B7;
+  left: 0;
+  right: 0;
+  top: -4px;
+  -webkit-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98); }
 .nav-tabs > li > a:hover {
   cursor: pointer;
-  background-color: #3e3e3b;
-  color: white;
-  margin: 0px;
-  -webkit-transition: all 200ms cubic-bezier(0.5, 0.5, 0.5, 0.5);
-  -moz-transition: all 200ms cubic-bezier(0.5, 0.5, 0.5, 0.5);
-  -o-transition: all 200ms cubic-bezier(0.5, 0.5, 0.5, 0.5);
-  transition: all 200ms cubic-bezier(0.5, 0.5, 0.5, 0.5); }
+  color: #18A6B7;
+  margin-bottom: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+  -webkit-transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  background-color: white; }
+.nav-tabs > li > a:hover::after {
+  -webkit-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  position: absolute;
+  top: 0px; }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-  color: white;
+  color: #18A6B7;
   cursor: pointer;
   border: 0px;
-  background-color: #3e3e3b;
-  border: 0px;
-  margin: 0px;
-  -webkit-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
-  -moz-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
-  -o-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
-  transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
+  margin-bottom: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+  -webkit-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98); }
+.nav-tabs > li.active > a::after {
+  position: absolute;
+  top: 0px;
+  -webkit-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -webkit-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98); }
 
 .button:hover {
   cursor: pointer; }
 .button:hover #line1 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #line2 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #line3 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #line4 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #prof_line1 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #prof_line2 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #prof_line3 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #prof_line4 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #prof_line5 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #prof_line6 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
 .button:hover #prof_line7 {
-  stroke: #eeeeee;
+  stroke: #18A6B7;
   -webkit-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -moz-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
   -o-transition: all 100ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
@@ -585,12 +639,12 @@ body {
   border-right: 0px;
   border-bottom: 1px solid #ccc; }
   .dropdown-menu > li > a:hover {
-    background-color: #3e3e3b;
-    color: #ffffff;
-    -webkit-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
-    -moz-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
-    -o-transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575);
-    transition: all 200ms cubic-bezier(0.22, 0.99, 0.11, 0.575); }
+    background-color: white;
+    color: #18A6B7;
+    -webkit-transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+    -moz-transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+    -o-transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+    transition: all 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98); }
 
 .navbar-button {
   font-style: bold;

@@ -16,11 +16,10 @@ var app = angular.module("followapp.mapService", []);
       });
     };
 
-    var changeLatLng = function() {
-      this.lat = marker.getPosition().lat();
-      this.lng = marker.getPosition().lng();
-      console.log(this.lat);
-      return [this.lat, this.lng];
+    var getLatLng = function(marker) {
+      var lat = marker.position.lat();
+      var lng = marker.position.lng();
+      return [lat, lng];
     };
 
     var createMarker = function(mainMap, myLatLng){
@@ -29,24 +28,44 @@ var app = angular.module("followapp.mapService", []);
           map: mainMap,
           draggable: true
         });
+    }
 
-      google.maps.event.addListener(this.marker, 'click', function(evt){
-        alert('map clicked');
-        changeLatLng();
-      }.bind(this));
+    var direction = function(direction, d){
+      var path 
+      if (direction == 'lat'){
+        console.log(d[0]);
+        if (d[0] >= 0){
+          path = 'N';
+        } 
+        if (d[0] < 0){
+          path = 'S';
+        } 
+      }
+      if (direction == 'lng'){
+        if (d[0] >= 0){
+          path = 'E';
+        } 
+        if (d[0] < 0){
+          path = 'W';
+        } 
+      }
+      return path
     }
 
     var toDMS = function(dd){
       var d = parseInt(dd);
       var m = Math.abs(parseInt((dd-d)*60));
-      var s = Math.abs((dd - d - m/60) * 3600); 
+      var s = Math.abs((dd.toFixed(6) - d - (m/60)) * 3600); 
+      console.log(dd.toFixed(6) + ' ' + d + ' ' + m)
       var sf = s.toFixed(4);
-      return [d,m,sf];
+      var dms = d + "° " + m + "' " + sf + "''";
+      return [d,m,sf, dms];
     }
 
     return {
           initMap : initMap,
-          changeLatLng: changeLatLng,
+          getLatLng: getLatLng,
+          direction: direction,
           createMarker : createMarker,
           toDMS : toDMS
     };

@@ -39,9 +39,9 @@
 	function run($window, $rootScope, $location, $state, authService) {
 	var auth = authService;
     $rootScope.$on('$stateChangeStart', function(angularEvent, next, current) {
-    	console.log(next.url);
+    	//console.log(next.url);
       if (next.url === '/userprof' && !auth.isLoggedIn()) {
-      	console.log('user not authorized')
+      	//console.log('user not authorized')
       	angularEvent.preventDefault()
         //$window.location.assign('/tab/main');
       }

@@ -11,7 +11,7 @@
   z-index: 199;
   display: flex;
   justify-content: space-around;
-  @include fontSelect(Montserrat, sans-serif);
+  @include fontSelect(lato, sans-serif);
   font-size: 28px;
   padding-bottom: 0px;
   max-height: 8vh;

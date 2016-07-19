@@ -8,29 +8,53 @@
     & {
       color: $tabColor;
       border-radius: 0px;
-      margin: 0px;
+      margin-bottom: 1px;
+      @include leftRightMargins(0px, 0px);
       border: 0px;
+      @include animate-ease(300ms);
+    }
+
+    &::after{
+      content: "";
+      height: 6px;
+      background-color: $icon;
+      left: 0;
+      right: 0;
+      top: -4px;
+      @include animate-ease(300ms);
     }
 
     &:hover {
-      cursor: pointer;
-      background-color: $tabColor;
-      color: white;
-      margin: 0px;
-      @include animate-Linear(200ms);
+      &{      
+        cursor: pointer;
+        color: $icon;
+        margin-bottom: 1px;
+        @include leftRightMargins(0px, 0px);
+        @include animate-ease(200ms);
+        background-color: white;
+      }
+      &::after{
+        @include animate-ease(300ms);
+        position: absolute;
+        top: 0px;
+      }
     }
   }
 
   .nav-tabs>li.active>a{
-      &, &:hover, &:focus {
-      color: white;
+    &, &:hover, &:focus {
+      color: $icon;
       cursor: pointer;
       border: 0px;
-      background-color: $tabColor;
-      border: 0px;
-      margin: 0px;
-      @include animation(200ms);
+      margin-bottom: 1px;
+      @include leftRightMargins(0px, 0px);
+      @include animate-ease(300ms);
     }
+    &::after{
+        position: absolute;
+        top: 0px;@include animate-ease(300ms);
+        @include animate-ease(300ms);
+      }
   }
 
 // Tab SVG Buttons
@@ -41,47 +65,47 @@
   }
 
   & #line1 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #line2 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #line3 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #line4 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #prof_line1 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #prof_line2 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #prof_line3 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #prof_line4 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #prof_line5 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #prof_line6 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
   & #prof_line7 {
-  stroke: #eeeeee;
+  stroke: $icon;
   @include animation(100ms);
   }
 }
@@ -105,9 +129,9 @@
   border-right: 0px;
   border-bottom: 1px solid #ccc;
   &>li>a:hover{
-    background-color: $tabColor;
-    color: $white;
-    @include animation(200ms);
+    background-color: white;
+    color: $icon;
+    @include animate-ease(200ms);
   }
 }
 
