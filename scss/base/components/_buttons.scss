@@ -138,12 +138,58 @@
 // Navbar Buttons
 
 .navbar-button {
-  &{font-style: bold;
-  color: #0d0d0d;
+  &{
+    @include fontSelect(lato, sans-serif);
+    color: $tabColor;
+    font-size: 34px;
+    @include animate-ease(300ms);
+    margin-left:0px !important;
+    right: 0;
+  }
+  &::before{
+    margin-top: 8px;
+    content: "";
+    height: 1em;
+    width: 1em;
+    background-color: $icon;
+    @include animate-ease(300ms);
+    position: absolute;
+    left: -80px;
+    right: 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
   }
   &:hover{
-  cursor: pointer;
-  background: linear-gradient(to right, white 90%, black 10%);
+    padding-left: 1.2em;
+    cursor: pointer;
+    color: $icon;
+    @include animate-ease(300ms);
+  }
+  &:hover::before{
+    margin-left: 1.2em;
+    margin-right: 20px;
+    left: -20px;
+    content: "";
+    height: 1em;
+    width: 1em;
+    background-color: $icon;
+    @include animate-ease(300ms);
+  }
+  &-active{
+    padding-left: 1.2em;
+    color: $icon;
+  }
+  &-active::before{
+    margin-left: 1.2em;
+    margin-right: 20px;
+    left: -20px;
+    color: $icon;
+    content: "";
+    height: 1em;
+    width: 1em;
+    background-color: $icon;
+    @include animate-ease(300ms);
   }
 }
 

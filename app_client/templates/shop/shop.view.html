@@ -4,27 +4,13 @@
 	<div class="navbar-holder">
 		<div class="navbar-content-holder">
 			<div class="navbar-static-text">
-				bracelets
+				BRACELETS
 			</div>
-
-			<div id="navbar-blackline"></div>
-
-			<div ng-repeat="b in menuButtons">
-
-            	<div ng-click="b.isActive=!b.isActive" class="navbar-button">{{b.header}}</div>
-
-	            <div class="navbar-bracelet-content" ng-class="{'navbar-bracelet-content-visible': b.isActive}">
-
-	            	<p class="navbar-bracelet-content-text" ng-class="{'navbar-bracelet-content-text-active': s.isActive}" ng-click="s.isActive=!s.isActive; activeSelect(s)" ng-repeat="s in b.subGroup">{{s.name}}</p>
-
-				</div>
-
-            </div>
- 
+				<div ng-repeat="b in menuButtons" ng-click="buttonActive(b)" class="navbar-button" ng-class="{'navbar-button-active': b.isActive}">{{b.header}}</div>
 		</div>
 
 	</div>
-
+	<!--
 	<div class="shop-content-holder">
 
 
@@ -118,7 +104,7 @@
 		</div>
 
 	</div>
-
+	-->
 </div>
 
 <footer></footer>
