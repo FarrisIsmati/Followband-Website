@@ -1,27 +1,30 @@
-// User order line cart
-
 var mongoose 	= require( 'mongoose' );
 
 var Schema 		= mongoose.Schema;
 
-var product = new Schema({
+var productSchema = new Schema({
 	name: {
 		type: String,
 		required: true
 	},
 	description: {
-		products: [],
+		type: String,
 		required: false
-	}
+	},
+	imgLink: {
+		type: String,
+		required: false
+	},
 	price: {
 		type: Number,
+		required: true
+	},
+	style: {
+		type: String,
 		required: true
 	}
 })
 
+var Product = mongoose.model('Product', productSchema);
 
-// productSchema.methods.lol = function() {
-
-// };
-
-mongoose.model('product', productSchema);
+module.exports = Product;

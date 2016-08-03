@@ -15,33 +15,100 @@ app.controller('MapCtrl', function($scope, mapService){
 	var myLatLng = new google.maps.LatLng(origY, origX);
 
 	var mapMarker = new mapService.createMarker(map.map, myLatLng);
+
+	var returnDirection = {
+		lat : function(){
+			return mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]);
+		},
+		lng : function(){
+			return mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]);
+		},
+		latDir : function(){
+			return mapService.direction('lat', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]));
+		},
+		lngDir : function(){
+			return mapService.direction('lng', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]));
+		},
+	}
 	
-	var lat = mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]);
-    var lng = mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]);
-	var latDir = mapService.direction('lat', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]));
-	var lngDir = mapService.direction('lng', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]));
+	$scope.latitudeDirection = returnDirection.latDir();
+	$scope.latitudeDMS = returnDirection.lat()[3];
+	
+	$scope.longitudeDirection = returnDirection.lngDir();
+	$scope.longitudeDMS = returnDirection.lng()[3];
 
-	$scope.latitudeDirection = latDir;
-	$scope.latitudeDMS = lat[3];
-	$scope.longitudeDMS = lng[3];
-	$scope.longitudeDirection = lngDir;
+  google.maps.event.addListener(mapMarker.marker, 'dragend', function(evt){
+  	$scope.$apply(function(){
+			$scope.latitudeDMS = returnDirection.lat()[3];
+			$scope.latitudeDirection = returnDirection.latDir();
 
-    google.maps.event.addListener(mapMarker.marker, 'dragend', function(evt){
-    	$scope.$apply(function(){
-		    var lat = mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]);
-		    var lng = mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]);
-			var latDir = mapService.direction('lat', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]));
-			var lngDir = mapService.direction('lng', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]));
+			$scope.longitudeDMS = returnDirection.lng()[3];
+			$scope.longitudeDirection = returnDirection.lngDir();
 
-			$scope.latitudeDMS = lat[3];
-			$scope.latitudeDirection = latDir;
+      mapService.storeToLocal(mapService.concatonateCoordinates(returnDirection.latDir() + ' ' + returnDirection.lat()[3], returnDirection.lngDir() + ' ' + returnDirection.lng()[3]));
 
-			$scope.longitudeDMS = lng[3];
-			$scope.longitudeDirection = lngDir;
-		});
-  	});
+	  });
+	});
 
 
+  // Create the search box and link it to the UI element.
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+  // Bias the SearchBox results towards current map's viewport.
+  map.map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.map.getBounds());
+  });
+
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+
+    mapMarker.marker.setPosition(place.geometry.location);
+
+    $scope.$apply(function(){
+			$scope.latitudeDMS = returnDirection.lat()[3];
+			$scope.latitudeDirection = returnDirection.latDir();
+			$scope.longitudeDMS = returnDirection.lng()[3];
+			$scope.longitudeDirection = returnDirection.lngDir();
+
+      mapService.storeToLocal(mapService.concatonateCoordinates(returnDirection.latDir() + ' ' + returnDirection.lat()[3], returnDirection.lngDir() + ' ' + returnDirection.lng()[3]));
+	  });
+
+    if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+    } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+
+    map.map.fitBounds(bounds);
+
+  });
+
+  // Map Display Tip
+  $scope.className = "map-display-tip-deactive";
+
+  $scope.changeClass = function(){
+    if ($scope.className === "map-display-tip-deactive"){
+      $scope.className = "map-display-tip";
+    }
+    else{
+      $scope.className = "map-display-tip-deactive";
+    }
+  };
 
 })
 }());

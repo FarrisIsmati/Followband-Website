@@ -51,10 +51,9 @@ module.exports.login = function(req, res) {
   //   });
   //   return;
   // }
-
+  //console.log(req.body.payload);
   passport.authenticate('local', function(err, user, info){
     var token;
-
     // If Passport throws/catches an error
     if (err) {
       console.log('There was an error ' + err);
@@ -62,7 +61,7 @@ module.exports.login = function(req, res) {
       return;
     }
 
-    // If a user is found
+    // If user credentials are good
     if(user){
       token = user.generateJWT();
       res.status(200);

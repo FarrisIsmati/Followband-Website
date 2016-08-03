@@ -10,7 +10,15 @@
 		</div>
 
 	</div>
-	<!--
+
+	<div class="shop-content-holder">
+			<div ng-repeat="p in products | filter:productMatch" class="shop-content-product">
+				<img ng-src="{{p.imgLink}}"></img>
+				<h1>{{p.name}}</h1>
+				<h2>{{ p.price | currency }}</h2>
+			</div>
+	</div>
+	<!--    | filter:productMatch(products)
 	<div class="shop-content-holder">
 
 

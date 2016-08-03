@@ -15,7 +15,9 @@ mongoose.connection.on('disconnected', function() {
 });
 
 // SCHEMA DECLERATION
+
 require('../models/user');
-// require('../models/userCart');
-// require('../models/product');
+
+require('../models/product');
 // require('../models/order');
+//require('../models/userCart');

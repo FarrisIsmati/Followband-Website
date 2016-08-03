@@ -7,12 +7,23 @@ var app = angular.module("followapp.mapService", []);
   app.service('mapService', mapService);
 
   function mapService () {
+    
+    // Map initializing functions
 
     var initMap = function(origY, origX) {
       this.map = new google.maps.Map(document.getElementById('map_canvas'), {
         center: {lat: origY, lng: origX},
         zoom: 8,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        zoomControl: true,
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+        },
+        mapTypeControl: false,
+        mapTypeControlOptions: {
+            position: google.maps.ControlPosition.LEFT_BOTTOM
+        },
+        streetViewControl: false
       });
     };
 
@@ -32,20 +43,20 @@ var app = angular.module("followapp.mapService", []);
 
     var direction = function(direction, d){
       var path 
+      // d[4] returns the non absoltue value of Degrees
       if (direction == 'lat'){
-        console.log(d[0]);
-        if (d[0] >= 0){
+        if (d[4] >= 0){
           path = 'N';
         } 
-        if (d[0] < 0){
+        if (d[4] < 0){
           path = 'S';
         } 
       }
       if (direction == 'lng'){
-        if (d[0] >= 0){
+        if (d[4] >= 0){
           path = 'E';
         } 
-        if (d[0] < 0){
+        if (d[4] < 0){
           path = 'W';
         } 
       }
@@ -53,13 +64,32 @@ var app = angular.module("followapp.mapService", []);
     }
 
     var toDMS = function(dd){
-      var d = parseInt(dd);
-      var m = Math.abs(parseInt((dd-d)*60));
-      var s = Math.abs((dd.toFixed(6) - d - (m/60)) * 3600); 
-      console.log(dd.toFixed(6) + ' ' + d + ' ' + m)
+      var inputNum = Math.abs(dd);
+      var d = Math.abs(parseInt(inputNum));
+      var m = Math.abs(parseInt((inputNum-d)*60));
+      var s = Math.abs((inputNum - d - (m/60)) * 3600); 
       var sf = s.toFixed(4);
       var dms = d + "° " + m + "' " + sf + "''";
-      return [d,m,sf, dms];
+      // Absolute Value of Degrees, Minutes, Seconds fixed to 4 decmial spots
+      // Non Absolute Value of Degrees for finding direction bearing
+      return [d,m,sf, dms, dd];
+    }
+
+
+
+    // Local Storage Functions
+
+    var storeToLocal = function(object){
+      localStorage.setItem('coordinates', JSON.stringify(object));
+    }
+
+    var retrieveLocal = function(object){
+      var retrievedObject = localStorage.getItem(object);
+      return JSON.parse(retrievedObject)
+    }
+
+    var concatonateCoordinates = function(lat, lng){
+        return {'lat': lat,'lng': lng}
     }
 
     return {
@@ -67,7 +97,10 @@ var app = angular.module("followapp.mapService", []);
           getLatLng: getLatLng,
           direction: direction,
           createMarker : createMarker,
-          toDMS : toDMS
+          toDMS : toDMS,
+          storeToLocal: storeToLocal,
+          retrieveLocal: retrieveLocal,
+          concatonateCoordinates: concatonateCoordinates
     };
   }
 

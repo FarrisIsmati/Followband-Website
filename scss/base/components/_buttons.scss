@@ -114,11 +114,6 @@
   margin-right: 30px;
 }
 
-.svg_buttons {
-  display: flex;
-  justify-content: space-around;
-}
-
 // Dropdown Menu Buttons
 
 .dropdown-menu{
@@ -143,19 +138,16 @@
     color: $tabColor;
     font-size: 34px;
     @include animate-ease(300ms);
-    margin-left:0px !important;
-    right: 0;
   }
   &::before{
     margin-top: 8px;
     content: "";
     height: 1em;
     width: 1em;
-    background-color: $icon;
+    background-color: rgba(237,182,187, 0);
     @include animate-ease(300ms);
     position: absolute;
-    left: -80px;
-    right: 0;
+    left: 13vw;
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -167,13 +159,11 @@
     @include animate-ease(300ms);
   }
   &:hover::before{
-    margin-left: 1.2em;
-    margin-right: 20px;
-    left: -20px;
     content: "";
     height: 1em;
     width: 1em;
-    background-color: $icon;
+    left: 15vw;
+    background-color: rgba(237,182,187, 1);
     @include animate-ease(300ms);
   }
   &-active{
@@ -181,14 +171,12 @@
     color: $icon;
   }
   &-active::before{
-    margin-left: 1.2em;
-    margin-right: 20px;
-    left: -20px;
     color: $icon;
     content: "";
     height: 1em;
     width: 1em;
-    background-color: $icon;
+    left: 15vw;
+    background-color: rgba(237,182,187, 1);
     @include animate-ease(300ms);
   }
 }
@@ -253,6 +241,7 @@
     padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
     }
     &:hover{
     cursor: pointer;
@@ -270,4 +259,34 @@
   margin-left: 0px;
   font-size: 18px;
   }
+}
+
+
+// Map Buttons
+.map-display-tip-symbol{
+    & {   
+        position:absolute;
+        z-index: 100;
+        top: 1.5%;
+        right: 1%;
+        color: white;
+        @include noselect();
+        
+    }
+    p:hover{
+        cursor:pointer;
+        font-size: 48px;
+        @include transformScale(1.1,1.1);
+        @include animate-ease(100ms);
+    }
+    p:active{
+        @include transformScale(1.15,1.15);
+        @include animate-ease(0ms);
+    }
+    & p{
+        font-family: Roboto;
+        font-size: 45px;
+        @include transformScale(1,1);
+        @include animate-ease(70ms);
+    }
 }

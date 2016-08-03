@@ -14,13 +14,24 @@ $denim : #4c586f;
 $gunMetal : #3e3e3b;
 $seafloor : #18A6B7;
 
+// Pink Scheme
+$lightPink: #FEDADA;
+$darkerPink: #EDB6BB;
+$darkerBlue: #1779D2;
+$purpleGrey: #C4BFDF;
+$lighterBlue: #D5E0F4;
+
 // Other Colors
 $translucentWhite : rgba(255,255,255,.96);
+$translucentLight :	rgba(245,245,245, .89);
+$translucentGrey  :	rgba(225,225,225, .89);
 
 // Main Colors
 $tabColor : $gunMetal;
-$startButton : $gunMetal;
-$backgroundColor : $whiteWash;
-$divText : $denim;
-$underLine : $cashmere;
-$icon : $seafloor;
+$startButton : $darkerBlue;
+$backgroundColor : white;
+$divText : $lightPink;
+$underLine : $darkerPink;
+$icon : $darkerPink;
+
+

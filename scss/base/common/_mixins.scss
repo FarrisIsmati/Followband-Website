@@ -57,3 +57,23 @@
   background-color: $color;
 }
 
+@mixin centerNoFlex(){
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+@mixin padding($top, $down, $left, $right){
+  padding-top: ($top);
+  padding-bottom: ($down);
+  padding-left: ($left);
+  padding-right: ($right);
+}
+
+@mixin transformScale($width, $height){
+    -ms-transform: scale($width, $height); 
+    -webkit-transform: scale($width, $height); 
+    transform: scale($width, $height);
+}

@@ -2,7 +2,6 @@ var mongoose 	= require( 'mongoose' );
 var jwt 		= require('jsonwebtoken');
 var crypto	 	= require('crypto');
 
-
 var Schema 		= mongoose.Schema;
 
 var userSchema = new Schema({
@@ -15,12 +14,6 @@ var userSchema = new Schema({
 		type: String,
 		required: true
 	},
-	// billing: {
-	// 	billingInf: [{ 
-	// 		card: String USE STRIPE METHOD TO STORE
-	// }],
-	// 	required: false
-	// }
 	shipping: {
 		shippingAddress: [{addressLine1: String, addressLine2: String,
 			city: String, country: String, state: String,
@@ -35,7 +28,7 @@ var userSchema = new Schema({
 		type: [],
 		required: false
 	},
-	cart: {
+	cart: { // If we want to reference cart in another schema type: [{type: Schema.Types.ObjectId, ref: 'Cart'}]
 		type: [],
 		required: false
 	},
@@ -75,4 +68,6 @@ userSchema.methods.generateJWT = function(user) {
   	"MYSECRET")
 };
 
-mongoose.model('User', userSchema);
+var User = mongoose.model('User', userSchema);
+
+module.exports = User;

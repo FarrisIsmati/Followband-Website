@@ -1,16 +1,16 @@
 // User order line cart
 
 var mongoose 	= require( 'mongoose' );
-var User      	= mongoose.model('User');
+//var User      	= mongoose.model('User');
 
 var Schema 		= mongoose.Schema;
 
-var order = new Schema({
+var orderSchema = new Schema({
 	shipping: {
 		shippingAddress: [{addressLine1: String, addressLine2: String,
 			city: String, country: String, state: String,
 			zip: Number, }],
-		required: true
+		required: false //should be true
 	},
 	total: {
 		type: Number,
@@ -23,7 +23,7 @@ var order = new Schema({
 })
 
 
-order.methods.getDate = function(){
+orderSchema.methods.getDate = function(){
 	var creationDate = new Date();
   	this.dateCreated = creationDate.setDate(creationDate.getDate());
 };

@@ -16,8 +16,13 @@
       });
     };
 
+    var getProducts = function () {
+      return $http.get('/tab/products');
+    };
+
     return {
-      getProfile : getProfile
+      getProfile : getProfile,
+      getProducts: getProducts
     };
   }
 
