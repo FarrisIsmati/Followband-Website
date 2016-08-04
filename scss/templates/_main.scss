@@ -66,8 +66,8 @@
   justify-content: center;
   width: 100vw;
   background-color: $backgroundColor;
-  margin-top: 6vh;
-  margin-bottom: 6vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
 }
 
 .main-middle-text-holder{
@@ -128,7 +128,7 @@ width: 28%;
 .main-middle-picture-holder{
   justify-content: center;
   display: flex;
-  margin-bottom: 6vh;
+  margin-bottom: 8vh;
   @include leftRightMargins(10vw, 10vw);
   position: relative;
 }

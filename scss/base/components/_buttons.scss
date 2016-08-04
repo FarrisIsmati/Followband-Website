@@ -144,7 +144,7 @@
     content: "";
     height: 1em;
     width: 1em;
-    background-color: rgba(237,182,187, 0);
+    background-color: rgba(24,166,183, 0);
     @include animate-ease(300ms);
     position: absolute;
     left: 13vw;
@@ -163,7 +163,7 @@
     height: 1em;
     width: 1em;
     left: 15vw;
-    background-color: rgba(237,182,187, 1);
+    background-color: rgba(24,166,183, 1);
     @include animate-ease(300ms);
   }
   &-active{
@@ -176,7 +176,7 @@
     height: 1em;
     width: 1em;
     left: 15vw;
-    background-color: rgba(237,182,187, 1);
+    background-color: rgba(24,166,183, 1);
     @include animate-ease(300ms);
   }
 }
@@ -289,4 +289,23 @@
         @include transformScale(1,1);
         @include animate-ease(70ms);
     }
+}
+
+// Shop Product Buttons
+
+.shop-content-button-goback{
+  &{
+    max-width: 90px;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: $gunMetal;
+    @include fontSelect(lato, sans-serif);
+    font-weight: 100;
+  }
+  &:hover{
+    cursor:pointer;
+    color: $seafloor;
+    text-decoration: underline;
+  }
 }

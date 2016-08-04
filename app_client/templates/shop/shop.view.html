@@ -1,118 +1,24 @@
 
 <div class="shop-view-holder">
-
 	<div class="navbar-holder">
-		<div class="navbar-content-holder">
+
+	<!-- NOTE: It's bad practice to duplicate the navbar when it already exists in a directive change this to the directive when you know how to let it reference the products in the controller -->
+	<div class="navbar-content-holder">
 			<div class="navbar-static-text">
 				BRACELETS
 			</div>
-				<div ng-repeat="b in menuButtons" ng-click="buttonActive(b)" class="navbar-button" ng-class="{'navbar-button-active': b.isActive}">{{b.header}}</div>
+				<div ng-repeat="b in menuButtons" ng-click="buttonActive(b);" class="navbar-button" ng-class="{'navbar-button-active': b.isActive}">{{b.header}}</div>
 		</div>
-
 	</div>
 
 	<div class="shop-content-holder">
 			<div ng-repeat="p in products | filter:productMatch" class="shop-content-product">
-				<img ng-src="{{p.imgLink}}"></img>
+				<img ng-controller="RouteCtrl" ng-src="{{p.imgLink}}" ng-click="setProduct(p); go(states.shopProduct.route); states.shopProduct.active;"/>
 				<h1>{{p.name}}</h1>
 				<h2>{{ p.price | currency }}</h2>
 			</div>
 	</div>
-	<!--    | filter:productMatch(products)
-	<div class="shop-content-holder">
 
-
-		<div class="shop-content-main-holder">
-
-			<div class="shop-content-main-image-holder">
-
-				<img class="shop-content-main-image" ng-src="http://placehold.it/750x450">
-
-				<div class="shop-content-main-image-small-holder">
-
-					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
-
-					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
-
-					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
-
-					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
-
-					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
-
-				</div>
-
-			</div>
-
-			<div class="shop-content-main-description-holder">
-
-				<h1 class="shop-content-main-description-object">{{activeData().name}}</h1>
-
-				<div class="shop-content-main-description-details">
-
-					<p>{{activeData().description}}</p>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="shop-content-rightbar-holder">
-
-			<div class="shop-content-rightbar-price">
-
-				<p>${{activeData().price}}</p>
-
-			</div>
-
-			<div class="shop-content-rightbar-size-holder">
-
-				<p>size</p>
-
-				<div class="shop-content-rightbar-size-selector-holder">
-
-					<div class="shop-content-rightbar-size-selector">S</div>
-
-					<div class="shop-content-rightbar-size-selector">M</div>
-
-					<div class="shop-content-rightbar-size-selector">L</div>
-
-				</div>
-
-			</div>
-
-			<div class="shop-content-rightbar-cart-holder">
-
-				<p>quantity</p>
-
-				<div class="dropdown">
-
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-					<span class="caret"></span></button>
-
-					<ul class="dropdown-menu">
-
-						<li>1</li>
-					    <li>2</li>
-					    <li>3</li>
-					    <li>4</li>
-					    <li>5</li>
-					    <li>6</li>
-					    <li>7</li>
-					    <li>8</li>
-					    <li>9</li>
-
-					  </ul>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-	-->
 </div>
 
 <footer></footer>

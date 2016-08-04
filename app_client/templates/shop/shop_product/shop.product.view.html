@@ -1,0 +1,109 @@
+	<!-- INDIVIDUAL PRODUCT VIEW -->
+<div class="shop-view-holder">
+
+	<shop-navbar></shop-navbar>
+
+	<div class="shop-content-holder">
+
+		<div class="shop-content-button-goback" ng-controller="RouteCtrl" ng-click="go(tabs[1].route); tabs[1].active">go back</div>
+
+		<div class="shop-content-main-holder">
+
+			<div class="shop-content-main-image-holder" ng-controller="ShopCtrl">
+
+				<img class="shop-content-main-image" ng-src="http://placehold.it/750x450" ng-click="returnProduct()">
+
+				<div class="shop-content-main-image-small-holder">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+					<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+
+				</div>
+
+			</div>
+
+			<div class="shop-content-main-description-holder">
+
+				<h1 class="shop-content-main-description-object">{{currentSelectedProduct.name}}</h1>
+
+				<div class="shop-content-main-description-details">
+
+					<p>{{currentSelectedProduct.description}}</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="shop-content-rightbar-holder">
+
+			<div class="shop-content-rightbar-price">
+
+				<p>{{currentSelectedProduct.price | currency}}</p>
+
+			</div>
+
+			<div class="shop-content-rightbar-size-holder">
+
+				<p>size</p>
+
+				<div class="shop-content-rightbar-size-selector-holder">
+
+					<div class="shop-content-rightbar-size-selector">S</div>
+
+					<div class="shop-content-rightbar-size-selector">M</div>
+
+					<div class="shop-content-rightbar-size-selector">L</div>
+
+				</div>
+
+			</div>
+
+			<div class="shop-content-rightbar-map-holder" ng-controller="RouteCtrl">
+
+				<p ng-click="go(states.mapPage.route)">map</p>
+
+			</div>
+
+			<div class="shop-content-rightbar-cart-holder">
+
+				<p>quantity</p>
+
+				<div class="dropdown">
+
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+					<span class="caret"></span></button>
+
+					<ul class="dropdown-menu">
+
+						<li>1</li>
+					    <li>2</li>
+					    <li>3</li>
+					    <li>4</li>
+					    <li>5</li>
+					    <li>6</li>
+					    <li>7</li>
+					    <li>8</li>
+					    <li>9</li>
+
+					  </ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<footer></footer>

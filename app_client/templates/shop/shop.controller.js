@@ -4,12 +4,12 @@
 	var app = angular.module("followapp.ShopCtrl", []);
 
 	app.controller('ShopCtrl', function($scope, dataService){
+		// Declare the data service
 		var data = dataService;
 
-		$scope.menuButtons = [{header: "BEADED", isActive: true},
-							  {header: "LEATHER", isActive: false}
-							  ]
+		$scope.menuButtons = data.returnSetMenuState();
 
+		// If there are products set the scope of products
 		data.getProducts()
 	    .success(function(data) {
 	      	$scope.products = data;
@@ -18,23 +18,31 @@
 	        console.log(e);
 	    });
 
+	    // If the product type matches the active state of the navbar return that product
 		$scope.productMatch = function(product){
-			for (var button in $scope.menuButtons) {
-				if ($scope.menuButtons[button].header.toLowerCase() === product.style.toLowerCase() && $scope.menuButtons[button].isActive){
+			for (var button in data.returnSetMenuState()) {
+				if (data.returnSetMenuState()[button].header.toLowerCase() === product.style.toLowerCase() && data.returnSetMenuState()[button].isActive){
 					return product;
 				}
 			}
 		}
 		
+		// Set the active state of the navbar
 		$scope.buttonActive = function(b) {
-			for (var button in $scope.menuButtons){
-				if (b.isActive == false && b != $scope.menuButtons[button]){
+			for (var button in data.returnSetMenuState() ){
+				if (b.isActive == false && b != data.returnSetMenuState()[button]){
 					b.isActive = true;
-					$scope.menuButtons[button].isActive = false;
+					data.returnSetMenuState()[button].isActive = false;
 				}
 			}
 		}
-	
+
+		// Set the reference for current selected product
+		$scope.setProduct = function(product) {
+			data.setCurrentProduct(product);
+		}
+
+		
 	});
 	
 }());

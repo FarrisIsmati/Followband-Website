@@ -19,7 +19,7 @@ var app = angular.module("followapp.mapService", []);
         zoomControlOptions: {
             position: google.maps.ControlPosition.RIGHT_BOTTOM
         },
-        mapTypeControl: false,
+        mapTypeControl: true,
         mapTypeControlOptions: {
             position: google.maps.ControlPosition.LEFT_BOTTOM
         },

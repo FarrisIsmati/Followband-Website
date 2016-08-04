@@ -1,4 +1,4 @@
-<nav class="tabs-holder" ng-controller="TabCtrl">
+<nav class="tabs-holder" ng-controller="RouteCtrl">
 
 
     <p class="header-text">follow ° ' ''</p>
@@ -23,13 +23,13 @@
             <path id="prof_line3" fill="none" stroke="#000000" stroke-miterlimit="10" d="M22.817 30.908c0 0-1.005-18.297-6.731-18.297l-0.492-0.001c0 0 8.406-10.82-3.594-10.82"/>
             </svg>
             <ul class="dropdown-menu">
-              <li><a ng-show="isLoggedIn()" ng-click="go(seperateTabs3.route)" active="seperateTabs3.active" >profile</a></li>
-              <li><a ng-hide="isLoggedIn()" ng-click="go(seperateTabs2.routeLogin)" active="seperateTabs2.activeLogin">login</a></li>
+              <li><a ng-show="isLoggedIn()" ng-click="go(states.profilePage.route)" active="states.profilePage.active" >profile</a></li>
+              <li><a ng-hide="isLoggedIn()" ng-click="go(states.registerPage.routeLogin)" active="states.registerPage.activeLogin">login</a></li>
               <li><a ng-show="isLoggedIn()" ng-click="logout()">logout</a></li>
             </ul>
           </div>
 
-        <div class="button" ng-click="go(seperateTabs.route)" active="seperateTabs.active" >
+        <div class="button" ng-click="go(states.cartPage.route)" active="states.cartPage.active" >
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
          width="24px" height="32px" viewBox="0 0 24 32" enable-background="new 0 0 24 32" xml:space="preserve">
                 <path id="line1" fill="none" stroke="#000000" stroke-miterlimit="10" d="M0.499,4.954c0,0,1.413,0.332,1.804,1.462
