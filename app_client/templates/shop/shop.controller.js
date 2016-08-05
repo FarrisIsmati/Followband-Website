@@ -7,8 +7,8 @@
 		// Declare the data service
 		var data = dataService;
 
-		$scope.menuButtons = data.returnSetMenuState();
-
+		$scope.menuButtons = data.returnSetMenuState()
+;
 		// If there are products set the scope of products
 		data.getProducts()
 	    .success(function(data) {

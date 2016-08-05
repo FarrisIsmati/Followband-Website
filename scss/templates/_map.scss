@@ -20,34 +20,56 @@
     height: 100%; 
 }
 
-.map-coords-display-holder{
-    &{
+.map-coords-display{
+    & {    
         position:absolute;
         z-index: 100;
         bottom: 5%;
         @include centerNoFlex();
-        text-align: center;
-        background-color: $translucentLight;
-        border-radius: 3px;
-        @include padding(5px, 5px, 10px, 10px);
-        width: 35%;
-        display: flex;
-        justify-content: space-around;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        width: 37%;
     }
-    & p{
-        color: $tabColor;
-        letter-spacing: 5px;
-        font-size: .6em;
-        @include fontSelect(lucidia, serif);
+    &-save{
+        &{
+            background-color: $translucentLight;
+            @include padding(5px, 5px, 10px, 10px);
+            border-radius: 4px;
+            font-size: .6em;
+            @include fontSelect(lucidia, serif);
+            float:right;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        &:hover{
+            cursor:pointer;
+            color: $seafloor;
+        }
+        &:active{
+            color:white;
+        }
     }
-    & p span{
-        padding-left: 10px;
-        @include fontSelect(lato, sans-serif);
+    &-holder{
+        &{
+            width: 85%;
+            float:left;
+            background-color: $translucentLight;
+            border-radius: 3px;
+            @include padding(5px, 5px, 10px, 10px);
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        & p{
+            color: $tabColor;
+            letter-spacing: 5px;
+            font-size: .6em;
+            @include fontSelect(lucidia, serif);
+        }
+        & p span{
+            padding-left: 10px;
+            @include fontSelect(lato, sans-serif);
+        }
+        &-right{
+        }
     }
-    &-right{
-    }
-
 }
 
 .map-display-tip{

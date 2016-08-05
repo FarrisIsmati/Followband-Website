@@ -1,15 +1,14 @@
-
 .shop-content-main {
 	&-holder{
 		padding-left: 5%;
 		float: left;
-		max-width: 750px;
+		max-width: 12%;
 	}
 	&-image-holder{
 
 	}
 	&-image{
-  		max-height: 450px;
+  		max-height: 30%;
 	}
 	&-image-small-holder{
 		& {
@@ -17,83 +16,176 @@
 			margin-top: 5px;
 		}
 		& img{
-
 		}
 	}
 	&-image-small{
-
 	}
 	&-description-holder{
-		margin-top: 10px;
+		margin-bottom: 20px;
 	}
+}
+
+.shop-content-rightbar{
+	&-holder{
+		float: right;
+	}
+	&-holder p{
+		font-size: 24px;
+		@include fontSelect(lato, sans-serif);
+		font-weight: 300;
+		color: $gunMetal;
+    }
 	&-description-object{
 		font-size: 42px;
 		@include fontSelect(lato, sans-serif);
     	font-weight: 400;
 	}
 	&-description-details{
+		word-wrap: break-word;
+		width: 12vw;
+		table-layout:fixed;
 		font-size: 24px;
 		@include fontSelect(lato, sans-serif);
     	font-weight: 300;
 	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.shop-content-rightbar-holder{
-	&{
-	float: right;
+	&-price{
+		margin-top: 10px;
 	}
-	& p {
-	@include fontSelect(lato, sans-serif);
-    font-weight: 400;
-    }
+	&-size-holder {
+		&{
+			margin-top: 20px;
+		}
+		& div button{
+			color: $gunMetal;
+			border-color: $gunMetal;
+			@include fontSelect(lato, sans-serif);
+		    font-weight: 400;
+			font-size: 18px;
+			border-radius: 2px;
+		}
+		& div button:hover{
+			color: $seafloor;
+			border-color: $seafloor;
+			background-color: white;
+		}
+		& .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{
+			background-color: white;
+			border-color: $seafloor;
+			color: $seafloor;
+		}
+		& .dropdown-menu{
+			left: 0;
+		}
+		& .dropdown-menu li{
+			@include fontSelect(lato, sans-serif);
+		    font-weight: 400;
+			font-size: 18px;
+			color: $gunMetal;
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		& .dropdown-menu li:hover{
+			color: $seafloor;
+			cursor: pointer;
+		}
+		 
+	}
+
+	&-size-holder p{
+		font-size: 42px;
+		@include fontSelect(lato, sans-serif);
+    	font-weight: 400;
+    	color: $gunMetal;
+	}
+
+	&-size-selector-holder{
+		display: flex;
+	}
+
+	&-size-selector{
+		text-align: center;
+		vertical-align: middle;
+		@include fontSelect(lato, sans-serif);
+	    font-weight: 400;
+		font-size: 18px;
+		margin: 3px;
+		width: 60px;
+		height: 35px;
+		border: solid;
+		border-width: 2px;
+	}
+	&-size-selector:hover{
+		color: $seafloor;
+		cursor: pointer;
+		border-color: $seafloor;
+	}
+
+	&-map-holder{
+		margin-top: 20px;
+	}
+	&-map-holder h2{
+		word-wrap: break-word;
+		width: 12vw;
+		font-size: 42px;
+		@include fontSelect(lato, sans-serif);
+    	font-weight: 400;
+    	color: $gunMetal;
+	}
+	&-map-holder h3{
+		margin-top: 5px;
+		@include fontSelect(lato, sans-serif);
+	    font-weight: 400;
+		font-size: 14px;
+    	color: $gunMetal;
+	}
+	&-map-holder p{
+		margin-top: 15px;
+		font-size: 24px;
+		@include fontSelect(lato, sans-serif);
+		font-weight: 300;
+		border-radius: 2px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: $seafloor;
+		background-color: $seafloor;
+		color: white;
+		padding: 3px;
+		text-align: center;
+		width: 70px;
+	}
+	&-map-holder p:hover{
+		cursor: pointer;
+		color: $seafloor;
+		background-color: white;
+	}
+
+	&-cart-holder{
+		&{
+			padding-top: 25px;
+		}
+		& p{
+			font-size: 24px;
+			@include fontSelect(lato, sans-serif);
+			font-weight: 300;
+			border-radius: 2px;
+			background-color: $seafloor;
+			color: white;
+			padding: 3px;
+			text-align: center;
+			width: 140px;
+			border-radius: 2px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: $seafloor;
+		}
+		& p:hover{
+			cursor:pointer;
+			background-color: white;
+			color: $seafloor;
+
+		}
+	}
+
+
 }
 
-.shop-content-rightbar-size-holder {
-	padding-top: 1em;
-}
-
-.shop-content-rightbar-size-selector-holder{
-	display: flex;
-}
-
-.shop-content-rightbar-size-selector{
-	text-align: center;
-	vertical-align: middle;
-	@include fontSelect(lato, sans-serif);
-    font-weight: 400;
-	font-size: 18px;
-	margin: 3px;
-	width: 60px;
-	height: 35px;
-	border: solid;
-}
-
-.shop-content-rightbar-size-selector:hover{
-	color: #a6a6a6;
-	cursor: pointer;
-	border-color: #a6a6a6;
-}
-
-.shop-content-rightbar-cart-holder{
-	padding-top: 1em;
-
-}

@@ -1,13 +1,16 @@
 
 <div class="map-page-holder">
 
-	<div class="map-coords-display-holder">
-		<p>{{latitudeDirection}}<span>{{latitudeDMS}}</span></p>
-		<p class="map-coords-display-holder-right">{{longitudeDirection}}<span>{{longitudeDMS}}</span></p>
+	<div class="map-coords-display">
+		<div class="map-coords-display-holder">
+			<p>{{latitudeDirection}}<span>{{latitudeDMS}}</span></p>
+			<p class="map-coords-display-holder-right">{{longitudeDirection}}<span>{{longitudeDMS}}</span></p>
+		</div>
+		<div ng-controller="RouteCtrl" class="map-coords-display-save">
+			<p ng-click="go(states.shopProduct.route); states.shopProduct.active;">SAVE</p>
+		</div>
 	</div>
 
-
-	
 	<div class="map-holder">
 
 		<div class="map-display-tip-symbol">

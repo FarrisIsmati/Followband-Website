@@ -7,8 +7,17 @@ var app = angular.module("followapp.MapCtrl", []);
 app.controller('MapCtrl', function($scope, mapService){
 	var mapService = mapService;
 
-	var origY = 38.433708;
-	var origX = -78.898537;
+  // If there is saved coordinates in local storage use it
+  // If not use the default position
+  var decimalDegrees = mapService.retrieveLocal('decimalDegrees');
+  console.log(decimalDegrees);
+  if (decimalDegrees != null){
+    var origY = decimalDegrees[0];
+    var origX = decimalDegrees[1];
+  } else {
+    var origY = 38.433708;
+    var origX = -78.898537;
+  }
 
 	var map = new mapService.initMap(origY, origX);
 
@@ -30,24 +39,35 @@ app.controller('MapCtrl', function($scope, mapService){
 			return mapService.direction('lng', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]));
 		},
 	}
-	
+
+  var saveDecimalDegreesToStorage = function(){
+    var latLngDecimalDegrees = [returnDirection.lat()[4], returnDirection.lng()[4]]
+
+    localStorage.setItem('decimalDegrees', JSON.stringify(latLngDecimalDegrees));
+  }
+
 	$scope.latitudeDirection = returnDirection.latDir();
 	$scope.latitudeDMS = returnDirection.lat()[3];
 	
 	$scope.longitudeDirection = returnDirection.lngDir();
 	$scope.longitudeDMS = returnDirection.lng()[3];
 
-  google.maps.event.addListener(mapMarker.marker, 'dragend', function(evt){
-  	$scope.$apply(function(){
-			$scope.latitudeDMS = returnDirection.lat()[3];
-			$scope.latitudeDirection = returnDirection.latDir();
+  var callCoords = function(){
+    $scope.$apply(function(){
+      $scope.latitudeDMS = returnDirection.lat()[3];
+      $scope.latitudeDirection = returnDirection.latDir();
 
-			$scope.longitudeDMS = returnDirection.lng()[3];
-			$scope.longitudeDirection = returnDirection.lngDir();
+      $scope.longitudeDMS = returnDirection.lng()[3];
+      $scope.longitudeDirection = returnDirection.lngDir();
 
       mapService.storeToLocal(mapService.concatonateCoordinates(returnDirection.latDir() + ' ' + returnDirection.lat()[3], returnDirection.lngDir() + ' ' + returnDirection.lng()[3]));
+    });
+    
+    saveDecimalDegreesToStorage();
+  }
 
-	  });
+  google.maps.event.addListener(mapMarker.marker, 'dragend', function(evt){
+    callCoords();
 	});
 
 
@@ -77,14 +97,10 @@ app.controller('MapCtrl', function($scope, mapService){
 
     mapMarker.marker.setPosition(place.geometry.location);
 
-    $scope.$apply(function(){
-			$scope.latitudeDMS = returnDirection.lat()[3];
-			$scope.latitudeDirection = returnDirection.latDir();
-			$scope.longitudeDMS = returnDirection.lng()[3];
-			$scope.longitudeDirection = returnDirection.lngDir();
+    callCoords();
+    var latLngDecimalDegrees = [returnDirection.lat()[4], returnDirection.lng()[4]]
 
-      mapService.storeToLocal(mapService.concatonateCoordinates(returnDirection.latDir() + ' ' + returnDirection.lat()[3], returnDirection.lngDir() + ' ' + returnDirection.lng()[3]));
-	  });
+    localStorage.setItem('decimalDegrees', JSON.stringify(latLngDecimalDegrees));
 
     if (place.geometry.viewport) {
         // Only geocodes have viewport.

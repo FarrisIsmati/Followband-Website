@@ -29,11 +29,17 @@
 
 			</div>
 
-			<div class="shop-content-main-description-holder">
 
-				<h1 class="shop-content-main-description-object">{{currentSelectedProduct.name}}</h1>
 
-				<div class="shop-content-main-description-details">
+		</div>
+
+		<div class="shop-content-rightbar-holder">
+
+			<div class="shop-content-rightbar-description-holder">
+
+				<h1 class="shop-content-rightbar-description-object">{{currentSelectedProduct.name}}</h1>
+
+				<div class="shop-content-rightbar-description-details">
 
 					<p>{{currentSelectedProduct.description}}</p>
 
@@ -41,62 +47,47 @@
 
 			</div>
 
-		</div>
-
-		<div class="shop-content-rightbar-holder">
-
 			<div class="shop-content-rightbar-price">
 
 				<p>{{currentSelectedProduct.price | currency}}</p>
 
 			</div>
 
-			<div class="shop-content-rightbar-size-holder">
-
-				<p>size</p>
-
-				<div class="shop-content-rightbar-size-selector-holder">
-
-					<div class="shop-content-rightbar-size-selector">S</div>
-
-					<div class="shop-content-rightbar-size-selector">M</div>
-
-					<div class="shop-content-rightbar-size-selector">L</div>
-
-				</div>
-
-			</div>
-
 			<div class="shop-content-rightbar-map-holder" ng-controller="RouteCtrl">
+
+				<h2>Coordinates</h2>
+
+				<h3>{{currentCoordinates.lat}}</h3>
+				<h3>{{currentCoordinates.lng}}</h3>
 
 				<p ng-click="go(states.mapPage.route)">map</p>
 
 			</div>
 
-			<div class="shop-content-rightbar-cart-holder">
+			<div class="shop-content-rightbar-size-holder">
 
-				<p>quantity</p>
+				<p>Size</p>
 
 				<div class="dropdown">
 
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">size
 					<span class="caret"></span></button>
 
 					<ul class="dropdown-menu">
 
-						<li>1</li>
-					    <li>2</li>
-					    <li>3</li>
-					    <li>4</li>
-					    <li>5</li>
-					    <li>6</li>
-					    <li>7</li>
-					    <li>8</li>
-					    <li>9</li>
+						<li>small</li>
+					    <li>medium</li>
+					    <li>large</li>
 
 					  </ul>
 
 				</div>
+
+			</div>
+
+			<div class="shop-content-rightbar-cart-holder">
+
+				<p>add to cart</p>
 
 			</div>
 
