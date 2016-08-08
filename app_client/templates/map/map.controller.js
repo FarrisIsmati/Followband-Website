@@ -10,7 +10,6 @@ app.controller('MapCtrl', function($scope, mapService){
   // If there is saved coordinates in local storage use it
   // If not use the default position
   var decimalDegrees = mapService.retrieveLocal('decimalDegrees');
-  console.log(decimalDegrees);
   if (decimalDegrees != null){
     var origY = decimalDegrees[0];
     var origX = decimalDegrees[1];

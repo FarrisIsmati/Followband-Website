@@ -13,7 +13,7 @@
 
 	<div class="shop-content-holder">
 			<div ng-repeat="p in products | filter:productMatch" class="shop-content-product">
-				<img ng-controller="RouteCtrl" ng-src="{{p.imgLink}}" ng-click="setProduct(p); go(states.shopProduct.route); states.shopProduct.active;"/>
+				<img ng-controller="RouteCtrl" ng-src="{{p.imgLink}}" ng-click="setProduct(p); go(states.shopProduct.route); setActive(states.shopProduct.active)"/>
 				<h1>{{p.name}}</h1>
 				<h2>{{ p.price | currency }}</h2>
 			</div>

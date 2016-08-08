@@ -70,14 +70,12 @@
 
 				<div class="dropdown">
 
-					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">size
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{sizeDefault}}
 					<span class="caret"></span></button>
 
 					<ul class="dropdown-menu">
 
-						<li>small</li>
-					    <li>medium</li>
-					    <li>large</li>
+						<li ng-repeat="s in sizes" ng-click="changeDropdownSelected(s)">{{s}}</li>
 
 					  </ul>
 

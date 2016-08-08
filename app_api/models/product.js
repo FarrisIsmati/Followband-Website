@@ -22,6 +22,10 @@ var productSchema = new Schema({
 	style: {
 		type: String,
 		required: true
+	},
+	size: {
+		type: String,
+		required: false
 	}
 })
 

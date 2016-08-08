@@ -74,7 +74,9 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $rootS
     $rootScope.$on('$stateChangeSuccess', function() {
         //if length of history > 5 then remove
         history.push($location.$$path);
-        console.log(history);
+        if (history.length > 5){
+          history.shift();
+        }
     });
 
     $scope.onSubmitLogin = function () {

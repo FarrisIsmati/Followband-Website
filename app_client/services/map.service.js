@@ -85,6 +85,11 @@ var app = angular.module("followapp.mapService", []);
 
     var retrieveLocal = function(object){
       var retrievedObject = localStorage.getItem(object);
+      // If retrieving from local coordinates and havent yet selected coordinates
+      // Return the origin coordinates
+      if (object === 'coordinates' && retrievedObject === null){
+        return JSON.parse('{"lat\":\"N 38° 26\' 1.3488\'\'\",\"lng\":\"W 78° 53\' 54.7332\'\'\"}')
+      }
       return JSON.parse(retrievedObject)
     }
 
