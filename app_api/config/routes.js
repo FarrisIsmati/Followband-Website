@@ -11,19 +11,19 @@ var ctrlProfile = require('../controllers/profile');
 var ctrlProducts = require('../controllers/products');
 
 // profile
-router.get('/tab/profile', auth, ctrlProfile.profileRead);
+router.get('/follow/profile', auth, ctrlProfile.profileRead);
 
 // AUTHENTICATION
 // REGISTER
-router.post('/tab/register', ctrlAuth.register);
+router.post('/follow/register', ctrlAuth.register);
 
 // LOGIN
-router.post('/tab/login', ctrlAuth.login);
+router.post('/follow/login', ctrlAuth.login);
 
 // GET PRODUCTS
-router.get('/tab/products', ctrlProducts.getProducts);
+router.get('/follow/products', ctrlProducts.getProducts);
 
 // CREATE CART
-//router.post('/tab/cart', ctrlCart.createCart);
+//router.post('/follow/cart', ctrlCart.createCart);
 
 module.exports = router;

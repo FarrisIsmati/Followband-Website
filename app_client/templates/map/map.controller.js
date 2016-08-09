@@ -4,12 +4,14 @@
 
 var app = angular.module("followapp.MapCtrl", []);
 
-app.controller('MapCtrl', function($scope, mapService){
-	var mapService = mapService;
+app.controller('MapCtrl', function($scope, mapService, dataService){
+  var mapService = mapService;
+  var dataService = dataService;
 
-  // If there is saved coordinates in local storage use it
+  // If there are saved coordinates in local storage use it
   // If not use the default position
-  var decimalDegrees = mapService.retrieveLocal('decimalDegrees');
+  var decimalDegrees = dataService.retrieveLocal('decimalDegrees');
+
   if (decimalDegrees != null){
     var origY = decimalDegrees[0];
     var origX = decimalDegrees[1];
@@ -18,48 +20,36 @@ app.controller('MapCtrl', function($scope, mapService){
     var origX = -78.898537;
   }
 
+  // Declare new map
 	var map = new mapService.initMap(origY, origX);
 
+  // Set the maps constructor coordinates
 	var myLatLng = new google.maps.LatLng(origY, origX);
 
+  // Create a map marker referencing the map
 	var mapMarker = new mapService.createMarker(map.map, myLatLng);
 
-	var returnDirection = {
-		lat : function(){
-			return mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]);
-		},
-		lng : function(){
-			return mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]);
-		},
-		latDir : function(){
-			return mapService.direction('lat', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[0]));
-		},
-		lngDir : function(){
-			return mapService.direction('lng', mapService.toDMS(mapService.getLatLng(mapMarker.marker)[1]));
-		},
-	}
-
   var saveDecimalDegreesToStorage = function(){
-    var latLngDecimalDegrees = [returnDirection.lat()[4], returnDirection.lng()[4]]
+    var latLngDecimalDegrees = [mapService.returnLat(mapMarker.marker)[4], mapService.returnLng(mapMarker.marker)[4]]
 
     localStorage.setItem('decimalDegrees', JSON.stringify(latLngDecimalDegrees));
   }
 
-	$scope.latitudeDirection = returnDirection.latDir();
-	$scope.latitudeDMS = returnDirection.lat()[3];
+	$scope.latitudeDirection =  mapService.returnLatDir(mapMarker.marker);
+	$scope.latitudeDMS = mapService.returnLat(mapMarker.marker)[3];
 	
-	$scope.longitudeDirection = returnDirection.lngDir();
-	$scope.longitudeDMS = returnDirection.lng()[3];
+	$scope.longitudeDirection = mapService.returnLngDir(mapMarker.marker);
+	$scope.longitudeDMS = mapService.returnLng(mapMarker.marker)[3];
 
   var callCoords = function(){
     $scope.$apply(function(){
-      $scope.latitudeDMS = returnDirection.lat()[3];
-      $scope.latitudeDirection = returnDirection.latDir();
+      $scope.latitudeDMS = mapService.returnLat(mapMarker.marker)[3];
+      $scope.latitudeDirection =  mapService.returnLatDir(mapMarker.marker);
 
-      $scope.longitudeDMS = returnDirection.lng()[3];
-      $scope.longitudeDirection = returnDirection.lngDir();
+      $scope.longitudeDMS = mapService.returnLng(mapMarker.marker)[3];
+      $scope.longitudeDirection = mapService.returnLngDir(mapMarker.marker);
 
-      mapService.storeToLocal(mapService.concatonateCoordinates(returnDirection.latDir() + ' ' + returnDirection.lat()[3], returnDirection.lngDir() + ' ' + returnDirection.lng()[3]));
+      dataService.storeToLocal('coordinates', mapService.concatonateCoordinates(mapService.returnLatDir(mapMarker.marker) + ' ' + mapService.returnLat(mapMarker.marker)[3], mapService.returnLngDir(mapMarker.marker) + ' ' + mapService.returnLng(mapMarker.marker)[3]));
     });
     
     saveDecimalDegreesToStorage();
@@ -97,7 +87,7 @@ app.controller('MapCtrl', function($scope, mapService){
     mapMarker.marker.setPosition(place.geometry.location);
 
     callCoords();
-    var latLngDecimalDegrees = [returnDirection.lat()[4], returnDirection.lng()[4]]
+    var latLngDecimalDegrees = [mapService.returnLat(mapMarker.marker)[4], mapService.returnLng(mapMarker.marker)[4]]
 
     localStorage.setItem('decimalDegrees', JSON.stringify(latLngDecimalDegrees));
 
@@ -114,6 +104,7 @@ app.controller('MapCtrl', function($scope, mapService){
   });
 
   // Map Display Tip
+
   $scope.className = "map-display-tip-deactive";
 
   $scope.changeClass = function(){

@@ -3,14 +3,15 @@
 
 	var app = angular.module("followapp.ShopCtrl", []);
 
-	app.controller('ShopCtrl', function($scope, dataService){
-		// Declare the data service
-		var data = dataService;
+	app.controller('ShopCtrl', function($scope, dataService, shopService){
+		// Declare the services
+		var dataService = dataService;
+		var shopService = shopService;
 
-		$scope.menuButtons = data.returnSetMenuState()
-;
+		$scope.menuButtons = shopService.returnSetMenuState();
+
 		// If there are products set the scope of products
-		data.getProducts()
+		dataService.getProducts()
 	    .success(function(data) {
 	      	$scope.products = data;
 	    })
@@ -20,8 +21,8 @@
 
 	    // If the product type matches the active state of the navbar return that product
 		$scope.productMatch = function(product){
-			for (var button in data.returnSetMenuState()) {
-				if (data.returnSetMenuState()[button].header.toLowerCase() === product.style.toLowerCase() && data.returnSetMenuState()[button].isActive){
+			for (var button in shopService.returnSetMenuState()) {
+				if (shopService.returnSetMenuState()[button].header.toLowerCase() === product.style.toLowerCase() && shopService.returnSetMenuState()[button].isActive){
 					return product;
 				}
 			}
@@ -29,17 +30,18 @@
 		
 		// Set the active state of the navbar
 		$scope.buttonActive = function(b) {
-			for (var button in data.returnSetMenuState() ){
-				if (b.isActive == false && b != data.returnSetMenuState()[button]){
+			for (var button in shopService.returnSetMenuState() ){
+				if (b.isActive == false && b != shopService.returnSetMenuState()[button]){
 					b.isActive = true;
-					data.returnSetMenuState()[button].isActive = false;
+					shopService.returnSetMenuState()[button].isActive = false;
 				}
 			}
 		}
 
 		// Set the reference for current selected product
+		// ---------SWITCH TO SHOP SERVICE------------
 		$scope.setProduct = function(product) {
-			data.setCurrentProduct(product);
+			dataService.setCurrentProduct(product);
 		}
 
 		

@@ -40,7 +40,7 @@ app.controller("RouteCtrl", function($rootScope, $scope, $state, authService) {
 				$scope.tabs.forEach(function(tab) {
 					tab.active = $scope.active(tab.route);
 				});
-				console.log($scope.states);
+
 			
 
 		});

@@ -9,7 +9,6 @@ var app = angular.module("followapp.mapService", []);
   function mapService () {
     
     // Map initializing functions
-
     var initMap = function(origY, origX) {
       this.map = new google.maps.Map(document.getElementById('map_canvas'), {
         center: {lat: origY, lng: origX},
@@ -27,12 +26,14 @@ var app = angular.module("followapp.mapService", []);
       });
     };
 
+    // Retrieve the latitude and longitude points from the marker
     var getLatLng = function(marker) {
       var lat = marker.position.lat();
       var lng = marker.position.lng();
       return [lat, lng];
     };
 
+    // Create a google maps marker
     var createMarker = function(mainMap, myLatLng){
       this.marker = new google.maps.Marker({
           position: myLatLng,
@@ -41,9 +42,10 @@ var app = angular.module("followapp.mapService", []);
         });
     }
 
+    // Find the directional heading of the marker
     var direction = function(direction, d){
       var path 
-      // d[4] returns the non absoltue value of Degrees
+      // d[4] returns the non absolute value of Degrees
       if (direction == 'lat'){
         if (d[4] >= 0){
           path = 'N';
@@ -63,6 +65,7 @@ var app = angular.module("followapp.mapService", []);
       return path
     }
 
+    // Convert Decimal Degrees to Degrees Minutes Seconds
     var toDMS = function(dd){
       var inputNum = Math.abs(dd);
       var d = Math.abs(parseInt(inputNum));
@@ -75,24 +78,27 @@ var app = angular.module("followapp.mapService", []);
       return [d,m,sf, dms, dd];
     }
 
-
-
-    // Local Storage Functions
-
-    var storeToLocal = function(object){
-      localStorage.setItem('coordinates', JSON.stringify(object));
+    // Return the marker's current latitude in Degrees Minutes Seconds
+    var returnLat = function(mapMarker){
+      return toDMS(getLatLng(mapMarker)[0]);
     }
 
-    var retrieveLocal = function(object){
-      var retrievedObject = localStorage.getItem(object);
-      // If retrieving from local coordinates and havent yet selected coordinates
-      // Return the origin coordinates
-      if (object === 'coordinates' && retrievedObject === null){
-        return JSON.parse('{"lat\":\"N 38° 26\' 1.3488\'\'\",\"lng\":\"W 78° 53\' 54.7332\'\'\"}')
-      }
-      return JSON.parse(retrievedObject)
+    // Return the marker's current longitude in Degrees Minutes Seconds
+    var returnLng = function(mapMarker){
+      return toDMS(getLatLng(mapMarker)[1]);
     }
 
+    // Return the marker's current latitudinal direction
+    var returnLatDir = function(mapMarker){
+      return direction('lat', toDMS(getLatLng(mapMarker)[0]));
+    }
+
+    // Return the marker's current longitudinal direction
+    var returnLngDir = function(mapMarker){
+      return direction('lng', toDMS(getLatLng(mapMarker)[1]));
+    }
+
+    // Concatonate the Coordinates for storage
     var concatonateCoordinates = function(lat, lng){
         return {'lat': lat,'lng': lng}
     }
@@ -103,8 +109,10 @@ var app = angular.module("followapp.mapService", []);
           direction: direction,
           createMarker : createMarker,
           toDMS : toDMS,
-          storeToLocal: storeToLocal,
-          retrieveLocal: retrieveLocal,
+          returnLat : returnLat,
+          returnLng : returnLng,
+          returnLatDir : returnLatDir,
+          returnLngDir : returnLngDir,
           concatonateCoordinates: concatonateCoordinates
     };
   }

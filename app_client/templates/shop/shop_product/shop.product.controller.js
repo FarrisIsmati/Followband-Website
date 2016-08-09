@@ -3,19 +3,22 @@
 
 	var app = angular.module("followapp.ShopProductCtrl", []);
 
-	app.controller('ShopProductCtrl', function($scope, dataService, mapService){
-		// Declare the data service
-		var data = dataService;
+	app.controller('ShopProductCtrl', function($scope, dataService, mapService, authService){
+		// Declare the services
+		var dataService = dataService;
 		var mapService = mapService;
+		var shopService = shopService;
+		var authService = authService;
 
 		// Set the scope of currentSelectedProduct to equal the saved current product in the data service
-		$scope.currentSelectedProduct = data.returnCurrentProduct();
+		// ---------SWITCH TO SHOP SERVICE------------
+		$scope.currentSelectedProduct = dataService.returnCurrentProduct();
 
 		if ($scope.currentSelectedProduct && $scope.currentSelectedProduct.size){
 			$scope.sizes = $scope.currentSelectedProduct.size.split(',');
 		}
 
-		$scope.currentCoordinates = mapService.retrieveLocal('coordinates');
+		$scope.currentCoordinates = dataService.retrieveLocal('coordinates');
 
 		$scope.sizeDefault = 'size';
 
@@ -23,19 +26,25 @@
 			$scope.sizeDefault = item;
 		}
 
-		var exportProduct = {
-			size: this.size,
-			coordinates: this.coordinates,
-			product: this.product
-		}
+		$scope.exportProduct = function(){
+			// IF LINEITEM HAS ALL REQURIED FIELDS THEN MOVE ON
+			// if (lineItem != undefined)
+			var lineItem = {
+				_id: $scope.currentSelectedProduct._id,
+				size: $scope.sizeDefault,
+				latitude: $scope.currentCoordinates.lat,
+				longitude: $scope.currentCoordinates.lng
+			}
 
-		$scope.exportProduct = function(exportProduct){
-			// All of these are data service functions passing in exportProduct variable
+			if (authService.isLoggedIn()){
+				// Send product to user cart
+				
+				//dataService.postLineItem();
+			} //else {
+				// If not logged in send product to local storage cart
+			//}
 
-			// If not logged in send product to local storage cart
-
-			// If logged in send product to user cart
-
+			
 			// If logged in and detected new items in local storage append them to the user cart
 		}
 	});

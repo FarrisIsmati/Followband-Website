@@ -45,13 +45,13 @@ var app = angular.module("followapp.authService", []);
     };
 
     var register = function(user) {
-      return $http.post('/tab/register', user).success(function(data){
+      return $http.post('/follow/register', user).success(function(data){
         saveToken(data.token);
       });
     };
 
     var login = function(user) {
-      return $http.post('/tab/login', user).success(function(data) {
+      return $http.post('/follow/login', user).success(function(data) {
         saveToken(data.token);
       });
     };

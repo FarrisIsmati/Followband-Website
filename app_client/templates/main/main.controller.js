@@ -4,6 +4,7 @@
 var app = angular.module("followapp.MainCtrl", []);
 
 app.controller('MainCtrl', function($scope){
+  // Carousel
   $scope.myInterval = 20000;
   $scope.noWrapSlides = false;
   $scope.active = 0;
