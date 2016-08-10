@@ -8,6 +8,13 @@ var app = angular.module("followapp.authService", []);
 
   function authentication ($http, $window) {
 
+    var parseToken = function(token){
+      var payload = token.split('.')[1];
+      payload = $window.atob(payload);
+      payload = JSON.parse(payload);
+      return payload;
+    }
+
     var saveToken = function (token) {
       $window.localStorage['mean-token'] = token;
     };
@@ -18,13 +25,9 @@ var app = angular.module("followapp.authService", []);
 
     var isLoggedIn = function() {
       var token = getToken();
-      var payload;
+      var payload = parseToken(token);
 
       if(token){
-        payload = token.split('.')[1];
-        payload = $window.atob(payload);
-        payload = JSON.parse(payload);
-
         return payload.exp > Date.now() / 1000;
       } else {
         return false;
@@ -34,9 +37,7 @@ var app = angular.module("followapp.authService", []);
     var currentUser = function() {
       if(isLoggedIn()){
         var token = getToken();
-        var payload = token.split('.')[1];
-        payload = $window.atob(payload);
-        payload = JSON.parse(payload);
+        var payload = parseToken(token);
         return {
           email : payload.email,
           name : payload.name
@@ -77,6 +78,7 @@ var app = angular.module("followapp.authService", []);
     };
 
     return {
+          parseToken : parseToken,
           currentUser : currentUser,
           saveToken : saveToken,
           getToken : getToken,

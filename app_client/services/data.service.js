@@ -27,8 +27,8 @@
     };
 
     // Send lineItem
-    var postLineItem = function() {
-      $http.post('/follow/lineItem', user).success(function(data) {
+    var postLineItem = function(postData) {
+      $http.post('/follow/cart', postData).success(function(data) {
         console.log('Successfully added to cart');
       });
     }
@@ -73,6 +73,7 @@
     return {
       getProfile : getProfile,
       getProducts: getProducts,
+      postLineItem : postLineItem,
       storeToLocal : storeToLocal,
       retrieveLocal  : retrieveLocal,
       setCurrentProduct : setCurrentProduct,

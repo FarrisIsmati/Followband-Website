@@ -9,21 +9,24 @@ var ctrlAuth = require('../controllers/authentication');
 var ctrlProfile = require('../controllers/profile');
 //var ctrlCart = require('../controllers/shoppingCart');
 var ctrlProducts = require('../controllers/products');
+var ctrlCart = require('../controllers/cart');
 
 // profile
 router.get('/follow/profile', auth, ctrlProfile.profileRead);
 
-// AUTHENTICATION
+// -----AUTHENTICATION-----
 // REGISTER
 router.post('/follow/register', ctrlAuth.register);
 
 // LOGIN
 router.post('/follow/login', ctrlAuth.login);
 
+// -----CART-----
+// POST LINE ITEM
+router.post('/follow/cart', ctrlCart.postLineItem);
+
+// -----SHOP-----
 // GET PRODUCTS
 router.get('/follow/products', ctrlProducts.getProducts);
-
-// CREATE CART
-//router.post('/follow/cart', ctrlCart.createCart);
 
 module.exports = router;

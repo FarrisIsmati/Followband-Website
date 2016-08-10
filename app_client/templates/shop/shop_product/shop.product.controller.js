@@ -3,7 +3,7 @@
 
 	var app = angular.module("followapp.ShopProductCtrl", []);
 
-	app.controller('ShopProductCtrl', function($scope, dataService, mapService, authService){
+	app.controller('ShopProductCtrl', function($scope, $window, dataService, mapService, authService){
 		// Declare the services
 		var dataService = dataService;
 		var mapService = mapService;
@@ -30,17 +30,22 @@
 			// IF LINEITEM HAS ALL REQURIED FIELDS THEN MOVE ON
 			// if (lineItem != undefined)
 			var lineItem = {
-				_id: $scope.currentSelectedProduct._id,
+				productId: $scope.currentSelectedProduct._id,
+				productName: $scope.currentSelectedProduct.name,
 				size: $scope.sizeDefault,
 				latitude: $scope.currentCoordinates.lat,
 				longitude: $scope.currentCoordinates.lng
 			}
 
-			if (authService.isLoggedIn()){
-				// Send product to user cart
-				
-				//dataService.postLineItem();
-			} //else {
+			if(authService.isLoggedIn()){
+				// Turn this into a service (Token Parse Processes)
+				var token = authService.getToken();
+		        var payload = authService.parseToken(token);
+		        dataService.postLineItem([lineItem,payload._id]);
+		      } else {
+		      	console.log('User is not logged in');
+		        return false;
+		      } //else {
 				// If not logged in send product to local storage cart
 			//}
 
