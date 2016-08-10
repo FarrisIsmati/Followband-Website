@@ -25,6 +25,9 @@ router.post('/follow/login', ctrlAuth.login);
 // POST LINE ITEM
 router.post('/follow/cart', ctrlCart.postLineItem);
 
+// GET UNIQUE ID FOR LINE ITEMS
+router.get('/follow/cart', ctrlCart.getUserCart);
+
 // -----SHOP-----
 // GET PRODUCTS
 router.get('/follow/products', ctrlProducts.getProducts);

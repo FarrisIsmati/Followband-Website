@@ -26,6 +26,10 @@
       return $http.get('/follow/products');
     };
 
+    var getCart = function(payload){
+      return $http.get('/follow/cart', {params:{"payload": payload._id}});
+    }
+
     // Send lineItem
     var postLineItem = function(postData) {
       $http.post('/follow/cart', postData).success(function(data) {
@@ -73,6 +77,7 @@
     return {
       getProfile : getProfile,
       getProducts: getProducts,
+      getCart : getCart,
       postLineItem : postLineItem,
       storeToLocal : storeToLocal,
       retrieveLocal  : retrieveLocal,

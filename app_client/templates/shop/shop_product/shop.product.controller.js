@@ -29,8 +29,8 @@
 
 		$scope.exportProduct = function(){
 			// IF LINEITEM HAS ALL REQURIED FIELDS THEN MOVE ON
-			// if (lineItem != undefined)
 			var lineItem = {
+				lineItemID : cartService.getUniqueID(),
 				productId: $scope.currentSelectedProduct._id,
 				productName: $scope.currentSelectedProduct.name,
 				size: $scope.sizeDefault,
@@ -38,20 +38,7 @@
 				longitude: $scope.currentCoordinates.lng
 			}
 
-			// Declare token
-    		var token = authService.getToken();
-
-    		if (token){
-    			cartService.pushToCartDB(lineItem, token);
-    		} else {
-    			if (!localStorage) {
-    				alert('Your browser does not support local storage please login');
-    			} else {
-    				cartService.pushToCartLocal(lineItem);
-    			}
-    		}
-			
-			// If logged in and detected new items in local storage append them to the user cart
+			cartService.pushLineItem(lineItem);
 		}
 	});
 	

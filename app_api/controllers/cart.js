@@ -19,3 +19,15 @@ module.exports.postLineItem = function(req, res) {
   });
 };
 
+module.exports.getUserCart = function(req, res) {
+  // Find by UserID Supplied by token on local storage
+
+  User.findById(req.query.payload, function (err, user) {
+    if (user){
+      res.status(200).json(user.cart)
+    } else {
+      res.status(404).json(err);
+      return;
+    }
+  });
+};

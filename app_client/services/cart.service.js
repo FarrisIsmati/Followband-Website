@@ -41,6 +41,7 @@ var app = angular.module("followapp.cartService", []);
 
         localStorage.setItem('localCart', JSON.stringify(currentSessionCart));
 
+
       }
     }
 
@@ -49,11 +50,48 @@ var app = angular.module("followapp.cartService", []);
       localStorage.removeItem('localCart');
     }
 
+    var pushLineItem = function(lineItem){
+      // Declare token
+      var token = authService.getToken();
+
+      // If logged in
+      if (token){
+        var payload = authService.parseToken(token);
+        console.log(dataService.getCart(payload));
+        if (localStorage.getItem('localCart')){
+          for (var item in dataService.retrieveLocal('localCart')){
+            if (item.lineItemID){
+              console.log('pass')
+            }
+          localStorage.removeItem('localCart');
+          }
+        }
+        //pushToCartDB(lineItem, token);
+
+      // If not logged in
+      } else {
+        if (!localStorage) {
+          alert('Your browser does not support local storage please login');
+        } else {
+          pushToCartLocal(lineItem);
+        }
+      }
+    }
+
+    var getUniqueID = function(){
+      var templateString = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
+      return templateString.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+      })
+    }
+
     return {
       pushToCartDB : pushToCartDB,
       pushToCartLocal : pushToCartLocal,
-      removeFromCartLocal : removeFromCartLocal
-
+      removeFromCartLocal : removeFromCartLocal,
+      pushLineItem : pushLineItem,
+      getUniqueID : getUniqueID
     };
   }
 

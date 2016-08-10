@@ -8,7 +8,6 @@ module.exports.getProducts = function(req, res) {
 		}
 		res.json(products);
 	});
-
 };
 
 
