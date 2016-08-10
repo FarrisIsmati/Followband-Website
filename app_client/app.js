@@ -3,7 +3,7 @@
 
 	var app = angular.module("followapp", [
 	 	"ui.router", "ui.bootstrap", "followapp.RouteCtrl",
-	 	"followapp.MapCtrl", "followapp.MainCtrl", "followapp.ShopCtrl", "followapp.ProfileCtrl", "followapp.UserProfCtrl", "followapp.ShopProductCtrl", "followapp.CartCtrl", "followapp.authService", "followapp.dataService", "followapp.mapService", "followapp.shopService" ]);
+	 	"followapp.MapCtrl", "followapp.MainCtrl", "followapp.ShopCtrl", "followapp.ProfileCtrl", "followapp.UserProfCtrl", "followapp.ShopProductCtrl", "followapp.CartCtrl", "followapp.authService", "followapp.dataService", "followapp.mapService", "followapp.shopService", "followapp.cartService" ]);
 
 	app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
 		$urlRouterProvider.otherwise("/follow/main");
