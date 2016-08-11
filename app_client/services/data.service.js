@@ -32,9 +32,11 @@
 
     // Send lineItem
     var postLineItem = function(postData) {
-      $http.post('/follow/cart', postData).success(function(data) {
-        console.log('Successfully added to cart');
-      });
+      $http.post('/follow/cart', postData).then(function success(response){
+          console.log(response);
+      }, function error(response){
+          console.log(response);
+      })
     }
 
     // ------------------ LOCAL SERVICES -------------------

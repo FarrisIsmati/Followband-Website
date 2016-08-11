@@ -75,6 +75,7 @@
 
 					<ul class="dropdown-menu">
 
+						<li  ng-disabled="true">choose size</li>
 						<li ng-repeat="s in sizes" ng-click="changeDropdownSelected(s)">{{s}}</li>
 
 					  </ul>
@@ -85,7 +86,7 @@
 
 			<div class="shop-content-rightbar-cart-holder">
 
-				<p ng-click="exportProduct()">add to cart</p>
+				<p ng-disabled="" ng-click="exportProduct()">add to cart</p>
 
 			</div>
 

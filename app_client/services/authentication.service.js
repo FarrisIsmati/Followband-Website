@@ -62,7 +62,6 @@ var app = angular.module("followapp.authService", []);
         console.log('Loging out');
         $window.localStorage.removeItem('mean-token');
       }
-      
     };
 
     //Checks to see if password contains at least 1 lower and upper case a number and a minimum of 7 characters
