@@ -72,6 +72,13 @@
   padding-right: ($right);
 }
 
+@mixin margin($top, $down, $left, $right){
+  margin-top: ($top);
+  margin-bottom: ($down);
+  margin-left: ($left);
+  margin-right: ($right);
+}
+
 @mixin transformScale($width, $height){
     -ms-transform: scale($width, $height); 
     -webkit-transform: scale($width, $height); 

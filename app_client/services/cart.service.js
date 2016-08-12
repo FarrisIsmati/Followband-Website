@@ -39,7 +39,7 @@ var app = angular.module("followapp.cartService", []);
     // If user is logged in then merge Local Cart to DB Cart
     var mergeLocalToDb = function(){
       var token = authService.getToken();
-          if (token){
+        if (token){
             var payload = authService.parseToken(token);
 
             // Merge local Storage with user cart if local storage detected
@@ -49,7 +49,9 @@ var app = angular.module("followapp.cartService", []);
             }
             removeFromCartLocal();
           }
-      }
+        } else {
+          alert('You are not logged in');
+        }
     }
 
     // Stores line item in the cart
@@ -92,9 +94,3 @@ var app = angular.module("followapp.cartService", []);
 
 })();
 
-        // Resolve getCart promise
-        // dataService.getCart(payload).then(function (resolve){
-        //   console.log(resolve.data[0].lineItemID);
-        // }, function(reason){
-        //   console.log(reason);
-        // });

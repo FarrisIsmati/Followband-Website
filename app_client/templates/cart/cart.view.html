@@ -1,3 +1,37 @@
-<div class="cart-wrapper">
-	<p>cart</p>
+<div class="cart-content">
+
+
+	<div class="cart-content-mergeDisplay">
+	<p ng-show="checkIfLocalCart()">We detected items added to your cart before you were logged in. Would you like to add them?</p>
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th class="cart-content-thName" colspan="2">NAME</th>
+				<th rowspan="1">SIZE</th>
+				<th rowspan="1">QTY</th>
+				<th rowspan="1">PRICE</th>
+				<th rowspan="1">TOTAL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in lineItems">
+				<td class="cart-content-img-holder" ><img class="cart-content-img" ng-src="{{item.productImg}}"/></td>
+				<td class="cart-content-productName">{{ item.productName }}</td>
+				<td class="cart-content-productSize">{{ item.size }}</td>
+				<td class="cart-content-productQty">
+					<input type="number" name="ng-input" ng-model="itemLineTotal" size="4" min="1" max="99">
+					</input>
+				</td>
+				<td class="cart-content-productPrice">{{ item.price | currency }}</td>
+				<td class="cart-content-productTotal">{{ item.price | currency }}</td>
+				<td class="cart-content-productRemove">x</td>
+				<td ng-click="updateLineItemQty(item.lineItemID)">update</td>
+			</tr>
+		</tbody>
+		
+	</table>
+
+
 </div>
