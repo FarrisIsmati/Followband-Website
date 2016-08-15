@@ -5,25 +5,23 @@
 // carousel
 
 .button-carousel-wrapper{
-  padding-top: 5vh;
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  margin-top: 5vh;
+  position: relative;
 }
 
 .carousel{
   &-holder{
+    max-height: 100%;
+    max-width: 100%;
     position: relative;
     @include noselect();
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   }
   &-inner>.item>img, .carousel-inner>.item>a>img {
-    height: 95vh;
-
+    width: auto;
+    max-height: 1000px;
   }
-
-
-
-
   &-control {
     width: 4%;
   }
@@ -68,6 +66,7 @@
   background-color: $backgroundColor;
   margin-top: 4vh;
   margin-bottom: 4vh;
+  position: relative;
 }
 
 .main-middle-text-holder{
@@ -159,5 +158,11 @@ width: 28%;
     position: relative;
   }
 }
-/* ------------------ BOTTOM ----------------*/
-/* ------------------ IMAGES ----------------*/
+
+/* ------------------ MEDIA QUERIES ----------------*/
+
+@media only screen  
+  and (max-device-width: 1400px) {
+
+
+}

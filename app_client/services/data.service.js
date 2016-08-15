@@ -57,25 +57,6 @@
       return JSON.parse(retrievedObject)
     }
 
-
-
-
-
-
-    // --------MOVE TO SHOP SERVICE--------------
-
-    var currentProduct = '';
-
-    // Get and set individual products 
-
-    var setCurrentProduct = function (selectedProduct){
-      currentProduct = selectedProduct;
-    }
-
-    var returnCurrentProduct = function (){
-      return currentProduct;
-    }
-
     return {
       getProfile : getProfile,
       getProducts: getProducts,
@@ -83,8 +64,6 @@
       postLineItem : postLineItem,
       storeToLocal : storeToLocal,
       retrieveLocal  : retrieveLocal,
-      setCurrentProduct : setCurrentProduct,
-      returnCurrentProduct : returnCurrentProduct
     };
   }
 

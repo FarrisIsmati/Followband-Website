@@ -1,61 +1,83 @@
 "use strict";
 (function(){
 
-	var app = angular.module("followapp", [
-	 	"ui.router", "ui.bootstrap", "followapp.RouteCtrl",
-	 	"followapp.MapCtrl", "followapp.MainCtrl", "followapp.ShopCtrl", "followapp.ProfileCtrl", "followapp.UserProfCtrl", "followapp.ShopProductCtrl", "followapp.CartCtrl", "followapp.authService", "followapp.dataService", "followapp.mapService", "followapp.shopService", "followapp.cartService" ]);
+  var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'followapp.mainCtrl', 'followapp.ShopCtrl', 'followapp.CartCtrl', 'followapp.RouteCtrl', 'followapp.ShopProductCtrl', 'followapp.ProfileCtrl', 'followapp.UserProfCtrl', 'followapp.shopService', 'followapp.mapService', 'followapp.dataService', 'followapp.cartService', 'followapp.authService', 'followapp.stateService']);
 
-	app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
-		$urlRouterProvider.otherwise("/follow/main");
+  app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
+    $urlRouterProvider.otherwise("/main");
+    $locationProvider.html5Mode(true);
+    $stateProvider
+      .state('main', {
+        url: "/main",
+        views: {
+          "mainView": {
+            templateUrl: '/templates/main/main.view.html',
+            controller: 'MainCtrl',
+          }
+        }
+      })
+      .state('shop', {
+        url: "/shop",
+        onEnter: ['$state', function($state) {
+        }],
+        views: {
+          "mainView": {
+            templateUrl: '/templates/shop/shop.view.html',
+            controller: 'ShopCtrl',
+            data: {}
+          }
+        }
+      })
+      .state('shop.product', {
+        url: '/product/:id',
+        params: {
+          obj: null,
+          id: null
+        },
+        views: {
+          "mainView.product": {
+            templateUrl: '/templates/shop/shop_product/shop.product.view.html',
+            controller: 'ShopProductCtrl',
+            data: {}
+          }
+        }
+      })
+      .state('authenticate', {
+        url: '/authenticate',
+        views: {
+          "mainView": {
+            templateUrl: '/templates/profile/profile.view.html',
+            controller: 'ProfileCtrl'
+          }
+        }
+      })
+      .state('profile', {
+        url: '/profile',
+        views: {
+          "mainView": {
+            templateUrl: '/templates/userprof/userprof.view.html',
+            controller: 'UserProfCtrl'
+          }
+        }
+      })
+      .state('cart', {
+        url: '/cart',
+        views: {
+          "mainView": {
+            templateUrl: '/templates/cart/cart.view.html',
+            controller: 'CartCtrl'
+          }
+        }
+      })
 
-		$stateProvider
-				.state("follow", { abstract: true, url:"/follow", templateUrl:"templates/tabs/tabs.view.html" })
+  }]);
 
-					.state("follow.main",
-					{ url: "/main", 
-					templateUrl: "templates/main/main.view.html", 
-					controller: "MainCtrl",
-					activetab: true
-					 })
-
-					.state("follow.map",
-					{ url: "/map",
-					templateUrl: "templates/map/map.view.html", 
-					controller: "MapCtrl"})
-
-					.state("follow.shop",
-					{url: "/shop",
-					templateUrl: "templates/shop/shop.view.html",
-					controller: "ShopCtrl"})
-						.state("follow.product",
-							{ url: "/product",
-							  templateUrl: "templates/shop/shop_product/shop.product.view.html",
-							controller: "ShopProductCtrl"})
-
-					.state("follow.cart",
-					{ url: "/cart",
-					templateUrl: "templates/cart/cart.view.html",
-					controller: "CartCtrl"})
-
-					.state("follow.userprof",
-					{ url: "/userprof",
-					templateUrl: "templates/userprof/userprof.view.html",
-					controller: "UserProfCtrl"})
-
-					.state("follow.register", { url: "/register", templateUrl: "templates/profile/profile.view.html", controller: "ProfileCtrl"})
-
-	 	$locationProvider.html5Mode(true);
-	}]);
-
-	function run($window, $rootScope, $location, $state, authService) {
-	var auth = authService;
-    $rootScope.$on('$stateChangeStart', function(angularEvent, next, current) {
-      if (next.url === '/userprof' && !auth.isLoggedIn()) {
-      	angularEvent.preventDefault()
-      }
-    });
+  function run($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
   };
 
-  app.run(['$window', '$rootScope', '$location', '$state', 'authService', run]);
+  app.run(['$rootScope', '$state', '$stateParams', run]);
 }());
+
 

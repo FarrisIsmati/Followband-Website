@@ -67,11 +67,13 @@ body {
 
 /* ------------------ TOP ----------------*/
 .button-carousel-wrapper {
-  padding-top: 5vh;
-  height: 100vh;
-  width: 100vw; }
+  display: flex;
+  margin-top: 5vh;
+  position: relative; }
 
 .carousel-holder {
+  max-height: 100%;
+  max-width: 100%;
   position: relative;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -81,7 +83,8 @@ body {
   user-select: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); }
 .carousel-inner > .item > img, .carousel .carousel-inner > .item > a > img {
-  height: 95vh; }
+  width: auto;
+  max-height: 1000px; }
 .carousel-control {
   width: 4%; }
 .carousel-control.left {
@@ -121,7 +124,8 @@ body {
   width: 100vw;
   background-color: white;
   margin-top: 4vh;
-  margin-bottom: 4vh; }
+  margin-bottom: 4vh;
+  position: relative; }
 
 .main-middle-text-holder {
   margin-top: 6vh;
@@ -202,8 +206,7 @@ body {
   overflow: hidden;
   position: relative; }
 
-/* ------------------ BOTTOM ----------------*/
-/* ------------------ IMAGES ----------------*/
+/* ------------------ MEDIA QUERIES ----------------*/
 .map-page-holder {
   overflow: hidden;
   height: 100vh;
@@ -511,7 +514,8 @@ body {
 .shop-content-main-holder {
   padding-left: 5%;
   float: left;
-  max-width: 12%; }
+  max-width: 12%;
+  padding-top: 1em; }
 .shop-content-main-image {
   max-height: 30%; }
 .shop-content-main-image-small-holder {
@@ -946,11 +950,11 @@ body {
   justify-content: center;
   position: absolute;
   z-index: 99;
-  bottom: 12vh; }
+  bottom: 12%; }
 
 .main-start-button {
   text-align: center;
-  font-size: 56px;
+  font-size: 2em;
   color: white;
   background-color: transparent;
   border-radius: 0px;
@@ -965,6 +969,20 @@ body {
 .main-start-button:hover {
   cursor: pointer; }
 
+@media (max-width: 1200px) {
+  .main-start-button {
+    font-size: .8em;
+    border-radius: 0px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white; } }
+@media (max-width: 600px) {
+  .main-start-button {
+    font-size: .5em;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white; } }
 .userprofile-btn {
   font-size: 18px;
   margin-left: 1em; }

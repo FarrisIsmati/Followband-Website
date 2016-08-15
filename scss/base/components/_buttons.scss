@@ -217,7 +217,7 @@
 
 
 
-// Main Start button
+// -----------------Main Start button-----------------------
 
 .main-start-button-holder {
   @include fontSelect(Montserrat, sans-serif);
@@ -227,13 +227,13 @@
   justify-content: center;
   position: absolute;
   z-index: 99;
-  bottom: 12vh;
+  bottom: 12%;
 }
 
 .main-start-button {
   &{
     text-align: center;
-    font-size: 56px;
+    font-size: 2em;
     color: white;
     background-color: rgba(0,0,0,0);
     @include borderCreate(0px, 4px, solid, white);
@@ -250,7 +250,25 @@
     }
 }
 
-// Userprofile buttons
+@media (max-width: 1200px) {
+
+.main-start-button {
+    font-size: .8em;
+    @include borderCreate(0px, 2px, solid, white);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+.main-start-button {
+    font-size: .5em;
+    @include borderCreate(0px, 1px, solid, white);
+    }
+
+}
+
+// ---------------------Userprofile buttons---------------------------
 .userprofile-btn{
   &{
   font-size: 18px;
