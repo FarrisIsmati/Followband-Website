@@ -27,7 +27,9 @@ app.controller('MainCtrl', ['$scope', function($scope){
 	  $scope.active = 0;
 	  var slides = $scope.slides = [];
 	  var currIndex = 0;
-
+	    	if (screen.width <= 699){
+  		console.log('its tiny')
+  	}
 	  $scope.addSlide = function(i) {
 	    var newWidth = screen.width + slides.length + 1;
 	    slides.push({

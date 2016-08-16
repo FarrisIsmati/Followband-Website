@@ -34,6 +34,7 @@
   <script src="controllers/route.ctrl.js"></script>
   <script src="templates/userprof/userprof.ctrl.js"></script>
   <script src="templates/profile/profile.ctrl.js"></script>
+  <script src="templates/map/map.controller.js"></script>
 
   <script src="services/authentication.service.js"></script>
   <script src="services/data.service.js"></script>
@@ -43,58 +44,17 @@
   <script src="services/state.service.js"></script>
 
   <script src="templates/footer/footer.directive.js"></script>
+  <script src="templates/tab/tab.directive.js"></script>
 
 
 </head>
 
 
 
-<body ng-controller="Tabs">
+<body>
 
 
-  <nav class="tabs-holder" ng-controller="RouteCtrl">
-
-      <p class="header-text">follow ° ' ''</p>
-
-      <div class="main-tabs">
-          <tabset>
-              <tab 
-                  ng-repeat="t in tabs" 
-                  heading="{{t.heading}}"
-                  ui-sref="{{t.route}}"
-                  ui-sref-active="active"
-                  >
-              </tab>
-          </tabset>
-      </div>
-
-      <div class="svg_buttons">
-        <div ng-controller="ProfileCtrl" class="button dropdown"  id="prof_button">
-          <svg id="prof_line1" data-toggle="dropdown" id="Layer_1" x="0px" y="0px" width="24px" height="32px" viewBox="0 0 24 32" enable-background="new 0 0 24 32" xml:space="preserve" class="dropdown-toggle"  data-toggle="dropdown">
-            <path id="prof_line2" fill="none" stroke="#000000" stroke-miterlimit="10" d="M1.057 30.908c0 0 1.004-18.297 6.731-18.297l0.587-0.001c0 0-8.375-10.82 3.625-10.82"/>
-            <path id="prof_line3" fill="none" stroke="#000000" stroke-miterlimit="10" d="M22.817 30.908c0 0-1.005-18.297-6.731-18.297l-0.492-0.001c0 0 8.406-10.82-3.594-10.82"/>
-            </svg>
-            <ul class="dropdown-menu">
-              <li><a ng-show="isLoggedIn()" ui-sref="profile" ui-sref-active="active">profile</a></li>
-              <li><a ng-hide="isLoggedIn()" ui-sref="authenticate" ui-sref-active="active">login</a></li>
-              <li><a ng-show="isLoggedIn()" ng-click="logout()">logout</a></li>
-            </ul>
-          </div>
-
-        <div class="button" ui-sref="cart" ui-sref-active="active">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-         width="24px" height="32px" viewBox="0 0 24 32" enable-background="new 0 0 24 32" xml:space="preserve">
-                <path id="line1" fill="none" stroke="#000000" stroke-miterlimit="10" d="M0.499,4.954c0,0,1.413,0.332,1.804,1.462
-                    c0.391,1.131,3.923,16.721,3.923,16.721s0.483,0.634,2.492,0.634s13.871,0,13.871,0"/>
-                <polyline id="line2" fill="none" stroke="#000000" stroke-miterlimit="10" points="2.469,7.011 22.589,7.336 21.362,16.534 5.217,18.712 "/>
-                <circle id="line3" fill="none" stroke="#000000" stroke-miterlimit="10" cx="5.403" cy="27.863" r="1.115"/>
-                <circle id="line4" fill="none" stroke="#000000" stroke-miterlimit="10" cx="21.473" cy="27.863" r="1.116"/>
-            </svg>
-        </div>
-
-    </div>
-
-  </nav>
+  <headertab></headertab>
 
   <div ui-view="mainView">
 

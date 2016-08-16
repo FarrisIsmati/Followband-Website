@@ -1,0 +1,35 @@
+<div class="map-page-holder">
+
+	<div class="map-coords-display">
+		<div class="map-coords-display-holder">
+			<p>{{latitudeDirection}}<span>{{latitudeDMS}}</span></p>
+			<p class="map-coords-display-holder-right">{{longitudeDirection}}<span>{{longitudeDMS}}</span></p>
+		</div>
+		<div ng-controller="RouteCtrl" class="map-coords-display-save">
+			<p ui-sref="shop.product" ui-sref-active="active">SAVE</p>
+		</div>
+	</div>
+
+	<div class="map-holder">
+
+		<div class="map-display-tip-symbol">
+			<p ng-click="changeClass()">?</p>
+		</div>
+
+		<div ng-click="changeClass()" ng-class="className">
+			<div class="map-display-tip-text">
+				<div class="map-display-tip-text-top">
+					<p>Are you clanking?</p>
+				</div>
+				<div class="map-display-tip-text-bottom">
+					<p>We can help</p>
+				</div>
+			</div>
+		</div>
+
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+		<div id="map_canvas"></div>
+
+	</div>
+
+</div>

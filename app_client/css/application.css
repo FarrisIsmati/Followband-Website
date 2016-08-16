@@ -72,8 +72,6 @@ body {
   position: relative; }
 
 .carousel-holder {
-  max-height: 100%;
-  max-width: 100%;
   position: relative;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -346,6 +344,7 @@ body {
   float: left; }
 
 .main-tabs {
+  font-size: .8em;
   float: left;
   margin-left: 50%;
   transform: translate(-100%, 0%);
@@ -354,7 +353,7 @@ body {
   -o-transform: translate(-100%, 0%); }
 
 .header-text {
-  font-size: 28px;
+  font-size: .8em;
   float: left;
   transform: translate(0%, 25%);
   -webkit-transform: translate(0%, 25%);
@@ -390,6 +389,19 @@ body {
   max-width: 50px;
   max-height: 50px; }
 
+/*--------------Media Queries ----------------*/
+@media (max-width: 1000px) {
+  .main-tabs {
+    font-size: .7em; }
+
+  .header-text {
+    font-size: .7em; } }
+@media (max-width: 500px) {
+  .main-tabs {
+    font-size: .5em; }
+
+  .header-text {
+    font-size: .5em; } }
 .shop-view-holder {
   width: 100vw;
   height: 100vh;

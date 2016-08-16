@@ -1,7 +1,7 @@
 "use strict";
 (function(){
 
-  var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'followapp.mainCtrl', 'followapp.ShopCtrl', 'followapp.CartCtrl', 'followapp.RouteCtrl', 'followapp.ShopProductCtrl', 'followapp.ProfileCtrl', 'followapp.UserProfCtrl', 'followapp.shopService', 'followapp.mapService', 'followapp.dataService', 'followapp.cartService', 'followapp.authService', 'followapp.stateService']);
+  var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'followapp.mainCtrl', 'followapp.ShopCtrl', 'followapp.CartCtrl', 'followapp.RouteCtrl', 'followapp.ShopProductCtrl', 'followapp.ProfileCtrl', 'followapp.UserProfCtrl', 'followapp.MapCtrl', 'followapp.shopService', 'followapp.mapService', 'followapp.dataService', 'followapp.cartService', 'followapp.authService', 'followapp.stateService']);
 
   app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
     $urlRouterProvider.otherwise("/main");
@@ -39,6 +39,15 @@
             templateUrl: '/templates/shop/shop_product/shop.product.view.html',
             controller: 'ShopProductCtrl',
             data: {}
+          }
+        }
+      })
+      .state('map', {
+        url: '/map',
+        views: {
+          "mainView":{
+            templateUrl: '/templates/map/map.view.html',
+            controller: 'MapCtrl'
           }
         }
       })
