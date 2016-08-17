@@ -3,7 +3,16 @@
 
 	var app = angular.module("followapp.ShopCtrl", []);
 
-	app.controller('ShopCtrl', function($scope, $state, $stateParams, $rootScope, dataService, shopService, stateService){
+	//Removed stateParams fyi
+	app.controller('ShopCtrl', function($scope, $state, $rootScope, dataService, shopService){
+		// If there are products set the scope of products
+		dataService.getProducts()
+	    .success(function(data) {
+	      	$scope.products = data;
+	    })
+	    .error(function (e) {
+	        console.log(e);
+	    });
 
 		// If the individual product is selected the product menu will dissapear
 		$scope.getState = function(){
@@ -28,15 +37,6 @@
 			}
 		}
 
-		// If there are products set the scope of products
-		dataService.getProducts()
-	    .success(function(data) {
-	      	$scope.products = data;
-	    })
-	    .error(function (e) {
-	        console.log(e);
-	    });
-
 	    // If the product type matches the active state of the navbar return that product
 		$scope.productMatch = function(product){
 			for (var button in shopService.returnSetMenuState()) {
@@ -47,7 +47,6 @@
 		}
 		
 		// Set the reference for current selected product
-		// ---------SWITCH TO SHOP SERVICE------------
 		$scope.setProduct = function(product) {
 			var setProduct = product;
 			dataService.storeToLocal('currentProduct', product);

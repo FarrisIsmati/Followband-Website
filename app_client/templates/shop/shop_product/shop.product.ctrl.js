@@ -3,7 +3,7 @@
 
 	var app = angular.module("followapp.ShopProductCtrl", []);
 
-	app.controller('ShopProductCtrl', function($scope, $state, $window, $timeout, dataService, mapService, authService, cartService){
+	app.controller('ShopProductCtrl', function($scope, dataService, cartService){
 		// Set the scope of currentSelectedProduct to equal the saved current product in the data service
 		$scope.currentSelectedProduct = dataService.retrieveLocal('currentProduct');
 
@@ -13,6 +13,8 @@
 		// Set the size of the size dropdown menu
 		if ($scope.currentSelectedProduct && $scope.currentSelectedProduct.size){
 			$scope.sizes = $scope.currentSelectedProduct.size.split(',');
+		} else {
+			alert('There is an error')
 		}
 
 		$scope.sizeDefault = 'small';
@@ -23,7 +25,6 @@
 
 		// Export all the aggragte product data to a lineItem
 		$scope.exportProduct = function(){
-			// IF LINEITEM HAS ALL REQURIED FIELDS THEN MOVE ON
 			var lineItem = {
 				lineItemID : $scope.sizeDefault + $scope.currentSelectedProduct._id + $scope.currentCoordinates.lat + $scope.currentCoordinates.lng,
 				productImg: $scope.currentSelectedProduct.imgLink,

@@ -23,13 +23,19 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
 	      console.log(reason);
 	    });
     } else {
-    	console.log('run the else statement');
     	if (dataService.retrieveLocal('localCart')){
     		$scope.lineItems = dataService.retrieveLocal('localCart');
-    	} else {
-    		alert('no cart');
-    	}
-    	
+
+            $scope.deleteLineItem = function(lineitem){
+                var cart = dataService.retrieveLocal('localCart');
+                var updatedCart = cart.filter(function(item){
+                    if (lineitem.lineItemID != item.lineItemID){
+                        return item
+                    }
+                })
+                dataService.storeToLocal('localCart', updatedCart);
+            }
+    	}	
     }
  
     // If a local cart exists while you are logged in prompt the user to merge the carts
@@ -47,10 +53,9 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
     	return item * qty;
     }
 
-	// Merge the local cart to the users DB Cart
-	$scope.mergeCart = function(){
-		cartService.mergeLocalToDb()
-	}
+    $scope.clearLocalCart = function(){
+        cartService.clearLocalCart();
+    }
 
   });
 

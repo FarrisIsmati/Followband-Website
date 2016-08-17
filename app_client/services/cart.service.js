@@ -75,45 +75,23 @@ var app = angular.module("followapp.cartService", []);
       }
     }
 
-    // CLEAR CART
-    var clearCart = function(){
-      var token = authService.getToken();
-      // If using a database clear the cart
-      if (token){
-        var payload = authService.parseToken(token);
-        //CLEAR USER CART FROM DB
-        //DELETE ROUTE
-      }
-      // If using local storage remove the cart
+    // CLEAR LOCAL CART
+    var clearLocalCart = function(){
       if (localStorage.getItem('localCart')){
         localStorage.removeItem('localCart');
       };
     }
 
-    // POST LOCALCART TO DATABASE CART
-    // If user is logged in then merge Local Cart to DB Cart
-    var mergeLocalToDb = function(){
-      var token = authService.getToken();
-        // If the use ris logged in
-        if (token){
-            var payload = authService.parseToken(token);
+    var updateCart = function(){
 
-            // Merge local Storage with user cart if local storage detected
-            if (localStorage.getItem('localCart')){ 
-              // DO A CRAZY MERGE FUNCTION THAT CHECKS LOCAL CART TO  DB CART
-            }
-            clearCart();
-        } else {
-          alert('You are not logged in');
-        }
     }
 
     return {
       pushToCartDB : pushToCartDB,
       pushToCartLocal : pushToCartLocal,
-      mergeLocalToDb : mergeLocalToDb,
-      clearCart : clearCart,
-      pushLineItem : pushLineItem
+      clearLocalCart : clearLocalCart,
+      pushLineItem : pushLineItem,
+      updateCart : updateCart
     };
   }
 
