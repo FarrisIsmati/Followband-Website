@@ -11,6 +11,7 @@ var ctrlProfile = require('../controllers/profile');
 var ctrlProducts = require('../controllers/products');
 var ctrlCart = require('../controllers/cart');
 
+
 // profile
 router.get('/follow/profile', auth, ctrlProfile.profileRead);
 
@@ -24,6 +25,9 @@ router.post('/follow/login', ctrlAuth.login);
 // -----CART-----
 // POST LINE ITEM
 router.post('/follow/cart', ctrlCart.postLineItem);
+
+// PUT LINE ITEM
+router.put('/follow/cart', ctrlCart.putLineItem);
 
 // GET UNIQUE ID FOR LINE ITEMS
 router.get('/follow/cart', ctrlCart.getUserCart);

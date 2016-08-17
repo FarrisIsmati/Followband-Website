@@ -25,7 +25,7 @@
 		$scope.exportProduct = function(){
 			// IF LINEITEM HAS ALL REQURIED FIELDS THEN MOVE ON
 			var lineItem = {
-				lineItemID : cartService.getUniqueID(),
+				lineItemID : $scope.sizeDefault + $scope.currentSelectedProduct._id + $scope.currentCoordinates.lat + $scope.currentCoordinates.lng,
 				productImg: $scope.currentSelectedProduct.imgLink,
 				productId: $scope.currentSelectedProduct._id,
 				productName: $scope.currentSelectedProduct.name,

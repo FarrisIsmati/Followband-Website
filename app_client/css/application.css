@@ -703,6 +703,8 @@ body {
   width: 10%; }
 .cart-content-productName {
   border: 0; }
+.cart-content-productCoord {
+  border: 0; }
 .cart-content-productSize {
   border: 0; }
 .cart-content-productQty {

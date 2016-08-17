@@ -21,7 +21,7 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
     // Resolve getCart promise
     if ( token ) {
     	var payload = authService.parseToken(token);
-	   	dataService.getCart(payload).then(function (resolve){
+	   	dataService.getCart(payload._id).then(function (resolve){
 	   	  if (resolve.data){
 	   	  	$scope.lineItems = resolve.data; 
 	   	  }
@@ -38,7 +38,7 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
     	
     }
 
-    $scope.itemLineTotal = 1;
+    
 
     $scope.updateLineItemQty = function(id){
     	console.log('im nuts');
@@ -55,6 +55,7 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
     	}
     };
 
+    //This needs to be placed in the update function ^^ So it gets qty from the database
     $scope.calcLineItemTotal = function(item, qty){
     	return item * qty;
     }

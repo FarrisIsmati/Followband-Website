@@ -27,15 +27,25 @@
     };
 
     var getCart = function(payload){
-      return $http.get('/follow/cart', {params:{"payload": payload._id}});
+      return $http.get('/follow/cart', {params:{"payload": payload}});
     }
 
-    // Send lineItem
+    // POST LINE ITEM TO USER CART
     var postLineItem = function(postData) {
       $http.post('/follow/cart', postData).then(function success(response){
           console.log(response);
       }, function error(response){
           console.log(response);
+      })
+    }
+
+
+    // PUT UPDATE LINE ITEM QUANTITY
+    var putLineItem = function(putData) {
+      $http.put('/follow/cart', putData).then(function success(response){
+          console.log(response.status);
+      }, function error(response){
+          console.log(response.status);
       })
     }
 
@@ -62,8 +72,9 @@
       getProducts: getProducts,
       getCart : getCart,
       postLineItem : postLineItem,
+      putLineItem : putLineItem,
       storeToLocal : storeToLocal,
-      retrieveLocal  : retrieveLocal,
+      retrieveLocal  : retrieveLocal
     };
   }
 
