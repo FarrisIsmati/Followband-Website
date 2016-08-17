@@ -8,22 +8,16 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
 
 	var token = authService.getToken();
 	
-	// If a local cart exists while you are logged in prompt the user to merge the carts
-	$scope.checkIfLocalCart = function(){
-		if (token && dataService.retrieveLocal('localCart')) {
-			console.log('you have local storage cart :)')
-			return true;
-		} else {
-			return false;
-		}
-	}
-
     // Resolve getCart promise
     if ( token ) {
     	var payload = authService.parseToken(token);
 	   	dataService.getCart(payload._id).then(function (resolve){
 	   	  if (resolve.data){
 	   	  	$scope.lineItems = resolve.data; 
+
+            $scope.deleteLineItem = function(lineitem){
+                dataService.deleteLineItem([lineitem.lineItemID, payload._id]);
+            }
 	   	  }
 	    }, function(reason){
 	      console.log(reason);
@@ -37,23 +31,16 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
     	}
     	
     }
-
-    
-
-    $scope.updateLineItemQty = function(id){
-    	console.log('im nuts');
-    	if (dataService.retrieveLocal('localCart')){
-    		for (var item in dataService.retrieveLocal('localCart')){
-    			if (dataService.retrieveLocal('localCart')[item].lineItemID === id){
-    				console.log('Update Qty from localstorage')
-    			} else {
-    				console.log('No matching ID found');
-    			}
-    		}
-    	} else {
-    		console.log('Update Qty from database');
-    	}
-    };
+ 
+    // If a local cart exists while you are logged in prompt the user to merge the carts
+    $scope.checkIfLocalCart = function(){
+        if (token && dataService.retrieveLocal('localCart')) {
+            console.log('you have local storage cart :)')
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     //This needs to be placed in the update function ^^ So it gets qty from the database
     $scope.calcLineItemTotal = function(item, qty){

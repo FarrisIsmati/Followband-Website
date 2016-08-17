@@ -49,6 +49,15 @@
       })
     }
 
+    // DEL LINE ITEM
+    var deleteLineItem = function(delData) {
+      $http.delete('/follow/cart', {params:{"payload": delData}}).then(function success(response){
+          console.log(response.status);
+      }, function error(response){
+          console.log(response.status);
+      })
+    }
+
     // ------------------ LOCAL SERVICES -------------------
 
     // Stores an object to a holder in the users Local Storage
@@ -73,6 +82,7 @@
       getCart : getCart,
       postLineItem : postLineItem,
       putLineItem : putLineItem,
+      deleteLineItem : deleteLineItem,
       storeToLocal : storeToLocal,
       retrieveLocal  : retrieveLocal
     };

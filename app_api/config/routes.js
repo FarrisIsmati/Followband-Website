@@ -29,6 +29,9 @@ router.post('/follow/cart', ctrlCart.postLineItem);
 // PUT LINE ITEM
 router.put('/follow/cart', ctrlCart.putLineItem);
 
+// DELETE LINE ITEM
+router.delete('/follow/cart', ctrlCart.deleteLineItem);
+
 // GET UNIQUE ID FOR LINE ITEMS
 router.get('/follow/cart', ctrlCart.getUserCart);
 

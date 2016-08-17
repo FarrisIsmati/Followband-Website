@@ -250,20 +250,20 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
 
 .main-start-button {
-    font-size: .8em;
-    @include borderCreate(0px, 2px, solid, white);
+    font-size: 3em;
+    @include borderCreate(0px, 4px, solid, white);
     }
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
 .main-start-button {
-    font-size: .5em;
-    @include borderCreate(0px, 1px, solid, white);
+    font-size: 4em;
+    @include borderCreate(0px, 6px, solid, white);
     }
 
 }

@@ -29,7 +29,7 @@
 				</td>
 				<td class="cart-content-productPrice">{{ item.price | currency }}</td>
 				<td class="cart-content-productTotal">{{ calcLineItemTotal(item.quantity, item.price) | currency }}</td>
-				<td class="cart-content-productRemove">x</td>
+				<td class="cart-content-productRemove" ng-click="deleteLineItem(item)">x</td>
 				<td ng-click="updateLineItemQty(item.lineItemID)">update</td>
 			</tr>
 		</tbody>

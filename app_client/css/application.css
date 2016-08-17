@@ -153,14 +153,14 @@ body {
 
 .main-middle-text-holder-steps {
   text-align: center;
-  padding-top: 10vh; }
+  padding-top: 15%; }
 .main-middle-text-holder-steps h1 {
   font-family: Roboto Condensed, sans-serif;
   font-weight: 700;
-  font-size: 36px; }
+  font-size: 2.5em; }
 .main-middle-text-holder-steps p {
   font-family: lato, sans-serif;
-  font-size: 22px;
+  font-size: 2em;
   margin-left: 10%;
   margin-right: 10%; }
 
@@ -205,6 +205,47 @@ body {
   position: relative; }
 
 /* ------------------ MEDIA QUERIES ----------------*/
+@media (max-width: 1000px) {
+  .main-middle-text-holder-steps {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    padding-top: 15%; }
+  .main-middle-text-holder-steps h1 {
+    font-family: Roboto Condensed, sans-serif;
+    font-weight: 700; }
+  .main-middle-text-holder-steps p {
+    font-family: lato, sans-serif;
+    margin-left: 10%;
+    margin-right: 10%; }
+  .main-middle-text-holder-steps svg {
+    padding-top: 5%; }
+
+  #step-first {
+    width: auto; }
+
+  #step-middle {
+    width: auto; }
+
+  #step-last {
+    width: auto; } }
+@media (max-width: 700px) {
+  .main-middle-text-holder-steps {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    padding-top: 15%; }
+  .main-middle-text-holder-steps h1 {
+    font-family: Roboto Condensed, sans-serif;
+    font-weight: 700;
+    font-size: 1.8em; }
+  .main-middle-text-holder-steps p {
+    font-family: lato, sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.2em; } }
 .map-page-holder {
   overflow: hidden;
   height: 100vh;
@@ -983,18 +1024,18 @@ body {
 .main-start-button:hover {
   cursor: pointer; }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .main-start-button {
-    font-size: .8em;
+    font-size: 3em;
     border-radius: 0px;
-    border-width: 2px;
+    border-width: 4px;
     border-style: solid;
     border-color: white; } }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .main-start-button {
-    font-size: .5em;
+    font-size: 4em;
     border-radius: 0px;
-    border-width: 1px;
+    border-width: 6px;
     border-style: solid;
     border-color: white; } }
 .userprofile-btn {
