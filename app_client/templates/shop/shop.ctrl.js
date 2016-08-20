@@ -1,7 +1,7 @@
 'use strict';
 (function(){
 
-	var app = angular.module("followapp.ShopCtrl", []);
+	var app = angular.module("ShopCtrl", []);
 
 	//Removed stateParams fyi
 	app.controller('ShopCtrl', function($scope, $state, $rootScope, dataService, shopService){

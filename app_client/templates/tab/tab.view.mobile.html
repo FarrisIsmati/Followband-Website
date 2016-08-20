@@ -2,7 +2,16 @@
 
     <p class="header-text">follow ° ' ''</p>
 
-    
+    <div ng-controller="ProfileCtrl" class="button dropdown"  id="prof_burger">
+	    <svg toggle="dropdown" class="dropdown-toggle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="" pagealignment="none" x="0px" y="0px" width="24px" height="32px" viewBox="0 0 24 32" enable-background="new 0 0 24 32" xml:space="preserve"><defs></defs><g type="LAYER" name="workspace" id="workspace" locked="true"></g><g type="LAYER" name="Layer 01" id="Layer 01"><path transform="matrix(1 0 0 1 3.601990049751201 21.373134328358205)" width="17.114427860696516" height="2.8656716417910424" stroke-width="0.8751899489873677" stroke-miterlimit="3" stroke="#000000" fill="rgb(0, 0, 0)" d="M0,0 L17.114427860696516,0 L17.114427860696516,2.8656716417910424 L0,2.8656716417910424 L0,0 Z "></path><path transform="matrix(1 0 0 1 3.522388059701477 14.28855721393035)" width="17.114427860696516" height="2.8656716417910424" stroke-width="0.8751899489873677" stroke-miterlimit="3" stroke="#000000" fill="rgb(0, 0, 0)" d="M0,0 L17.114427860696516,0 L17.114427860696516,2.8656716417910424 L0,2.8656716417910424 L0,0 Z "></path><path transform="matrix(1 0 0 1 3.5621890547263533 7.4029850746268675)" width="17.114427860696516" height="2.8656716417910424" stroke-width="0.8751899489873677" stroke-miterlimit="3" stroke="#000000" fill="#000000" d="M0,0 L17.114427860696516,0 L17.114427860696516,2.8656716417910424 L0,2.8656716417910424 L0,0 Z "></path></g></svg>
+      	<ul class="dropdown-menu">
+      		<li><a ui-sref="main" ui-sref-active="active">main</a></li>
+      		<li><a ui-sref="shop" ui-sref-active="active">shop</a></li>
+        	<li><a ng-show="isLoggedIn()" ui-sref="profile" ui-sref-active="active">profile</a></li>
+        	<li><a ng-hide="isLoggedIn()" ui-sref="authenticate" ui-sref-active="active">login</a></li>
+        	<li><a ng-show="isLoggedIn()" ng-click="logout()">logout</a></li>
+      	</ul>
+    </div>
 
   </div>
 

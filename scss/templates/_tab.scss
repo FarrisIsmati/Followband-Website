@@ -7,12 +7,10 @@
 .tabs-holder {
   position: fixed;
   clear: both;
-  top: 0; left: 0;
+  top: 0; 
+  left: 0;
   z-index: 199;
-  @include fontSelect(lato, sans-serif);
-  font-size: 28px;
-  padding-bottom: 0px;
-  max-height: 8vh;
+  padding-bottom: 3px;
   width: 100vw;
   background-color: white;
   align-items: center;
@@ -78,9 +76,7 @@
 /*--------------Media Queries ----------------*/
 
 @media (max-width: 1000px){
-  .main-tabs{
-    font-size: .7em;
-  }
+
 
   .header-text {
     font-size: .7em;
@@ -88,9 +84,7 @@
 }
 
 @media (max-width: 500px){
-  .main-tabs{
-    font-size: .5em;
-  }
+
   .header-text {
     font-size: .5em;
   }

@@ -1,7 +1,7 @@
 "use strict";
 (function(){
 
-var app = angular.module("followapp.RouteCtrl", []);
+var app = angular.module("RouteCtrl", []);
 
 app.controller("RouteCtrl", function($rootScope, $scope, $state, authService, stateService) {
 		$scope.go = function(route){

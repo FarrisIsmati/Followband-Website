@@ -2,7 +2,7 @@
 
 (function(){
 
-var app = angular.module("followapp.UserProfCtrl", []);
+var app = angular.module("UserProfCtrl", []);
 
 app.controller('UserProfCtrl', function($scope, $location, dataService){
     // Declare the data service
