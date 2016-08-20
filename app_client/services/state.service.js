@@ -2,7 +2,7 @@
 
 (function() {
 
-  var app = angular.module("followapp.stateService", []);
+  var app = angular.module("StateService", []);
   app.service('stateService', stateService);
 
   function stateService ($http) {

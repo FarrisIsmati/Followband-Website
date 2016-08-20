@@ -1,24 +1,4 @@
-var app = angular.module('followapp.mainCtrl', ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router'])
-
-app.controller('Tabs', ['$scope', '$stateParams', '$state',
-  function($scope, $stateParams, $state) {}
-]);
-
-app.controller('2ndTabCtrl', ['$scope', '$stateParams', '$state',
-  function($scope, $stateParams, $state) {}
-]);
-
-app.controller('Tab1Link1Ctrl', ['$scope', '$stateParams', '$state',
-  function($scope, $stateParams, $state) {
-    $scope.link1things = ["A", "Set", "Of", "Things", "link1", "viewA"];
-  }
-]);
-
-app.controller('Tab1Link2Ctrl', ['$scope', '$stateParams', '$state',
-  function($scope, $stateParams, $state) {
-    $scope.link2things = ["A", "Set", "Of", "Things", "link2", "viewA"];
-  }
-]);
+var app = angular.module('MainCtrl', ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router'])
 
 app.controller('MainCtrl', ['$scope', function($scope){
 	  // Carousel
@@ -27,13 +7,11 @@ app.controller('MainCtrl', ['$scope', function($scope){
 	  $scope.active = 0;
 	  var slides = $scope.slides = [];
 	  var currIndex = 0;
-	    	if (screen.width <= 699){
-  		console.log('its tiny')
-  	}
+
 	  $scope.addSlide = function(i) {
 	    var newWidth = screen.width + slides.length + 1;
 	    slides.push({
-	      image: '../../images/image' + i + '.jpg',
+	      image: '../../images/Carousel/image' + i + '.jpg',
 	      id: currIndex++
 	    });
 	  };
@@ -42,6 +20,5 @@ app.controller('MainCtrl', ['$scope', function($scope){
 	    $scope.addSlide(i);
 	  }
 
-	  $scope.imagesRow1 = [{'id':'../../images/row11.jpg', 'desc':'follow stories'}, {'id':'../../images/row12.jpg', 'desc':'follow products'}, {'id':'../../images/row13.jpg', 'desc':'follow media'}]
 	}
 ]);

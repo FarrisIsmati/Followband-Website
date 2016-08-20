@@ -2,7 +2,7 @@
 
 (function() {
 
-  var app = angular.module("followapp.dataService", []);
+  var app = angular.module("DataService", []);
 
   app.service('dataService', dataService);
 

@@ -2,7 +2,7 @@
 
 (function() {
 
-var app = angular.module("followapp.MapCtrl", []);
+var app = angular.module("MapCtrl", []);
 
 app.controller('MapCtrl', function($scope, mapService, dataService){
   var mapService = mapService;
@@ -87,6 +87,7 @@ app.controller('MapCtrl', function($scope, mapService, dataService){
     mapMarker.marker.setPosition(place.geometry.location);
 
     callCoords();
+    
     var latLngDecimalDegrees = [mapService.returnLat(mapMarker.marker)[4], mapService.returnLng(mapMarker.marker)[4]]
 
     localStorage.setItem('decimalDegrees', JSON.stringify(latLngDecimalDegrees));

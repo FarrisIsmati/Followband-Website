@@ -2,7 +2,7 @@
 
 (function () {
 
-var app = angular.module("followapp.mapService", []);
+var app = angular.module("MapService", []);
 
   app.service('mapService', mapService);
 

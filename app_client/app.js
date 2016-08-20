@@ -1,7 +1,7 @@
 "use strict";
 (function(){
 
-  var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'followapp.mainCtrl', 'ShopCtrl', 'followapp.CartCtrl', 'RouteCtrl', 'followapp.ShopProductCtrl', 'followapp.ProfileCtrl', 'UserProfCtrl', 'followapp.MapCtrl', 'followapp.shopService', 'followapp.mapService', 'followapp.dataService', 'followapp.cartService', 'followapp.authService', 'followapp.stateService']);
+  var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'MainCtrl', 'ShopCtrl', 'CartCtrl', 'RouteCtrl', 'ShopProductCtrl', 'ProfileCtrl', 'UserProfCtrl', 'MapCtrl', 'ShopService', 'MapService', 'DataService', 'CartService', 'AuthService', 'StateService']);
 
   app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
     $urlRouterProvider.otherwise("/main");

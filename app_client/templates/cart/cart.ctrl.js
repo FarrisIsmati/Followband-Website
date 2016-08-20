@@ -2,7 +2,7 @@
 
 (function(){
 
-var app = angular.module("followapp.CartCtrl", []);
+var app = angular.module("CartCtrl", []);
 
 app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScope, cartService, dataService, authService){
 

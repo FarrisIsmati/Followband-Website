@@ -2,7 +2,7 @@
 
 (function(){
 
-var app = angular.module("followapp.ProfileCtrl", []);
+var app = angular.module("ProfileCtrl", []);
 
 app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state, $rootScope, authService){
     var auth = authService;

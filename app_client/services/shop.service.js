@@ -2,7 +2,7 @@
 
 (function() {
 
-  var app = angular.module("followapp.shopService", []);
+  var app = angular.module("ShopService", []);
   app.factory('shopService', function shopService ($http, dataService) {
     var currentProduct = '';
 

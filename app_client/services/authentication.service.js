@@ -2,7 +2,7 @@
 
 (function () {
 
-var app = angular.module("followapp.authService", []);
+var app = angular.module("AuthService", []);
 
   app.service('authService', authentication);
 

@@ -2,7 +2,7 @@
 
 (function () {
 
-var app = angular.module("followapp.cartService", []);
+var app = angular.module("CartService", []);
 
   app.service('cartService', cart);
 
@@ -83,7 +83,7 @@ var app = angular.module("followapp.cartService", []);
     }
 
     var updateCart = function(){
-
+    // Take care of this one :)
     }
 
     return {

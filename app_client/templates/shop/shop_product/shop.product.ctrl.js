@@ -1,7 +1,7 @@
 'use strict';
 (function(){
 
-	var app = angular.module("followapp.ShopProductCtrl", []);
+	var app = angular.module("ShopProductCtrl", []);
 
 	app.controller('ShopProductCtrl', function($scope, dataService, cartService){
 		// Set the scope of currentSelectedProduct to equal the saved current product in the data service
