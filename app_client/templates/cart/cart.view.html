@@ -1,34 +1,66 @@
-<div class="cart-content">
-	<table>
-		<thead>
-			<tr>
-				<th class="cart-content-thName" colspan="2">NAME</th>
-				<th class="cart-content-thCoord" colspan="2">COORDINATES</th>
-				<th rowspan="1">SIZE</th>
-				<th rowspan="1">QTY</th>
-				<th rowspan="1">PRICE</th>
-				<th rowspan="1">TOTAL</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in lineItems">
-				<td class="cart-content-img-holder" ><img class="cart-content-img" ng-src="{{item.productImg}}"/></td>
-				<td class="cart-content-productName">{{ item.productName }}</td>
-				<td class="cart-content-productCoord">{{ item.latitude }}</td>
-				<td class="cart-content-productCoord">{{ item.longitude }}</td>
-				<td class="cart-content-productSize">{{ item.size }}</td>
-				<td class="cart-content-productQty">
-					<input type="number" name="ng-input" ng-model="item.quantity" size="4" min="1" max="99">
-					</input>
-				</td>
-				<td class="cart-content-productPrice">{{ item.price | currency }}</td>
-				<td class="cart-content-productTotal">{{ calcLineItemTotal(item.quantity, item.price) | currency }}</td>
-				<td class="cart-content-productRemove" ng-click="deleteLineItem(item)">x</td>
-				<td ng-click="updateLineItemQty(item.lineItemID)">update</td>
-			</tr>
-		</tbody>
-		
-	</table>
+<div class="cart-content-wrapper">
+	<div class="cart-content">
+		<table>
+			<thead>
+				<tr>
+					<th class="cart-content-thName" colspan="2">NAME</th>
+					<th class="cart-content-thCoord" colspan="2">COORDINATES</th>
+					<th rowspan="1">SIZE</th>
+					<th rowspan="1">QTY</th>
+					<th rowspan="1">PRICE</th>
+					<th rowspan="1">TOTAL</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in lineItems">
+					<td class="cart-content-img-holder" ><img class="cart-content-img" ng-src="{{item.productImg}}"/></td>
+					<td class="cart-content-productName">{{ item.productName }}</td>
+					<td class="cart-content-productCoord">{{ item.latitude }}</td>
+					<td class="cart-content-productCoord">{{ item.longitude }}</td>
+					<td class="cart-content-productSize">{{ item.size }}</td>
+					<td class="cart-content-productQty">
+						<input type="number" name="ng-input" ng-model="item.quantity" size="4" min="1" max="99">
+						</input>
+					</td>
+					<td class="cart-content-productPrice">{{ item.price | currency }}</td>
+					<td class="cart-content-productTotal">{{ calcLineItemTotal(item.quantity, item.price) | currency }}</td>
+					<td class="cart-content-productRemove" ng-click="deleteLineItem(item)">x</td>
+					<td class="cart-content-productUpdate" ng-click="updateLineItemQty(item)">update</td>
+				</tr>
+			</tbody>
+			
+		</table>
 
+		<div class="cart-content-holder-totals">
+			<table>
+				<tfoot>
+					<tr>
+						<td rowspan="1">
+							<strong> GRAND TOTAL </strong>
+						</td>
+						<td class="cart-content-holder-totals-td-right" rowspan="1">
+							<strong> $123 </strong>
+						</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td class="cart-content-holder-totals-td-left">
+							Subtotal
+						</td>
+						<td class="cart-content-holder-totals-td-right">
+							$123
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-</div>
+			<div class="cart-content-holder-totals-checkout">
+				<p class="shop-content-button-default"> CHECKOUT </p>
+			</div>
+
+		</div>
+
+	</div>
+
+<div>

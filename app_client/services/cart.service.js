@@ -57,7 +57,7 @@ var app = angular.module("CartService", []);
       if (localStorage.getItem('localCart')){
         var tempLocal = dataService.retrieveLocal('localCart');
         var checkTrue = containsItem(tempLocal, lineItem);
-        // If the line item is in the car then increase the quantity
+        // If the line item is in the cart then increase the quantity
         if (checkTrue){
           tempLocal[checkTrue[1]].quantity = tempLocal[checkTrue[1]].quantity + 1;
           dataService.storeToLocal('localCart', tempLocal);
@@ -88,6 +88,7 @@ var app = angular.module("CartService", []);
 
     return {
       pushToCartDB : pushToCartDB,
+      containsItem : containsItem,
       pushToCartLocal : pushToCartLocal,
       clearLocalCart : clearLocalCart,
       pushLineItem : pushLineItem,

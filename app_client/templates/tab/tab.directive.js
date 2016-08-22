@@ -11,6 +11,7 @@
         link: function(scope) {
 
             $window.onresize = function() {
+                console.log(scope.templateUrl);
                 changeTemplate();
                 scope.$apply();
             };
