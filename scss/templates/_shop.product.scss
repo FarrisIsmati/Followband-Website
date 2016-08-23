@@ -144,52 +144,10 @@
 	}
 	&-map-holder p{
 		margin-top: 15px;
-		font-size: 24px;
-		@include fontSelect(lato, sans-serif);
-		font-weight: 300;
-		border-radius: 2px;
-		border-style: solid;
-		border-width: 1px;
-		border-color: $seafloor;
-		background-color: $seafloor;
-		color: white;
-		padding: 3px;
-		text-align: center;
-		width: 70px;
 	}
-	&-map-holder p:hover{
-		cursor: pointer;
-		color: $seafloor;
-		background-color: white;
-	}
-
-	&-cart-holder{
-		&{
-			padding-top: 25px;
-		}
-		& p{
-			font-size: 24px;
-			@include fontSelect(lato, sans-serif);
-			font-weight: 300;
-			border-radius: 2px;
-			background-color: $seafloor;
-			color: white;
-			padding: 3px;
-			text-align: center;
-			width: 140px;
-			border-radius: 2px;
-			border-style: solid;
-			border-width: 1px;
-			border-color: $seafloor;
-		}
-		& p:hover{
-			cursor:pointer;
-			background-color: white;
-			color: $seafloor;
-
-		}
-	}
-
 
 }
 
+.cart-btn{
+	margin-top: 20px;
+}

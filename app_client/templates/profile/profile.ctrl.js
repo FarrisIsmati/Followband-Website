@@ -4,12 +4,12 @@
 
 var app = angular.module("ProfileCtrl", []);
 
-app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state, $rootScope, authService){
-    var auth = authService;
+app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state, $rootScope, $timeout, authService){
+    $scope.loginBtn = "generic-button-default"
+    $scope.regBtn = "generic-button-default"
 
-    //Need to figure out how to move isLoggedIn an logout to the services
     $scope.isLoggedIn = function() {
-      var token = auth.getToken();
+      var token = authService.getToken();
       var payload;
 
       if(token){
@@ -24,41 +24,33 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
     };
 
     $scope.logout = function() {
-      if (auth.isLoggedIn()){
+      if (authService.isLoggedIn()){
         console.log('Loging out');
         $location.path('/main');
         $window.localStorage.removeItem('mean-token');
       }
     };
 
-    $scope.credentialsReg = {
-      name : "",
-      email : "",
-      password : "",
-      passwordconfirm : ""
-    };
-
-    $scope.credentialsLog = {
-      email : "",
-      password : "",
-    };
-
     $scope.onSubmitRegister = function () {
-      //If passwords don't match end func
-      //If user already exists return error
-      //All fields required handled in the view
+      $scope.credentialsReg = {
+        name : "",
+        email : "",
+        password : "",
+        passwordconfirm : ""
+      };
 
-      //Need
-      //Passwords must meet min requirements
       if ($scope.credentialsReg.password != $scope.credentialsReg.passwordconfirm) {
         console.log('passwords dont match');
         return
       } 
-      if (auth.passwordCompatible($scope.credentialsReg.password)){
+      if (authService.passwordCompatible($scope.credentialsReg.password)){
         console.log('Submitting registration');
-        auth.register($scope.credentialsReg)
+        authService.register($scope.credentialsReg)
           .error(function(err){
-            alert(err.problem);
+            $scope.regBtn = "generic-button-danger"
+            $timeout(function() {
+               $scope.regBtn = "generic-button-default";
+            }, 3000);    
         })
         .then(function(){
           $location.path('/profile');
@@ -79,16 +71,25 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
         }
     });
 
-    $scope.onSubmitLogin = function () {
-        auth.login($scope.credentialsLog)
-        .error(function(err){
-          alert(err.problem);
-          return
-        })
-        .then(function(){
-          $location.path('/main');
-        });
-    };
+    $scope.onSubmitLogin = function (form) {
+      $scope.credentialsLog = {
+        email : "",
+        password : "",
+      };
+
+      authService.login($scope.credentialsLog)
+      .error(function(err){
+        $scope.loginBtn = "generic-button-danger"
+        $timeout(function() {
+           $scope.loginBtn = "generic-button-default";
+        }, 3000);        
+        return err.problem;
+      })
+      .then(function(){
+
+        $location.path('/main');
+      });
+  };
 
 
 

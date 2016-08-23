@@ -54,7 +54,7 @@
 			<h3>{{currentCoordinates.lat}}</h3>
 			<h3>{{currentCoordinates.lng}}</h3>
 
-			<p ui-sref="map" ui-sref-active="active">map</p>
+			<p class="generic-button-default" ui-sref="map" ui-sref-active="active">map</p>
 
 		</div>
 
@@ -78,11 +78,7 @@
 
 		</div>
 
-		<div class="shop-content-button-default">
-
-			<p ng-disabled="" ng-click="exportProduct()">add to cart</p>
-
-		</div>
+		<p class="cart-btn generic-button-default" ng-disabled="" ng-click="exportProduct()">add to cart</p>
 
 	</div>
 

@@ -1,11 +1,10 @@
-
 <div class="login_holder">
 	<h1 class="login_title">Login</h1>
 	<h2 class="login_subtitle">Not a member? Please register instead.</h2>
 
 	<div class="form_holder">
 
-		<form  ng-submit="onSubmitLogin()">
+		<form  name="loginForm" ng-submit="onSubmitLogin(loginForm)">
 	        <div class="form-group">
 	            <label>Email</label>
 	            <input type="text" class="form-control" name="email"placeholder="Enter email" ng-model="credentialsLog.email" required>
@@ -16,40 +15,40 @@
 	            <input type="password" class="form-control" name="password"ng-model="credentialsLog.password" required>
 	        </div>
 
-	        <button type="submit" class="btn btn-default btn-lg">Login</button>
+	        <button name="loginBtn" type="submit" ng-class="loginBtn">Login</button>
     	</form>
 	</div>
 
 	<h1 class="login_title">Register</h1>
 	<h2 class="login_subtitle">Already a member? Please login instead.</h2>
 
-<div class="form_holder">
+	<div class="form_holder">
 
-	<form ng-submit="onSubmitRegister()">
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="credentialsReg.email" required>
-        </div>
-        <div class="form-group">
-	        <label>Name</label>
-	        <input type="text" class="form-control" name="name" placeholder="Name" ng-model="credentialsReg.name" required>
-	    </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="credentialsReg.password" required>
-        </div>
+		<form ng-submit="onSubmitRegister()">
+	        <div class="form-group">
+	            <label>Email</label>
+	            <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="credentialsReg.email" required>
+	        </div>
+	        <div class="form-group">
+		        <label>Name</label>
+		        <input type="text" class="form-control" name="name" placeholder="Name" ng-model="credentialsReg.name" required>
+		    </div>
+	        <div class="form-group">
+	            <label>Password</label>
+	            <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="credentialsReg.password" required>
+	        </div>
 
-       	<div class="form-group">
-	        <label>Confirm Password</label>
-	        <input type="password" class="form-control" name="passwordconfirm" placeholder="Password" ng-model="credentialsReg.passwordconfirm" required>
-	    </div>
+	       	<div class="form-group">
+		        <label>Confirm Password</label>
+		        <input type="password" class="form-control" name="passwordconfirm" placeholder="Password" ng-model="credentialsReg.passwordconfirm" required>
+		    </div>
 
-        <button type="submit" class="btn btn-default btn-lg">Signup</button>
-    </form>
-		
-	</div>
+	        <button type="submit" ng-class="regBtn">Signup</button>
+	    </form>
+			
+		</div>
 
 </div>
 
-<!--BOTTOM
-<footer></footer>-->
+<!------BOTTOM------>
+<footer></footer>
