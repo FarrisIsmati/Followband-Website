@@ -16,6 +16,7 @@ app.controller('UserProfCtrl', function($scope, $location, dataService){
       	$scope.user = data
       })
       .error(function (e) {
+        $location.path('/main');
         console.log(e);
       });
 

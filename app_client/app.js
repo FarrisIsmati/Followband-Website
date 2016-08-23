@@ -1,7 +1,7 @@
 "use strict";
 (function(){
 
-  var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'MainCtrl', 'ShopCtrl', 'CartCtrl', 'RouteCtrl', 'ShopProductCtrl', 'ProfileCtrl', 'UserProfCtrl', 'MapCtrl', 'ShopService', 'MapService', 'DataService', 'CartService', 'AuthService', 'StateService']);
+  var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'MainCtrl', 'ShopCtrl', 'CartCtrl', 'RouteCtrl', 'ShopProductCtrl', 'ProfileCtrl', 'UserProfCtrl', 'MapCtrl', 'RegSuccessCtrl', 'ShopService', 'MapService', 'DataService', 'CartService', 'AuthService', 'StateService']);
 
   app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
     $urlRouterProvider.otherwise("/main");
@@ -66,6 +66,15 @@
           "mainView": {
             templateUrl: '/templates/userprof/userprof.view.html',
             controller: 'UserProfCtrl'
+          }
+        }
+      })
+      .state('registerSuccess', {
+        url: '/regSuccess',
+        views: {
+          "mainView": {
+            templateUrl: '/templates/authSuccess/register.success.view.html',
+            controller: 'RegSuccessCtrl'
           }
         }
       })

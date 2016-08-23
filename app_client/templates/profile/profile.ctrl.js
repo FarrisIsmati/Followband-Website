@@ -8,6 +8,18 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
     $scope.loginBtn = "generic-button-default"
     $scope.regBtn = "generic-button-default"
 
+    $scope.credentialsReg = {
+      name : "",
+      email : "",
+      password : "",
+      passwordconfirm : ""
+    };
+
+    $scope.credentialsLog = {
+      email : "",
+      password : "",
+    };
+
     $scope.isLoggedIn = function() {
       var token = authService.getToken();
       var payload;
@@ -32,13 +44,6 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
     };
 
     $scope.onSubmitRegister = function () {
-      $scope.credentialsReg = {
-        name : "",
-        email : "",
-        password : "",
-        passwordconfirm : ""
-      };
-
       if ($scope.credentialsReg.password != $scope.credentialsReg.passwordconfirm) {
         console.log('passwords dont match');
         return
@@ -53,7 +58,7 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
             }, 3000);    
         })
         .then(function(){
-          $location.path('/profile');
+          $location.path('/regSuccess');
         });
       } else {
         console.log('password doesnt meet requirements');
@@ -72,11 +77,6 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
     });
 
     $scope.onSubmitLogin = function (form) {
-      $scope.credentialsLog = {
-        email : "",
-        password : "",
-      };
-
       authService.login($scope.credentialsLog)
       .error(function(err){
         $scope.loginBtn = "generic-button-danger"
@@ -86,11 +86,23 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
         return err.problem;
       })
       .then(function(){
-
-        $location.path('/main');
+        $location.path('/shop');
       });
   };
 
+  $scope.authLogin = true;
+
+  $scope.changeAuthLogin = function(){
+    if ($scope.authLogin){
+        $scope.authLogin = false;
+    } else {
+      $scope.authLogin = true;
+    }
+  }
+
+  $scope.returnAuthLogin = function(){
+      return $scope.authLogin;
+  }
 
 
   });

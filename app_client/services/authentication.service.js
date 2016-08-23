@@ -69,11 +69,14 @@ var app = angular.module("AuthService", []);
       var re_num = /(?=.*[0-9])/.test(password);
       var re_low = /(?=.*[a-z])/.test(password);
       var re_up = /(?=.*[A-Z])/.test(password);
-
+      console.log(password);
+      console.log(re_num);
+      console.log(re_low);
+      console.log(re_up);
       if ((password.indexOf(' ') <= 0) && (re_num) && (re_low) && (re_up) && (password.length > 6)){
         return true;
       }
-      return false;
+      console.log('passwrodfailed')
     };
 
     return {

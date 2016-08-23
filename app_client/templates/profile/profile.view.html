@@ -1,8 +1,9 @@
-<div class="login_holder">
-	<h1 class="login_title">Login</h1>
-	<h2 class="login_subtitle">Not a member? Please register instead.</h2>
+<div class="authentication-holder">
 
-	<div class="form_holder">
+
+	<div class="form_holder" ng-show="returnAuthLogin()">
+		<h1 class="login_title">Login</h1>
+		<h2 class="login_subtitle">Not a member? Please <span ng-click="changeAuthLogin()" class="switch-auth">register</span> instead.</h2>
 
 		<form  name="loginForm" ng-submit="onSubmitLogin(loginForm)">
 	        <div class="form-group">
@@ -12,19 +13,21 @@
 
 	        <div class="form-group">
 	            <label>Password</label>
-	            <input type="password" class="form-control" name="password"ng-model="credentialsLog.password" required>
+	            <input type="password" placeholder="Password" class="form-control" name="password"ng-model="credentialsLog.password" required>
 	        </div>
 
 	        <button name="loginBtn" type="submit" ng-class="loginBtn">Login</button>
     	</form>
 	</div>
 
-	<h1 class="login_title">Register</h1>
-	<h2 class="login_subtitle">Already a member? Please login instead.</h2>
 
-	<div class="form_holder">
 
-		<form ng-submit="onSubmitRegister()">
+	<div class="form_holder" ng-hide="returnAuthLogin()">
+		<h1 class="login_title">Register</h1>
+		<h2 class="login_subtitle">Already a member? Please <span ng-click="changeAuthLogin()" class="switch-auth">login</span> instead.</h2>
+
+		<form name="registerForm" ng-submit="onSubmitRegister()">
+
 	        <div class="form-group">
 	            <label>Email</label>
 	            <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="credentialsReg.email" required>
@@ -33,7 +36,7 @@
 		        <label>Name</label>
 		        <input type="text" class="form-control" name="name" placeholder="Name" ng-model="credentialsReg.name" required>
 		    </div>
-	        <div class="form-group">
+	        <div name="myPassword" class="form-group">
 	            <label>Password</label>
 	            <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="credentialsReg.password" required>
 	        </div>
