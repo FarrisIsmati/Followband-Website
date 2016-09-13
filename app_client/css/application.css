@@ -498,12 +498,15 @@ body {
 .shop-content-product {
   float: left;
   width: 30%;
-  height: 40%;
+  height: 30%;
   margin-right: 3%;
-  margin-bottom: 5%; }
+  margin-bottom: 10%; }
+.shop-content-product:hover > h1 {
+  color: #18A6B7;
+  cursor: pointer; }
 .shop-content-product img {
   width: 100%;
-  height: 80%; }
+  height: 100%; }
 .shop-content-product img:hover {
   cursor: pointer; }
 .shop-content-product h1 {

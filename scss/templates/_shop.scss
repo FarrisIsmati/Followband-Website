@@ -20,22 +20,26 @@
 		&{  
 			float: left;
 			width: 30%;
-			height: 40%;
+			height: 30%;
 			margin-right: 3%;
-			margin-bottom: 5%;
+			margin-bottom: 10%;
+		}
+		&:hover > h1 {
+			color: $underLine;
+			cursor: pointer;
 		}
 		& img{
 			width: 100%;
-			height: 80%;
+			height: 100%;
 		}
-		& img:hover{
+		& img:hover {
 			cursor: pointer;
 		}
 		& h1{
 			@include fontSelect(lato, sans-serif);
 			font-weight: 300;
 			font-size: 30px;
-			color: $tabColor;
+			color: $tabColor
 		}
 		& h2{
 			@include fontSelect(lato, sans-serif);
