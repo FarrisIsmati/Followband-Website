@@ -26,15 +26,15 @@
         z-index: 100;
         bottom: 5%;
         @include centerNoFlex();
-        width: 37%;
+        width: 42%;
     }
     &-save{
         &{
             background-color: $translucentLight;
             @include padding(5px, 5px, 10px, 10px);
-            border-radius: 4px;
-            font-size: .6em;
-            @include fontSelect(lucidia, serif);
+            border-radius: 3px;
+            font-size: 1.2em;
+            @include fontSelect(lato, sans-serif);
             float:right;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
@@ -60,7 +60,7 @@
         & p{
             color: $tabColor;
             letter-spacing: 5px;
-            font-size: .6em;
+            font-size: 1.2em;
             @include fontSelect(lucidia, serif);
         }
         & p span{
@@ -75,22 +75,30 @@
 .map-display-tip{
     &{   
         border-radius: 12px;
-        background-color: $translucentGrey;
-        height: 600px;
-        width: 1200px;
+        background-color: $translucentLight;
+        padding: 20px;
         position:absolute;
         z-index: 100;
         @include centerNoFlex();
-        top: 45%;
+        top: 40%;
         display:flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
     &:hover{
         cursor: pointer;
     }
     &-deactive{
         display:none;
+    }
+    &-text-top{
+        @include fontSelect(lato, sans-serif);
+        font-size: 2.3em;
+    }
+    &-text-bottom{
+        @include fontSelect(lato, sans-serif);
+        font-size: 1.3em;
     }
 }
 
@@ -121,9 +129,70 @@
 }
 
 #pac-input:focus {
-border-color: #4d90fe;
+    border-color: #4d90fe;
 }
 
 .pac-container {
-font-family: Roboto;
+    font-family: Roboto;
+}
+
+/* ------------------ MEDIA QUERIES ----------------*/
+
+@media (max-width: 1400px){
+  .map-coords-display{
+        &-save{
+            &{
+                font-size: .7em;
+            }
+        }
+        &-holder{
+            & p{
+                font-size: .7em;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1100px){
+    .map-coords-display{
+        & {    
+            width: auto;
+        }
+        &-save{
+            &{
+                font-size: 1.5em;
+                float:none;
+            }
+        }
+        &-holder{
+            &{
+                display: none;
+            }
+        }
+    }
+
+    .map-display-tip{
+        &{   
+            top: 40%;
+        }
+    }
+
+    #pac-input {
+        width: 150px;
+    }
+
+}
+
+@media (max-width: 500px){
+    .map-display-tip{
+        &-text-top{
+            @include fontSelect(lato, sans-serif);
+            font-size: 1.5em;
+        }
+        &-text-bottom{
+            @include fontSelect(lato, sans-serif);
+            font-size: .7em;
+        }
+    }
 }

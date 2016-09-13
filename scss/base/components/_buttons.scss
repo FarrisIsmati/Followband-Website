@@ -254,14 +254,10 @@
   }
   p:hover{
       cursor:pointer;
-      @include transformScale(1.1,1.1);
-      @include animate-ease(100ms);
   }
   p{
       font-family: Roboto;
       font-size: 3em;
-      @include transformScale(1,1);
-      @include animate-ease(70ms);
   }
 }
 
