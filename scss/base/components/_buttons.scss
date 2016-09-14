@@ -2,6 +2,89 @@
 
 
 //-----------------------TAB BUTTONS-----------------------
+.nav-tab-li{
+  float: left;
+}
+.nav-tab{
+  &{
+    @include fontSelect(lato, sans-serif);
+    font-size: 2.5em;
+    padding: 5px 12px;
+    color: $tabColor;
+    margin-bottom: 1px;
+    margin: 0px 0px 0px 0px;
+    border: 0px;
+    outline: 0;
+    @include animate-ease(300ms);
+  }
+  &:hover{
+    cursor: pointer;
+    outline: 0;
+    color: $icon;
+    margin: 0px 0px 0px 0px;
+    @include animate-ease(300ms);
+    background-color: white;
+    text-decoration: none;
+  }
+
+  &.active{
+    color: $icon;
+    cursor: pointer;
+    border: 0px;
+    outline: 0;
+    margin: 0px 0px 0px 0px;
+    text-decoration: none;
+    @include animate-ease(300ms);
+  }
+
+}
+
+//------very sloppy
+
+.tab-bar-right{
+    &::after{
+    content:"";
+    position: absolute;
+    top: 0px;
+    bottom: 40px;
+    left: 50%;
+    right: 0px;
+    background-color: $icon;
+    @include animate-ease(300ms);
+    width: 50%;
+  }
+  &:hover::after{
+    @include animate-ease(300ms);
+    bottom: 35px;
+  }
+  &.active::after{
+    bottom: 35px;
+  }
+}
+
+.tab-bar-left{
+    &::after{
+    content:"";
+    position: absolute;
+    top: 0px;
+    bottom: 40px;
+    left: 0;
+    right: 0px;
+    background-color: $icon;
+    @include animate-ease(300ms);
+    width: 50%;
+  }
+  &:hover::after{
+    @include animate-ease(300ms);
+    bottom: 35px;
+  }
+  &.active::after{
+    bottom: 35px;
+  }
+}
+
+//------Use for reference old
+
 .nav-tabs>li>a{
   & {
     @include fontSelect(lato, sans-serif);
@@ -54,7 +137,6 @@
       @include animate-ease(300ms);
     }
 }
-
 
 //-----------------------TAB SVG BUTTONS-----------------------
 .button:hover, .active {
