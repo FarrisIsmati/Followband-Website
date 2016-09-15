@@ -20,9 +20,9 @@
 }
 
 .navbar-static-text {
-	@include fontSelect(Roboto Condensed, sans-serif);
-  font-weight: 700;
-	font-size: 1.3em;
+	@include fontSelect(Halis R, sans-serif);
+  font-weight: 800;
+	font-size: 1.1em;
 	color: $tabColor;
 }
 

@@ -2,12 +2,17 @@
 
 
 //-----------------------TAB BUTTONS-----------------------
-.nav-tab-li{
-  float: left;
+.nav-tab-wrapper{
+  display:flex;
+  justify-content: center;
 }
+
+.nav-tab-li{
+}
+
 .nav-tab{
   &{
-    @include fontSelect(lato, sans-serif);
+    @include fontSelect(Halis R, sans-serif);
     font-size: 2.5em;
     padding: 5px 12px;
     color: $tabColor;
@@ -39,103 +44,53 @@
 
 }
 
-//------very sloppy
+//-----------------------Floating Bar Above Tab Buttons-----------------------
+// Need to figure out how to do this better
 
 .tab-bar-right{
+    &{
+    width: 100%;
+    }
     &::after{
     content:"";
     position: absolute;
     top: 0px;
-    bottom: 40px;
+    bottom: 75px;
     left: 50%;
     right: 0px;
     background-color: $icon;
     @include animate-ease(300ms);
-    width: 50%;
+    width: 6%;
   }
   &:hover::after{
     @include animate-ease(300ms);
-    bottom: 35px;
+    bottom: 64px;
   }
   &.active::after{
-    bottom: 35px;
+    bottom: 64px;
   }
 }
 
 .tab-bar-left{
-    &::after{
+  &::after{
     content:"";
     position: absolute;
     top: 0px;
-    bottom: 40px;
+    bottom: 75px;
     left: 0;
     right: 0px;
     background-color: $icon;
     @include animate-ease(300ms);
-    width: 50%;
+    width: 6%;
+    margin-left: 43.5%;
   }
   &:hover::after{
     @include animate-ease(300ms);
-    bottom: 35px;
+    bottom: 64px;
   }
   &.active::after{
-    bottom: 35px;
+    bottom: 64px;
   }
-}
-
-//------Use for reference old
-
-.nav-tabs>li>a{
-  & {
-    @include fontSelect(lato, sans-serif);
-    font-size: 2.5em;
-    padding: 5px 12px;
-    color: $tabColor;
-    margin-bottom: 1px;
-    margin: 0px 0px 0px 0px;
-    border: 0px;
-    @include animate-ease(300ms);
-  }
-
-  &::after{
-    content: "";
-    height: 6px;
-    background-color: $icon;
-    left: 0;
-    right: 0;
-    top: -4px;
-    @include animate-ease(300ms);
-  }
-
-  &:hover {
-    &{      
-      cursor: pointer;
-      color: $icon;
-      margin: 0px 0px 0px 0px;
-      @include animate-ease(300ms);
-      background-color: white;
-    }
-    &::after{
-      @include animate-ease(300ms);
-      position: absolute;
-      top: 0px;
-    }
-  }
-}
-
-.nav-tabs>li.active>a{
-  &, &:hover, &:focus {
-    color: $icon;
-    cursor: pointer;
-    border: 0px;
-    margin: 0px 0px 0px 0px;
-    @include animate-ease(300ms);
-  }
-  &::after{
-      position: absolute;
-      top: 0px;
-      @include animate-ease(300ms);
-    }
 }
 
 //-----------------------TAB SVG BUTTONS-----------------------
@@ -209,7 +164,7 @@
 .dropdown-menu{
   &{
     padding-top: 6px;
-    margin-top: 22px;
+    margin-top: 15px;
     min-width: 0px;
     @include centerNoFlex();
     border-top: 0px;
@@ -218,6 +173,7 @@
     border-right: 0px;
     border-top-right-radius: 0;
     border-bottom: 1px solid #ccc;
+    @include fontSelect(Halis R, sans-serif);
   }
 
   &>li>a:hover{
@@ -231,7 +187,8 @@
 //-----------------------NAVBAR BUTTONS-----------------------
 .navbar-button {
   &{
-    @include fontSelect(lato, sans-serif);
+    @include fontSelect(Halis R, sans-serif);
+    font-weight: 300;
     color: $tabColor;
     font-size: 1em;
     @include animate-ease(300ms);
@@ -281,8 +238,8 @@
 
 //-----------------------MAIN START BUTTON-----------------------
 .main-start-button-holder {
-  @include fontSelect(Montserrat, sans-serif);
-  font-weight: 300;
+  @include fontSelect(Halis R, sans-serif);
+  font-weight: 500;
   width: 100%;
   display: flex;
   justify-content: center;

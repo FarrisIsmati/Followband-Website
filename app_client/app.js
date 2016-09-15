@@ -4,7 +4,7 @@
   var app = angular.module("followapp", ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router', 'MainCtrl', 'ShopCtrl', 'CartCtrl', 'RouteCtrl', 'ShopProductCtrl', 'ProfileCtrl', 'UserProfCtrl', 'MapCtrl', 'RegSuccessCtrl', 'ShopService', 'MapService', 'DataService', 'CartService', 'AuthService', 'StateService']);
 
   app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
-    $urlRouterProvider.otherwise("/shop");
+    $urlRouterProvider.otherwise("/main");
     $locationProvider.html5Mode(true);
     $stateProvider
       .state('main', {

@@ -65,6 +65,13 @@
   -o-transform: translate(-50%, -50%);
 }
 
+@mixin centerVerticle(){
+    transform: translate(0%, 25%);
+    -webkit-transform: translate(0%, 25%);
+    -moz-transform: translate(0%, 25%);
+    -o-transform: translate(0%, 25%);
+}
+
 @mixin padding($top, $down, $left, $right){
   padding-top: ($top);
   padding-bottom: ($down);

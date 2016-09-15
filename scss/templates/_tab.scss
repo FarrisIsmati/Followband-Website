@@ -4,82 +4,84 @@
   height: 20%;
 }
 
-.tabs-holder {
+.tab-holder {
   position: fixed;
-  clear: both;
   top: 0; 
   left: 0;
   z-index: 199;
-  padding-bottom: 8px;
-  width: 100vw;
+  padding-bottom: 18px;
+  width: 100%;
   background-color: white;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
-.main-tabs{
-  font-size: .8em;
-  float: left;
-  position: absolute;
-  margin-left: 40%;
-  transform: translate(-100%, 0%);
-  -webkit-transform: translate(-100%, 0%);
-  -moz-transform: translate(-100%, 0%);
-  -o-transform: translate(-100%, 0%);
+#tab-container {
+  text-align:center;
 }
 
-.header-text {
-  margin-top: 3px;
-  font-size: .8em;
-  float: left;
+#tab-left {
+  & { 
+    @include centerVerticle();
+    float:left;
+    width:300px;
+  }
+  & img {
+    width: 65%;
+    height: 65%;
+  }
 }
 
-.svg_buttons {
-  float: right;
-  display: flex;
-    transform: translate(0%, 25%);
-  -webkit-transform: translate(0%, 25%);
-  -moz-transform: translate(0%, 25%);
-  -o-transform: translate(0%, 25%);
+#tab-center {
+  font-size: 1em;
+  display: inline-block;
+  margin:0 auto;
+  width:300px;
+}
+
+#tab-right {
+  & {
+      @include centerVerticle();
+      float:right;
+      width:300px;
+  }
+  & .svg-buttons-holder {
+    float:right;
+    display: flex;
+  }
 }
 
 .button {
   float: right;
 }
 
-.tabs-under {
-  top: 0; left: 0;
-  z-index: 198;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  min-height: 5vh;
-  width: 100vw;
-  background-color: white;
-}
-
-.nav-tabs {
-  border-bottom: 0px;
-}
-
-.tabs-logo-img{
-  max-width: 50px;
-  max-height: 50px;
-}
-
 /*--------------Media Queries ----------------*/
+@media (max-width: 1500px){
+  #tab-left {
+    & { 
+      width:250px;
+    }
+  }
 
-@media (max-width: 1000px){
+  #tab-center {
+    width:250px;
+    font-size: .9em;
+  }
 
-
-  .header-text {
-    font-size: .7em;
+  #tab-right {
+    & {
+        width:250px;
+    }
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 1200px){
+  .tab-holder{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
   .header-text {
-    font-size: .5em;
+    font-size: .7em;
   }
 }

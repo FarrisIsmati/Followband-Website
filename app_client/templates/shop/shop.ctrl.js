@@ -48,9 +48,8 @@
 		
 		// Set the reference for current selected product
 		$scope.setProduct = function(product) {
-			var setProduct = product;
 			dataService.storeToLocal('currentProduct', product);
-			$state.go('shop.product', { obj: JSON.stringify(setProduct) } )
+			$state.go('shop.product', { obj: JSON.stringify(product) } )
 		}
 
 	});

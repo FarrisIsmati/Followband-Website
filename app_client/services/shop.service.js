@@ -3,12 +3,19 @@
 (function() {
 
   var app = angular.module("ShopService", []);
-  app.factory('shopService', function shopService ($http, dataService) {
+  app.service('shopService', function shopService ($http, dataService) {
     var currentProduct = '';
 
-    var menuButtons = [{header: "BEADED", isActive: true},
-                      {header: "LEATHER", isActive: false}
-                      ];
+    var menuButtons = [
+                      {header: "ORIGINAL", isActive: true},
+                      {header: "GREEK", isActive: false}
+                     ];
+
+    if (!dataService.retrieveLocal('navbarBracelet')){
+      dataService.storeToLocal('navbarBracelet', menuButtons);
+    } else {
+      menuButtons = dataService.retrieveLocal('navbarBracelet');
+    }
 
     return {
       returnSetMenuState : function(){
@@ -17,6 +24,15 @@
       // Get and set individual products
       setCurrentProduct : function (selectedProduct){
         currentProduct = selectedProduct;
+
+        for (var product in menuButtons){
+          if (selectedProduct.header === menuButtons[product].header){
+            menuButtons[product]. isActive = true;
+          } else {
+            menuButtons[product]. isActive = false;
+          }
+        }
+        dataService.storeToLocal('navbarBracelet', menuButtons);
       },
       returnCurrentProduct : function (){
         return currentProduct;

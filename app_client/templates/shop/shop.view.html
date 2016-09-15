@@ -1,14 +1,18 @@
+<headertab></headertab>
 
 <div class="shop-view-holder">
 	<div class="navbar-holder">
 
-	<!-- NOTE: It's bad practice to duplicate the navbar when it already exists in a directive change this to the directive when you know how to let it reference the products in the controller -->
-	<div class="navbar-content-holder">
-			<div class="navbar-static-text">
-				BRACELETS
-			</div>
-				<div ng-repeat="b in menuButtons" ng-click="buttonActive(b);" class="navbar-button" ui-sref="shop" ng-class="{'navbar-button-active': b.isActive}">{{b.header}}</div>
+		<!-- NOTE: It's bad practice to duplicate the navbar when it already exists in a directive change this to the directive when you know how to let it reference the products in the controller -->
+		<div class="navbar-content-holder">
+				<div class="navbar-static-text">
+					BRACELETS
+				</div>
+				<div ng-repeat="b in menuButtons" ng-click="buttonActive(b);" class="navbar-button" ui-sref="shop" ng-class="{'navbar-button-active': b.isActive}">
+					{{b.header}}
+				</div>
 		</div>
+
 	</div>
 
 	<div class="shop-content-holder" ng-hide="getState()">
@@ -19,6 +23,4 @@
 			</div>
 	</div>
 
-  	<div ui-view="mainView.product">
-
-</div>
+ <div ui-view="mainView.product"></div>

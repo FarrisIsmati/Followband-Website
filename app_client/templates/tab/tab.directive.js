@@ -19,9 +19,9 @@
 
             function changeTemplate() {
                 var screenWidth = $window.innerWidth;
-                if (screenWidth < 1000) {
+                if (screenWidth < 1200) {
                     scope.templateUrl = 'templates/tab/tab.view.mobile.html';
-                } else if (screenWidth >= 1000) {
+                } else if (screenWidth >= 1200) {
                     scope.templateUrl = 'templates/tab/tab.view.html';
                 }
             }
