@@ -5,6 +5,9 @@
 
 	//Removed stateParams fyi
 	app.controller('ShopCtrl', function($scope, $state, $rootScope, dataService, shopService){
+		// Set scope for mobile and web versions of page
+		$scope.shopview = ['/templates/shop/shop.view.mobile.html', '/templates/shop/shop.view.html']
+
 		// If there are products set the scope of products
 		dataService.getProducts()
 	    .success(function(data) {
