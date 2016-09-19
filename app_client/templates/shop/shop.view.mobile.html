@@ -1,13 +1,22 @@
 <templatehold ng-controller="TabCtrl" templates="tabview"></templatehold>
-
 <div class="shop-view-holder">
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-	<p>LOLHAHA</p>
-</div>
+	
+	<div class="shop-topbar-holder">
+
+				<div ng-repeat="b in menuButtons" ng-click="buttonActive(b);" class="topnavbar-button" ui-sref="shop" ng-class="{'topnavbar-button-active': b.isActive}">
+					{{b.header}}
+				</div>
+
+	</div>
+
+
+
+	<div class="shop-content-mobile-holder" ng-hide="getState()">
+			<div ng-click="setProduct(p);" ui-sref=".product" ui-sref-active="active" ng-repeat="p in products | filter:productMatch" class="shop-content-mobile-product">
+				<img ng-controller="RouteCtrl" ng-src="{{p.imgLink}}"/>
+				<h1>{{p.name}}</h1>
+				<h2>{{ p.price | currency }}</h2>
+			</div>
+	</div>
+
+ <div class="shop-product-holder" ui-view="mainView.product"></div>

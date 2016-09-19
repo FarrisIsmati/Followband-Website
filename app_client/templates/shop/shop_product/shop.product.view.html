@@ -1,87 +1,69 @@
-<templatehold ng-controller="TabCtrl" templates="tabview"></templatehold>
 
 <!-- INDIVIDUAL PRODUCT VIEW -->
-<div class="shop-product-holder">
 
-	<div class="shop-content-button-goback" ng-controller="RouteCtrl" ui-sref="shop" ui-sref-active="active">go back</div>
+<div class="shop-content-button-goback" ng-controller="RouteCtrl" ui-sref="shop" ui-sref-active="active">go back</div>
 
-	<div class="shop-content-main-holder">
+<div class="shop-content-main-holder">
 
-		<div class="shop-content-main-image-holder" ng-controller="ShopCtrl">
+	<div class="shop-content-main-image-holder" ng-controller="ShopCtrl">
 
-			<img class="shop-content-main-image" ng-src="http://placehold.it/750x450" ng-click="returnProduct()">
+		<img class="shop-content-main-image" ng-src="http://placehold.it/750x450" ng-click="returnProduct()">
 
-			<div class="shop-content-main-image-small-holder">
+	</div>
 
-				<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+</div>
 
-				<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+<div class="shop-content-rightbar-holder">
 
-				<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+	<div class="shop-content-rightbar-description-holder">
 
-				<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+		<h1 class="shop-content-rightbar-description-object">{{currentSelectedProduct.name}}</h1>
 
-				<img class="shop-content-main-image-small" ng-src="http://placehold.it/150x150">
+		<div class="shop-content-rightbar-description-details">
 
-			</div>
+			<p>{{currentSelectedProduct.description}}</p>
 
 		</div>
 
 	</div>
 
-	<div class="shop-content-rightbar-holder">
+	<div class="shop-content-rightbar-price">
 
-		<div class="shop-content-rightbar-description-holder">
-
-			<h1 class="shop-content-rightbar-description-object">{{currentSelectedProduct.name}}</h1>
-
-			<div class="shop-content-rightbar-description-details">
-
-				<p>{{currentSelectedProduct.description}}</p>
-
-			</div>
-
-		</div>
-
-		<div class="shop-content-rightbar-price">
-
-			<p>{{currentSelectedProduct.price | currency}}</p>
-
-		</div>
-
-		<div class="shop-content-rightbar-map-holder" ng-controller="RouteCtrl">
-
-			<h2>Coordinates</h2>
-
-			<h3>{{currentCoordinates.lat}}</h3>
-			<h3>{{currentCoordinates.lng}}</h3>
-
-			<p class="generic-button-default" ui-sref="map" ui-sref-active="active">map</p>
-
-		</div>
-
-		<div class="shop-content-rightbar-size-holder">
-
-			<p>Size</p>
-
-			<div class="dropdown">
-
-				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{sizeDefault}}
-				<span class="caret"></span></button>
-
-				<ul class="dropdown-menu">
-
-					<li  ng-disabled="true">choose size</li>
-					<li ng-repeat="s in sizes" ng-click="changeDropdownSelected(s)">{{s}}</li>
-
-				  </ul>
-
-			</div>
-
-		</div>
-
-		<p class="cart-btn generic-button-default" ng-disabled="" ng-click="exportProduct()">add to cart</p>
+		<p>{{currentSelectedProduct.price | currency}}</p>
 
 	</div>
+
+	<div class="shop-content-rightbar-map-holder" ng-controller="RouteCtrl">
+
+		<h2>Coordinates</h2>
+
+		<h3>{{currentCoordinates.lat}}</h3>
+		<h3>{{currentCoordinates.lng}}</h3>
+
+		<p class="generic-button-default" ui-sref="map" ui-sref-active="active">map</p>
+
+	</div>
+
+	<div class="shop-content-rightbar-size-holder">
+
+		<p>Size</p>
+
+		<div class="dropdown">
+
+			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{sizeDefault}}
+			<span class="caret"></span></button>
+
+			<ul class="dropdown-menu">
+
+				<li  ng-disabled="true">choose size</li>
+				<li ng-repeat="s in sizes" ng-click="changeDropdownSelected(s)">{{s}}</li>
+
+			  </ul>
+
+		</div>
+
+	</div>
+
+	<p class="cart-btn generic-button-default" ng-disabled="" ng-click="exportProduct()">add to cart</p>
 
 </div>
