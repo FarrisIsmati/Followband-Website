@@ -16,7 +16,7 @@
 	</div>
 
 	<div class="shop-content-holder" ng-hide="getState()">
-			<div ng-click="setProduct(p);" ui-sref=".product" ui-sref-active="active" ng-repeat="p in products | filter:productMatch" class="shop-content-product">
+			<div ng-click="setProduct(p)" ui-sref-active="active" ng-repeat="p in products | filter:productMatch" class="shop-content-product">
 				<img ng-controller="RouteCtrl" ng-src="{{p.imgLink}}"/>
 				<h1>{{p.name}}</h1>
 				<h2>{{ p.price | currency }}</h2>

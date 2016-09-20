@@ -28,10 +28,9 @@
         }
       })
       .state('shop.product', {
-        url: '/product/:id',
+        url: '/product?obj',
         params: {
-          obj: null,
-          id: null
+          obj: null
         },
         views: {
           "mainView.product": {

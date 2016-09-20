@@ -1,54 +1,52 @@
 .shop-product-holder{
+	width: 100%;
+}
+
+.left-test{
+	float: left;
+}
+
+.right-test{
+	float: right;
 }
 
 .shop-content-main {
 	&-holder{
 		padding-left: 5%;
 		float: left;
-		max-width: 12%;
 		padding-top: 1em;
+		width: 70%;
+		margin-right: 5%;
 	}
 	&-image-holder{
 
 	}
 	&-image{
   		max-height: 30%;
-	}
-	&-image-small-holder{
-		& {
-			display:flex;
-			margin-top: 5px;
-		}
-		& img{
-		}
-	}
-	&-image-small{
-	}
-	&-description-holder{
-		margin-bottom: 20px;
+  		max-width: 100%;
 	}
 }
 
 .shop-content-rightbar{
 	&-holder{
 		float: right;
+		width: 25%;
 	}
 	&-holder p{
-		font-size: 24px;
+		font-size: 1em;
 		@include fontSelect(lato, sans-serif);
 		font-weight: 300;
 		color: $gunMetal;
     }
 	&-description-object{
-		font-size: 42px;
+		font-size: 2em;
 		@include fontSelect(lato, sans-serif);
     	font-weight: 400;
 	}
 	&-description-details{
 		word-wrap: break-word;
-		width: 12vw;
 		table-layout:fixed;
-		font-size: 24px;
+		font-size: 1em;
 		@include fontSelect(lato, sans-serif);
     	font-weight: 300;
 	}
@@ -64,7 +62,7 @@
 			border-color: $gunMetal;
 			@include fontSelect(lato, sans-serif);
 		    font-weight: 400;
-			font-size: 18px;
+			font-size: 1em;
 			border-radius: 2px;
 		}
 		& div button:hover{
@@ -83,7 +81,7 @@
 		& .dropdown-menu li{
 			@include fontSelect(lato, sans-serif);
 		    font-weight: 400;
-			font-size: 18px;
+			font-size: 1em;
 			color: $gunMetal;
 			padding-left: 8px;
 			padding-right: 8px;
@@ -96,7 +94,7 @@
 	}
 
 	&-size-holder p{
-		font-size: 42px;
+		font-size: 2em;
 		@include fontSelect(lato, sans-serif);
     	font-weight: 400;
     	color: $gunMetal;
@@ -111,7 +109,7 @@
 		vertical-align: middle;
 		@include fontSelect(lato, sans-serif);
 	    font-weight: 400;
-		font-size: 18px;
+		font-size: 1em;
 		margin: 3px;
 		width: 60px;
 		height: 35px;
@@ -129,8 +127,7 @@
 	}
 	&-map-holder h2{
 		word-wrap: break-word;
-		width: 12vw;
-		font-size: 42px;
+		font-size: 2em;
 		@include fontSelect(lato, sans-serif);
     	font-weight: 400;
     	color: $gunMetal;
@@ -139,7 +136,7 @@
 		margin-top: 5px;
 		@include fontSelect(lato, sans-serif);
 	    font-weight: 400;
-		font-size: 14px;
+		font-size: 1em;
     	color: $gunMetal;
 	}
 	&-map-holder p{

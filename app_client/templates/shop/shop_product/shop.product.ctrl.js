@@ -3,7 +3,7 @@
 
 	var app = angular.module("ShopProductCtrl", []);
 
-	app.controller('ShopProductCtrl', function($scope, dataService, cartService){
+	app.controller('ShopProductCtrl', function($scope, $stateParams, dataService, cartService){
 		// Set the scope of currentSelectedProduct to equal the saved current product in the data service
 		$scope.currentSelectedProduct = dataService.retrieveLocal('currentProduct');
 

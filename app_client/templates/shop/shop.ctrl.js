@@ -4,7 +4,7 @@
 	var app = angular.module("ShopCtrl", []);
 
 	//Removed stateParams fyi
-	app.controller('ShopCtrl', function($scope, $state, $rootScope, dataService, shopService){
+	app.controller('ShopCtrl', function($scope, $state, $rootScope, $stateParams, dataService, shopService){
 		// Set scope for mobile and web versions of page
 		$scope.shopview = ['/templates/shop/shop.view.mobile.html', '/templates/shop/shop.view.html']
 
@@ -52,7 +52,8 @@
 		// Set the reference for current selected product
 		$scope.setProduct = function(product) {
 			dataService.storeToLocal('currentProduct', product);
-			$state.go('shop.product', { obj: JSON.stringify(product) } )
+			$state.go('shop.product', { obj: JSON.stringify(product.name) } )
+			console.log($stateParams);
 		}
 
 	});

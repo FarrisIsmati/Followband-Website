@@ -1,15 +1,15 @@
 // Shop
 
 .shop-view-holder{
-
 	display: flex;
-	padding-top: 7vh;
-	padding-left: 15vw;
-  	padding-right: 15vw;
+	padding-top: 5%;
+	padding-left: 15%;
+  	padding-right: 15%;
 }
 
 .shop-content {
 	&-holder{	
+		width: 100%;
 		padding-left: 5%;
 		padding-top: 4vh;
 	}
@@ -95,3 +95,58 @@
 		}
 	}
 }
+
+
+/* ------------------ MOBILE -----------------------*/
+.shop-topbar-holder{
+	position: fixed;
+	display: flex;	
+	justify-content: space-around;
+	padding-bottom: 10px;
+	background-color: white;
+	margin-left: -10%;
+	padding-top: 20px;
+	width: 100%;
+}
+
+.shop-content-mobile {
+	&-holder{	
+		padding-left: 5%;
+		padding-top: 12vh;
+		display: flex;	
+		flex-direction: column;
+	}
+	&-product{
+		&{  
+		}
+		&:hover > h1 {
+			color: $underLine;
+			cursor: pointer;
+		}
+		&:hover > h2 {
+			color: $underLine;
+			cursor: pointer;
+		}
+		& img{
+			width: 100%;
+		}
+		& img:hover {
+			cursor: pointer;
+		}
+		& h1{
+			@include fontSelect(lato, sans-serif);
+			font-weight: 300;
+			font-size: 30px;
+			color: $tabColor
+		}
+		& h2{
+			@include fontSelect(lato, sans-serif);
+			font-weight: 300;
+			font-size: 28px;
+			color: $tabColor;
+			margin-bottom: 15%;
+		}
+	}
+}
+
+/* ------------------ MEDIA QUERIES ----------------*/

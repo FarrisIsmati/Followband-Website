@@ -164,7 +164,7 @@
 .dropdown-menu{
   &{
     padding-top: 6px;
-    margin-top: 15px;
+    margin-top: 7.5vh;
     min-width: 0px;
     @include centerNoFlex();
     border-top: 0px;
@@ -235,6 +235,34 @@
   }
 }
 
+//-----------------------TOPNAVBAR BUTTONS-----------------------
+
+.topnavbar-button {
+  &{
+    @include fontSelect(Halis R, sans-serif);
+    font-weight: 300;
+    color: $tabColor;
+    font-size: 2.3em;
+    @include animate-ease(300ms);
+    margin-right: 20px;
+  }
+  &:hover{
+    cursor: pointer;
+    color: $icon;
+    @include animate-ease(300ms);
+  }
+  &-active{
+    color: $icon;
+  }
+}
+
+@media (max-width: 600px){
+  .topnavbar-button {
+    &{
+      font-size: 1.5em;
+    }
+  }
+}
 
 //-----------------------MAIN START BUTTON-----------------------
 .main-start-button-holder {
