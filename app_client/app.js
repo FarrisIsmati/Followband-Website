@@ -34,7 +34,7 @@
         },
         views: {
           "mainView.product": {
-            templateUrl: '/templates/shop/shop_product/shop.product.view.html',
+            template: '<templatehold templates="productview"></templatehold>',
             controller: 'ShopProductCtrl',
             data: {}
           }

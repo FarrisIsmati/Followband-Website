@@ -3,7 +3,9 @@
 
 	var app = angular.module("ShopProductCtrl", []);
 
-	app.controller('ShopProductCtrl', function($scope, $stateParams, dataService, cartService){
+	app.controller('ShopProductCtrl', function($scope, $stateParams, $timeout, dataService, cartService){
+		$scope.productview = ['/templates/shop/shop_product/shop.product.view.mobile.html', '/templates/shop/shop_product/shop.product.view.html']
+
 		// Set the scope of currentSelectedProduct to equal the saved current product in the data service
 		$scope.currentSelectedProduct = dataService.retrieveLocal('currentProduct');
 
@@ -23,6 +25,8 @@
 			$scope.sizeDefault = item;
 		}
 
+		$scope.loading = false;
+
 		// Export all the aggragte product data to a lineItem
 		$scope.exportProduct = function(){
 			var lineItem = {
@@ -37,7 +41,15 @@
 				longitude: $scope.currentCoordinates.lng
 			}
 
+			$scope.loading = true;
+
 			cartService.pushLineItem(lineItem);
+
+			$timeout(function() {
+
+				$scope.loading = false;
+			}, 2000);
+
 		}
 	});
 	
