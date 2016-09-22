@@ -421,7 +421,6 @@ body {
   top: 0;
   left: 0;
   z-index: 199;
-  padding-bottom: 18px;
   width: 100%;
   background-color: white;
   padding-left: 15%;
@@ -436,10 +435,10 @@ body {
   -moz-transform: translate(0%, 25%);
   -o-transform: translate(0%, 25%);
   float: left;
-  width: 300px; }
+  width: 185px; }
 #tab-left img {
-  width: 65%;
-  height: 65%; }
+  width: 100%;
+  height: 100%; }
 
 #tab-center {
   font-size: 1em;
@@ -462,64 +461,37 @@ body {
   float: right; }
 
 /*--------------Media Queries ----------------*/
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
   #tab-left {
-    width: 250px; }
+    width: 165px; }
 
   #tab-center {
-    width: 250px;
+    width: 180px;
     font-size: .9em; }
 
   #tab-right {
-    width: 250px; } }
-@media (max-width: 1200px) {
+    width: 180px; } }
+@media (max-width: 700px) {
   #tab-left {
-    width: 220px; }
+    width: 155px; }
 
   #tab-center {
-    width: 220px;
-    font-size: .85em; }
+    width: 180px;
+    font-size: .9em; }
 
   #tab-right {
-    width: 220px; } }
-@media (max-width: 600px) {
-  .tab-holder {
-    padding-bottom: 5px; }
-
-  #tab-left {
-    transform: translate(0%, 25%);
-    -webkit-transform: translate(0%, 25%);
-    -moz-transform: translate(0%, 25%);
-    -o-transform: translate(0%, 25%);
-    float: left;
-    width: 200px; }
-  #tab-left img {
-    width: 75%;
-    height: 75%; } }
-@media (max-width: 400px) {
-  .tab-holder {
-    padding-bottom: 0px; }
-
-  #tab-left {
-    transform: translate(0%, 25%);
-    -webkit-transform: translate(0%, 25%);
-    -moz-transform: translate(0%, 25%);
-    -o-transform: translate(0%, 25%);
-    float: left;
-    width: 100px; }
-  #tab-left img {
-    width: 100%;
-    height: 100%; } }
+    width: 180px; } }
 .shop-view-holder {
   display: flex;
-  padding-top: 5%;
-  padding-left: 15%;
-  padding-right: 15%; }
+  margin-top: 8vh;
+  margin-left: 15%;
+  margin-right: 15%;
+  position: absoulte; }
 
 .shop-content-holder {
   width: 100%;
-  padding-left: 5%;
-  padding-top: 4vh; }
+  padding-left: 7%;
+  padding-top: 4%; }
 .shop-content-product {
   float: left;
   width: 260px;
@@ -550,8 +522,7 @@ body {
 /* ------------------ MEDIA QUERIES ----------------*/
 @media (max-width: 1400px) {
   .shop-content-holder {
-    padding-left: 5%;
-    padding-top: 4vh; }
+    padding-left: 9%; }
   .shop-content-product {
     float: left;
     width: 260px;
@@ -578,20 +549,21 @@ body {
     font-weight: 300;
     font-size: 28px;
     color: #3e3e3b; } }
+@media (max-width: 1000px) {
+  .shop-content-holder {
+    padding-left: 12%; } }
 /* ------------------ MOBILE -----------------------*/
 .shop-topbar-holder {
-  position: fixed;
-  display: flex;
-  justify-content: space-around;
-  padding-bottom: 10px;
+  position: absolute;
   background-color: white;
-  margin-left: -10%;
-  padding-top: 20px;
-  width: 100%; }
+  width: 72%; }
+.shop-topbar-holder > div:nth-child(2) {
+  float: right; }
+.shop-topbar-holder > div:nth-child(1) {
+  float: left; }
 
 .shop-content-mobile-holder {
-  padding-left: 5%;
-  padding-top: 12vh;
+  padding-top: 10vh;
   display: flex;
   flex-direction: column; }
 .shop-content-mobile-product:hover > h1 {
@@ -726,28 +698,28 @@ body {
   float: right;
   width: 25%; }
 .shop-content-rightbar-holder p {
-  font-size: 1em;
-  font-family: lato, sans-serif;
+  font-family: Halis R, sans-serif;
   font-weight: 300;
   color: #3e3e3b; }
 .shop-content-rightbar-description-object {
-  font-size: 2em;
-  font-family: lato, sans-serif;
-  font-weight: 400; }
+  font-size: 2.3em;
+  font-family: Halis R, sans-serif;
+  font-weight: 500; }
 .shop-content-rightbar-description-details {
   word-wrap: break-word;
   table-layout: fixed;
-  font-size: 1em;
-  font-family: lato, sans-serif;
+  font-size: 1.5em;
+  font-family: Halis R, sans-serif;
   font-weight: 300; }
 .shop-content-rightbar-price {
-  margin-top: 10px; }
+  margin-top: 10px;
+  font-size: 1.5em; }
 .shop-content-rightbar-size-holder {
   margin-top: 20px; }
 .shop-content-rightbar-size-holder div button {
   color: #3e3e3b;
   border-color: #3e3e3b;
-  font-family: lato, sans-serif;
+  font-family: Halis R, sans-serif;
   font-weight: 400;
   font-size: 1em;
   border-radius: 2px; }
@@ -762,7 +734,7 @@ body {
 .shop-content-rightbar-size-holder .dropdown-menu {
   left: 0; }
 .shop-content-rightbar-size-holder .dropdown-menu li {
-  font-family: lato, sans-serif;
+  font-family: Halis R, sans-serif;
   font-weight: 400;
   font-size: 1em;
   color: #3e3e3b;
@@ -772,18 +744,18 @@ body {
   color: #18A6B7;
   cursor: pointer; }
 .shop-content-rightbar-size-holder p {
-  font-size: 2em;
-  font-family: lato, sans-serif;
-  font-weight: 400;
+  font-size: 2.3em;
+  font-family: Halis R, sans-serif;
+  font-weight: 500;
   color: #3e3e3b; }
 .shop-content-rightbar-size-selector-holder {
   display: flex; }
 .shop-content-rightbar-size-selector {
   text-align: center;
   vertical-align: middle;
-  font-family: lato, sans-serif;
+  font-family: Halis R, sans-serif;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 1.5em;
   margin: 3px;
   width: 60px;
   height: 35px;
@@ -797,21 +769,202 @@ body {
   margin-top: 20px; }
 .shop-content-rightbar-map-holder h2 {
   word-wrap: break-word;
-  font-size: 2em;
-  font-family: lato, sans-serif;
-  font-weight: 400;
+  font-size: 2.3em;
+  font-family: Halis R, sans-serif;
+  font-weight: 500;
   color: #3e3e3b; }
 .shop-content-rightbar-map-holder h3 {
   margin-top: 5px;
-  font-family: lato, sans-serif;
-  font-weight: 400;
-  font-size: 1em;
+  font-family: Halis R, sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
   color: #3e3e3b; }
 .shop-content-rightbar-map-holder p {
   margin-top: 15px; }
 
 .cart-btn {
   margin-top: 20px; }
+
+/*--------------Media Queries ----------------*/
+@media (max-width: 1325px) {
+  .shop-content-rightbar-holder {
+    float: right;
+    width: 25%; }
+  .shop-content-rightbar-holder p {
+    font-family: Halis R, sans-serif;
+    font-weight: 300;
+    color: #3e3e3b; }
+  .shop-content-rightbar-description-object {
+    font-size: 1.9em;
+    font-family: Halis R, sans-serif;
+    font-weight: 500; }
+  .shop-content-rightbar-description-details {
+    word-wrap: break-word;
+    table-layout: fixed;
+    font-size: 1.2em;
+    font-family: Halis R, sans-serif;
+    font-weight: 300; }
+  .shop-content-rightbar-price {
+    margin-top: 10px;
+    font-size: 1.2em; }
+  .shop-content-rightbar-size-holder {
+    margin-top: 20px; }
+  .shop-content-rightbar-size-holder div button {
+    color: #3e3e3b;
+    border-color: #3e3e3b;
+    font-family: Halis R, sans-serif;
+    font-weight: 400;
+    font-size: .8em;
+    border-radius: 2px; }
+  .shop-content-rightbar-size-holder div button:hover {
+    color: #18A6B7;
+    border-color: #18A6B7;
+    background-color: white; }
+  .shop-content-rightbar-size-holder .btn-default:hover, .shop-content-rightbar-size-holder .btn-default:focus, .shop-content-rightbar-size-holder .btn-default:active, .shop-content-rightbar-size-holder .btn-default.active, .shop-content-rightbar-size-holder .open .dropdown-toggle.btn-default {
+    background-color: white;
+    border-color: #18A6B7;
+    color: #18A6B7; }
+  .shop-content-rightbar-size-holder .dropdown-menu {
+    left: 0; }
+  .shop-content-rightbar-size-holder .dropdown-menu li {
+    font-family: Halis R, sans-serif;
+    font-weight: 400;
+    font-size: .8em;
+    color: #3e3e3b;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .shop-content-rightbar-size-holder .dropdown-menu li:hover {
+    color: #18A6B7;
+    cursor: pointer; }
+  .shop-content-rightbar-size-holder p {
+    font-size: 1.9em;
+    font-family: Halis R, sans-serif;
+    font-weight: 500;
+    color: #3e3e3b; }
+  .shop-content-rightbar-size-selector-holder {
+    display: flex; }
+  .shop-content-rightbar-size-selector {
+    text-align: center;
+    vertical-align: middle;
+    font-family: Halis R, sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 3px;
+    width: 60px;
+    height: 35px;
+    border: solid;
+    border-width: 2px; }
+  .shop-content-rightbar-size-selector:hover {
+    color: #18A6B7;
+    cursor: pointer;
+    border-color: #18A6B7; }
+  .shop-content-rightbar-map-holder {
+    margin-top: 20px; }
+  .shop-content-rightbar-map-holder h2 {
+    word-wrap: break-word;
+    font-size: 1.9em;
+    font-family: Halis R, sans-serif;
+    font-weight: 500;
+    color: #3e3e3b; }
+  .shop-content-rightbar-map-holder h3 {
+    margin-top: 5px;
+    font-family: Halis R, sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: #3e3e3b; }
+  .shop-content-rightbar-map-holder p {
+    margin-top: 15px; } }
+@media (max-width: 1100px) {
+  .shop-content-rightbar-holder {
+    float: right;
+    width: 25%; }
+  .shop-content-rightbar-holder p {
+    font-family: Halis R, sans-serif;
+    font-weight: 300;
+    color: #3e3e3b; }
+  .shop-content-rightbar-description-object {
+    font-size: 1.4em;
+    font-family: Halis R, sans-serif;
+    font-weight: 500; }
+  .shop-content-rightbar-description-details {
+    word-wrap: break-word;
+    table-layout: fixed;
+    font-size: .9em;
+    font-family: Halis R, sans-serif;
+    font-weight: 300; }
+  .shop-content-rightbar-price {
+    margin-top: 10px;
+    font-size: .9em; }
+  .shop-content-rightbar-size-holder {
+    margin-top: 20px; }
+  .shop-content-rightbar-size-holder div button {
+    color: #3e3e3b;
+    border-color: #3e3e3b;
+    font-family: Halis R, sans-serif;
+    font-weight: 400;
+    font-size: .6em;
+    border-radius: 2px; }
+  .shop-content-rightbar-size-holder div button:hover {
+    color: #18A6B7;
+    border-color: #18A6B7;
+    background-color: white; }
+  .shop-content-rightbar-size-holder .btn-default:hover, .shop-content-rightbar-size-holder .btn-default:focus, .shop-content-rightbar-size-holder .btn-default:active, .shop-content-rightbar-size-holder .btn-default.active, .shop-content-rightbar-size-holder .open .dropdown-toggle.btn-default {
+    background-color: white;
+    border-color: #18A6B7;
+    color: #18A6B7; }
+  .shop-content-rightbar-size-holder .dropdown-menu {
+    left: 0; }
+  .shop-content-rightbar-size-holder .dropdown-menu li {
+    font-family: Halis R, sans-serif;
+    font-weight: 400;
+    font-size: .6em;
+    color: #3e3e3b;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .shop-content-rightbar-size-holder .dropdown-menu li:hover {
+    color: #18A6B7;
+    cursor: pointer; }
+  .shop-content-rightbar-size-holder p {
+    font-size: 1.4em;
+    font-family: Halis R, sans-serif;
+    font-weight: 500;
+    color: #3e3e3b; }
+  .shop-content-rightbar-size-selector-holder {
+    display: flex; }
+  .shop-content-rightbar-size-selector {
+    text-align: center;
+    vertical-align: middle;
+    font-family: Halis R, sans-serif;
+    font-weight: 400;
+    font-size: .9em;
+    margin: 3px;
+    width: 60px;
+    height: 35px;
+    border: solid;
+    border-width: 2px; }
+  .shop-content-rightbar-size-selector:hover {
+    color: #18A6B7;
+    cursor: pointer;
+    border-color: #18A6B7; }
+  .shop-content-rightbar-map-holder {
+    margin-top: 20px; }
+  .shop-content-rightbar-map-holder h2 {
+    word-wrap: break-word;
+    font-size: 1.4em;
+    font-family: Halis R, sans-serif;
+    font-weight: 500;
+    color: #3e3e3b; }
+  .shop-content-rightbar-map-holder h3 {
+    margin-top: 5px;
+    font-family: Halis R, sans-serif;
+    font-weight: 300;
+    font-size: .9em;
+    color: #3e3e3b; }
+  .shop-content-rightbar-map-holder p {
+    margin-top: 15px; } }
+/* ------------------ MOBILE -----------------------*/
+.shop-content-mobile-holder {
+  padding-top: 1vh; }
 
 .cart-content {
   width: 100%;
@@ -1161,8 +1314,7 @@ body {
   -webkit-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
   -moz-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
   -o-transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
-  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
-  margin-right: 20px; }
+  transition: all 300ms cubic-bezier(0.2, 0.01, 0.63, 0.98); }
 .topnavbar-button:hover {
   cursor: pointer;
   color: #18A6B7;
@@ -1173,9 +1325,9 @@ body {
 .topnavbar-button-active {
   color: #18A6B7; }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .topnavbar-button {
-    font-size: 1.5em; } }
+    font-size: 1.9em; } }
 .main-start-button-holder {
   font-family: Halis R, sans-serif;
   font-weight: 500;
@@ -1240,16 +1392,27 @@ body {
   margin-left: 5%;
   font-size: 1.5em;
   color: #3e3e3b;
-  font-family: lato, sans-serif;
-  font-weight: 100; }
+  font-family: Halis R, sans-serif;
+  font-weight: 200; }
 .shop-content-button-goback:hover {
   cursor: pointer;
   color: #18A6B7;
   text-decoration: underline; }
 
+.shop-content-button-goback-mobile {
+  max-width: 90px;
+  font-size: 1.5em;
+  color: #3e3e3b;
+  font-family: Halis R, sans-serif;
+  font-weight: 200; }
+.shop-content-button-goback-mobile:hover {
+  cursor: pointer;
+  color: #18A6B7;
+  text-decoration: underline; }
+
 .generic-button-default {
-  font-size: 24px !important;
-  font-family: lato, sans-serif !important;
+  font-size: 1.6em;
+  font-family: Halis R, sans-serif;
   font-weight: 300 !important;
   border-radius: 2px;
   background-color: #18a6b7;
@@ -1292,6 +1455,12 @@ body {
 .generic-button-danger:focus {
   outline: none; }
 
+@media (max-width: 1325px) {
+  .generic-button-default {
+    font-size: 1.4em !important; } }
+@media (max-width: 1100px) {
+  .generic-button-default {
+    font-size: 1em !important; } }
 .navbar-holder {
   height: 100%;
   width: 15%;
@@ -1311,12 +1480,19 @@ body {
   color: #3e3e3b; }
 
 /* ------------------ MEDIA QUERIES ----------------*/
-@media (max-width: 1400px) {
+@media (max-width: 1325px) {
   .navbar-holder {
     padding-right: 20%;
-    font-size: 1.4em; }
+    font-size: 1.5em; }
 
   .navbar-static-text {
-    font-size: 1.5em; } }
+    font-size: 1.2em; } }
+@media (max-width: 1100px) {
+  .navbar-holder {
+    padding-right: 20%;
+    font-size: 1.3em; }
+
+  .navbar-static-text {
+    font-size: 1.2em; } }
 
 /*# sourceMappingURL=application.css.map */

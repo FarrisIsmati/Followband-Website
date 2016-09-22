@@ -20,9 +20,9 @@
 
             function changeTemplate() {
               var screenWidth = $window.innerWidth;
-              if (screenWidth < 1000) {
+              if (screenWidth < 850) {
                 scope.templateUrl = templates[0];
-              } else if (screenWidth >= 1000) {
+              } else if (screenWidth >= 850) {
                 scope.templateUrl = templates[1];
               }
             }

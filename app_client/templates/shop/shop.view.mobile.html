@@ -1,7 +1,8 @@
 <templatehold ng-controller="TabCtrl" templates="tabview"></templatehold>
 <div class="shop-view-holder">
 	
-	<div class="shop-topbar-holder">
+
+	<div ng-hide="getState()" class="shop-topbar-holder">
 
 				<div ng-repeat="b in menuButtons" ng-click="buttonActive(b);" class="topnavbar-button" ui-sref="shop" ng-class="{'topnavbar-button-active': b.isActive}">
 					{{b.header}}

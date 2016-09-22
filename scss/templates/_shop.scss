@@ -2,16 +2,17 @@
 
 .shop-view-holder{
 	display: flex;
-	padding-top: 5%;
-	padding-left: 15%;
-  	padding-right: 15%;
+	margin-top: 8vh;
+	margin-left: 15%;
+  	margin-right: 15%;
+  	position: absoulte;
 }
 
 .shop-content {
 	&-holder{	
 		width: 100%;
-		padding-left: 5%;
-		padding-top: 4vh;
+		padding-left: 7%;
+		padding-top: 4%;
 	}
 	&-product{
 		&{  
@@ -55,8 +56,7 @@
 @media (max-width: 1400px){
 	.shop-content {
 		&-holder{	
-			padding-left: 5%;
-			padding-top: 4vh;
+			padding-left: 9%;
 		}
 		&-product{
 			&{  
@@ -96,23 +96,31 @@
 	}
 }
 
+@media (max-width: 1000px){
+	.shop-content-holder{	
+		padding-left: 12%;
+	}
+}
+
 
 /* ------------------ MOBILE -----------------------*/
 .shop-topbar-holder{
-	position: fixed;
-	display: flex;	
-	justify-content: space-around;
-	padding-bottom: 10px;
-	background-color: white;
-	margin-left: -10%;
-	padding-top: 20px;
-	width: 100%;
+	& {
+		position: absolute;
+		background-color: white;
+		width: 72%;
+	}
+	& > div:nth-child(2){
+		float: right;
+	}
+	& > div:nth-child(1){
+		float: left;
+	}
 }
 
 .shop-content-mobile {
 	&-holder{	
-		padding-left: 5%;
-		padding-top: 12vh;
+		padding-top: 10vh;
 		display: flex;	
 		flex-direction: column;
 	}

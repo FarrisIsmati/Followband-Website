@@ -5,20 +5,6 @@
 var app = angular.module("CartCtrl", []);
 
 app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScope, cartService, dataService, authService){
-    
-    $window.onresize = function() {
-        $scope.changeTemplate();
-        $scope.$apply();
-    };
-
-    $scope.changeTemplate = function() {
-        var screenWidth = $window.innerWidth;
-        if (screenWidth < 1000) {
-            return 'templates/tab/tab.view.mobile.html';
-        } else if (screenWidth >= 1000) {
-            return 'templates/tab/tab.view.html';
-        }
-    }
 
 	var token = authService.getToken();
 	
@@ -34,7 +20,6 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
             }
 
             $scope.updateLineItemQty = function(lineItem){
-                console.log('Run this bitch');
                 if (cartService.containsItem(value.data, lineItem)) {
                   dataService.putLineItem([lineItem, payload._id, lineItem.quantity]);
                 }
