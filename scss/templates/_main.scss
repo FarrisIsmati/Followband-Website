@@ -16,6 +16,9 @@
     @include noselect();
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   }
+  &-img {
+    width: 100vw !important;
+  }
   &-inner>.item>img, .carousel-inner>.item>a>img {
     width: auto;
     max-height: 1000px;

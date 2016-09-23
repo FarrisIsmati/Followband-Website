@@ -18,6 +18,15 @@
     }
 
     return {
+
+      // Try this function in the future
+      setMenuState : function(localStore){
+        if (!dataService.retrieveLocal(localStore)){
+          dataService.storeToLocal(localStore, menuButtons);
+        } else {
+          menuButtons = dataService.retrieveLocal(localStore);
+        }
+      },
       returnSetMenuState : function(){
         return menuButtons;
       },

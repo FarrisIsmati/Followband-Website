@@ -398,6 +398,134 @@
 
 /* ------------------ MOBILE -----------------------*/
 
-.shop-content-mobile-holder{
-	padding-top: 1vh;
+.shop-content-mobile {
+	&-holder{
+		padding-top: 1vh;
+		width: 100%;
+	}
+}
+
+.shop-content-mobile-rightbar{
+	&-holder{
+		float: right;
+		width: 25%;
+	}
+	&-holder p{
+		@include fontSelect(Halis R, sans-serif);
+		font-weight: 300;
+		color: $gunMetal;
+    }
+    &-description-holder{
+		margin-top: 30px;
+	}
+	&-description-object{
+		font-size: 2em;
+		@include fontSelect(Halis R, sans-serif);
+    	font-weight: 500;
+	}
+	&-description-details{
+		word-wrap: break-word;
+		table-layout:fixed;
+		font-size: 1.2em;
+		@include fontSelect(Halis R, sans-serif);
+    	font-weight: 300;
+	}
+	&-price{
+		margin-top: 10px;
+		font-size: 1.2em;
+	}
+	&-size-holder {
+		&{
+			margin-top: 20px;
+		}
+		& div button{
+			color: $gunMetal;
+			border-color: $gunMetal;
+			@include fontSelect(Halis R, sans-serif);
+		    font-weight: 400;
+			font-size: 1em;
+			border-radius: 2px;
+		}
+		& div button:hover{
+			color: $seafloor;
+			border-color: $seafloor;
+			background-color: white;
+		}
+		& .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{
+			background-color: white;
+			border-color: $seafloor;
+			color: $seafloor;
+		}
+		& .dropdown-menu{
+			left: 0;
+		}
+		& .dropdown-menu li{
+			@include fontSelect(Halis R, sans-serif);
+		    font-weight: 400;
+			font-size: 1em;
+			color: $gunMetal;
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		& .dropdown-menu li:hover{
+			color: $seafloor;
+			cursor: pointer;
+		}
+		 
+	}
+
+	&-size-holder p{
+		font-size: 2em;
+		@include fontSelect(Halis R, sans-serif);
+    	font-weight: 500;
+    	color: $gunMetal;
+	}
+
+	&-size-selector-holder{
+		display: flex;
+	}
+
+	&-size-selector{
+		text-align: center;
+		vertical-align: middle;
+		@include fontSelect(Halis R, sans-serif);
+	    font-weight: 400;
+		font-size: 1.2em;
+		margin: 3px;
+		width: 60px;
+		height: 35px;
+		border: solid;
+		border-width: 2px;
+	}
+	&-size-selector:hover{
+		color: $seafloor;
+		cursor: pointer;
+		border-color: $seafloor;
+	}
+
+	&-map-holder{
+		margin-top: 20px;
+	}
+	&-map-holder h2{
+		word-wrap: break-word;
+		font-size: 2em;
+		@include fontSelect(Halis R, sans-serif);
+    	font-weight: 500;
+    	color: $gunMetal;
+	}
+	&-map-holder h3{
+		margin-top: 5px;
+		@include fontSelect(Halis R, sans-serif);
+	    font-weight: 300;
+		font-size: 1.1em;
+    	color: $gunMetal;
+	}
+	&-map-holder p{
+		margin-top: 15px;
+	}
+
+}
+
+.cart-btn{
+	margin-top: 20px;
 }

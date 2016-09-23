@@ -98,6 +98,8 @@ body {
   -ms-user-select: none;
   user-select: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); }
+.carousel-img {
+  width: 100vw !important; }
 .carousel-inner > .item > img, .carousel .carousel-inner > .item > a > img {
   width: auto;
   max-height: 1000px; }
@@ -563,7 +565,7 @@ body {
   float: left; }
 
 .shop-content-mobile-holder {
-  padding-top: 10vh;
+  margin-top: 8vh;
   display: flex;
   flex-direction: column; }
 .shop-content-mobile-product:hover > h1 {
@@ -964,7 +966,101 @@ body {
     margin-top: 15px; } }
 /* ------------------ MOBILE -----------------------*/
 .shop-content-mobile-holder {
-  padding-top: 1vh; }
+  padding-top: 1vh;
+  width: 100%; }
+
+.shop-content-mobile-rightbar-holder {
+  float: right;
+  width: 25%; }
+.shop-content-mobile-rightbar-holder p {
+  font-family: Halis R, sans-serif;
+  font-weight: 300;
+  color: #3e3e3b; }
+.shop-content-mobile-rightbar-description-holder {
+  margin-top: 30px; }
+.shop-content-mobile-rightbar-description-object {
+  font-size: 2em;
+  font-family: Halis R, sans-serif;
+  font-weight: 500; }
+.shop-content-mobile-rightbar-description-details {
+  word-wrap: break-word;
+  table-layout: fixed;
+  font-size: 1.2em;
+  font-family: Halis R, sans-serif;
+  font-weight: 300; }
+.shop-content-mobile-rightbar-price {
+  margin-top: 10px;
+  font-size: 1.2em; }
+.shop-content-mobile-rightbar-size-holder {
+  margin-top: 20px; }
+.shop-content-mobile-rightbar-size-holder div button {
+  color: #3e3e3b;
+  border-color: #3e3e3b;
+  font-family: Halis R, sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  border-radius: 2px; }
+.shop-content-mobile-rightbar-size-holder div button:hover {
+  color: #18A6B7;
+  border-color: #18A6B7;
+  background-color: white; }
+.shop-content-mobile-rightbar-size-holder .btn-default:hover, .shop-content-mobile-rightbar-size-holder .btn-default:focus, .shop-content-mobile-rightbar-size-holder .btn-default:active, .shop-content-mobile-rightbar-size-holder .btn-default.active, .shop-content-mobile-rightbar-size-holder .open .dropdown-toggle.btn-default {
+  background-color: white;
+  border-color: #18A6B7;
+  color: #18A6B7; }
+.shop-content-mobile-rightbar-size-holder .dropdown-menu {
+  left: 0; }
+.shop-content-mobile-rightbar-size-holder .dropdown-menu li {
+  font-family: Halis R, sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #3e3e3b;
+  padding-left: 8px;
+  padding-right: 8px; }
+.shop-content-mobile-rightbar-size-holder .dropdown-menu li:hover {
+  color: #18A6B7;
+  cursor: pointer; }
+.shop-content-mobile-rightbar-size-holder p {
+  font-size: 2em;
+  font-family: Halis R, sans-serif;
+  font-weight: 500;
+  color: #3e3e3b; }
+.shop-content-mobile-rightbar-size-selector-holder {
+  display: flex; }
+.shop-content-mobile-rightbar-size-selector {
+  text-align: center;
+  vertical-align: middle;
+  font-family: Halis R, sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  margin: 3px;
+  width: 60px;
+  height: 35px;
+  border: solid;
+  border-width: 2px; }
+.shop-content-mobile-rightbar-size-selector:hover {
+  color: #18A6B7;
+  cursor: pointer;
+  border-color: #18A6B7; }
+.shop-content-mobile-rightbar-map-holder {
+  margin-top: 20px; }
+.shop-content-mobile-rightbar-map-holder h2 {
+  word-wrap: break-word;
+  font-size: 2em;
+  font-family: Halis R, sans-serif;
+  font-weight: 500;
+  color: #3e3e3b; }
+.shop-content-mobile-rightbar-map-holder h3 {
+  margin-top: 5px;
+  font-family: Halis R, sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  color: #3e3e3b; }
+.shop-content-mobile-rightbar-map-holder p {
+  margin-top: 15px; }
+
+.cart-btn {
+  margin-top: 20px; }
 
 .cart-content {
   width: 100%;
@@ -1461,6 +1557,31 @@ body {
 @media (max-width: 1100px) {
   .generic-button-default {
     font-size: 1em !important; } }
+.generic-button-mobile-default {
+  font-size: 1.4em;
+  font-family: Halis R, sans-serif;
+  font-weight: 300 !important;
+  border-radius: 2px;
+  background-color: #18a6b7;
+  color: white !important;
+  display: inline-block;
+  padding: 3px 8px 3px 8px;
+  text-align: center;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #18a6b7 !important;
+  -webkit-transition: background-color 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -moz-transition: background-color 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  -o-transition: background-color 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98);
+  transition: background-color 200ms cubic-bezier(0.2, 0.01, 0.63, 0.98); }
+.generic-button-mobile-default:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #18a6b7 !important; }
+.generic-button-mobile-default:focus {
+  outline: none; }
+
 .navbar-holder {
   height: 100%;
   width: 15%;

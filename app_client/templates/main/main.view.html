@@ -18,8 +18,9 @@
 		<carousel active="active" interval="15000" no-wrap="noWrapSlides">
 
 		  <slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-		    <img ng-src="{{slide.image}}" style="width:100vw;">
+		    <img class="carousel-img" ng-src="{{slide.image}}">
 		  </slide>
+
 		</carousel>
 		
 	</div>

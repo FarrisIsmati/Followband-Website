@@ -1,10 +1,10 @@
+'use strict';
+(function(){
+
 var app = angular.module('MainCtrl', ['ui.bootstrap', 'ui.bootstrap.tpls', 'ui.router'])
 
 app.controller('MainCtrl', ['$scope', function($scope){
 	  // Carousel
-	  $scope.myInterval = 20000;
-	  $scope.noWrapSlides = false;
-	  $scope.active = 0;
 	  var slides = $scope.slides = [];
 	  var currIndex = 0;
 
@@ -22,3 +22,5 @@ app.controller('MainCtrl', ['$scope', function($scope){
 
 	}
 ]);
+
+}());
