@@ -15,7 +15,6 @@
               scope.$apply();
             });
             var templates = scope.$eval(attrs.templates);
-            console.log(templates)
             changeTemplate();
 
             function changeTemplate() {
