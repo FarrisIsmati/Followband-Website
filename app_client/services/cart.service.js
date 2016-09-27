@@ -4,7 +4,7 @@
 
 var app = angular.module("CartService", []);
 
-  app.service('cartService', cart);
+  app.factory('cartService', cart);
 
   function cart ($http, $window, authService, dataService) {
     // PUSH LINE ITEM TO CART OR POST LINE ITEM TO CART DB
@@ -75,6 +75,28 @@ var app = angular.module("CartService", []);
       }
     }
 
+    var deleteLocalLineItem = function(localCart, lineItem){
+      var updatedCart = localCart.filter(function(item){
+        if (lineItem.lineItemID != item.lineItemID){
+            return item
+        }
+      });
+
+      dataService.storeToLocal('localCart', updatedCart);
+    }
+
+    var updateLocalLineItem = function(localCart, lineItem){
+      var tempLocal = localCart;
+      var checkTrue = containsItem(tempLocal, lineItem);
+      
+      // If the line item is in the cart then increase the quantity
+      if (checkTrue){
+        tempLocal[checkTrue[1]].quantity = lineItem.quantity;
+        dataService.storeToLocal('localCart', tempLocal);
+      }
+      console.log(lineItem);
+    }
+
     // CLEAR LOCAL CART
     var clearLocalCart = function(){
       if (localStorage.getItem('localCart')){
@@ -82,17 +104,24 @@ var app = angular.module("CartService", []);
       };
     }
 
-    var updateCart = function(){
-    // Take care of this one :)
+    // Calculates the total of the cart
+    var cartTotal = function(data){
+      return data.map(function(obj){
+        return obj.price * obj.quantity;
+      }).reduce(function(a, b){
+        return a + b;
+      }, 0);
     }
 
     return {
       pushToCartDB : pushToCartDB,
       containsItem : containsItem,
       pushToCartLocal : pushToCartLocal,
+      deleteLocalLineItem : deleteLocalLineItem,
+      updateLocalLineItem : updateLocalLineItem,
       clearLocalCart : clearLocalCart,
       pushLineItem : pushLineItem,
-      updateCart : updateCart
+      cartTotal : cartTotal
     };
   }
 

@@ -4,12 +4,9 @@
 
   var app = angular.module("DataService", []);
 
-  app.service('dataService', dataService);
+  app.factory('dataService', dataService);
 
     function dataService ($http, authService) {
-    // Declare the authentication service
-    var auth = authService;
-
     // ------------------ $http SERVICES -------------------
 
     // Get user profile data from database

@@ -12,19 +12,9 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
     if ( token ) {
     	var payload = authService.parseToken(token);
 	   	dataService.getCart(payload._id).then(function (value){
-
             if (value.data){
+
     	   	  	$scope.lineItems = value.data;
-
-                var arrayOfPrices = value.data.map(function(obj){
-                    return obj.price * obj.quantity;
-                })
-
-                $scope.total = function(){
-                    return arrayOfPrices.reduce(function(a, b){
-                        return a + b;
-                    }, 0);
-                }
 
                 $scope.deleteLineItem = function(lineitem){
                     dataService.deleteLineItem([lineitem.lineItemID, payload._id]);
@@ -36,40 +26,36 @@ app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScop
                     }
                 }
 
-    	   	}
+                $scope.total = function(){
+                    return cartService.cartTotal(value.data);
+                }
 
+    	   	}
 	    }, function(reason){
 	      console.log(reason);
 	    });
     } else {
-    	if (dataService.retrieveLocal('localCart')){
-    		$scope.lineItems = dataService.retrieveLocal('localCart');
+        var localCart = dataService.retrieveLocal('localCart');
 
-            $scope.deleteLineItem = function(lineitem){
-                var cart = dataService.retrieveLocal('localCart');
-                var updatedCart = cart.filter(function(item){
-                    if (lineitem.lineItemID != item.lineItemID){
-                        return item
-                    }
-                })
-                dataService.storeToLocal('localCart', updatedCart);
+    	if (localCart){
+    		$scope.lineItems = localCart;
+
+            $scope.deleteLineItem = function(lineItem){
+                cartService.deleteLocalLineItem(localCart, lineItem);
             }
 
             $scope.updateLineItemQty = function(lineItem){
-                var tempLocal = dataService.retrieveLocal('localCart');
-                var checkTrue = cartService.containsItem(tempLocal, lineItem);
-                // If the line item is in the cart then increase the quantity
-                if (checkTrue){
-                  tempLocal[checkTrue[1]].quantity = lineItem.quantity;
-                  dataService.storeToLocal('localCart', tempLocal);
-                }
-                console.log(lineItem);
+                cartService.updateLocalLineItem(localCart, lineItem);
             }
-
 
             $scope.clearLocalCart = function(){
                 cartService.clearLocalCart();
             }
+
+            $scope.total = function(){
+                return cartService.cartTotal(localCart);
+            }
+
     	}	
     }
 
