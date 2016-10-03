@@ -23,11 +23,11 @@
 					<td class="cart-content-productQty">
 						<input type="number" name="ng-input" ng-model="item.quantity" size="4" min="1" max="99">
 						</input>
+						<p class="cart-content-productUpdate" ng-click="updateLineItemQty(item); reloadRoute();">update</p>
 					</td>
 					<td class="cart-content-productPrice">{{ item.price | currency }}</td>
 					<td class="cart-content-productTotal">{{ calcLineItemTotal(item.quantity, item.price) | currency }}</td>
 					<td class="cart-content-productRemove" ng-click="deleteLineItem(item); reloadRoute();">x</td>
-					<td class="cart-content-productUpdate" ng-click="updateLineItemQty(item); reloadRoute();">update</td>
 				</tr>
 			</tbody>
 			
