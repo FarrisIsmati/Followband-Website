@@ -3,26 +3,15 @@
 
 <div class="shop-content-button-goback-mobile" ng-controller="RouteCtrl" ui-sref="shop" ui-sref-active="active">go back</div>
 
-<div class="shop-content-mobile-holder">
+<div class="shop-content-main-image-holder" ng-controller="ShopCtrl">
 
+	<h1 class="shop-content-mobile-rightbar-description-object">{{currentSelectedProduct.name}}</h1>
 
-	<div class="shop-content-main-image-holder" ng-controller="ShopCtrl">
+	<img class="shop-content-main-image" ng-src="{{currentSelectedProduct.imgLink}}" ng-click="returnProduct()">
 
-		<img class="shop-content-main-image" ng-src="{{currentSelectedProduct.imgLink}}" ng-click="returnProduct()">
+</div>
 
-	</div>
-
-	<div class="shop-content-mobile-rightbar-description-holder">
-
-		<h1 class="shop-content-mobile-rightbar-description-object">{{currentSelectedProduct.name}}</h1>
-
-		<div class="shop-content-mobile-rightbar-description-details">
-
-			<p>{{currentSelectedProduct.description}}</p>
-
-		</div>
-
-	</div>
+<div class="shop-content-mobile-rightbar-description-holder">
 
 	<div class="shop-content-mobile-rightbar-price">
 
@@ -30,41 +19,46 @@
 
 	</div>
 
-	<div class="shop-content-mobile-rightbar-map-holder" ng-controller="RouteCtrl">
+	<div class="shop-content-mobile-rightbar-description-details">
 
-		<h2>Coordinates</h2>
+		<p>{{currentSelectedProduct.description}}</p>
 
-		<h3>{{currentCoordinates.lat}}</h3>
-		<h3>{{currentCoordinates.lng}}</h3>
-
-		<p class="generic-button-mobile-default" ui-sref="map" ui-sref-active="active">map</p>
-
-	</div>
-
-	<div class="shop-content-mobile-rightbar-size-holder">
-
-		<p>Size</p>
-
-		<div class="dropdown">
-
-			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{sizeDefault}}
-			<span class="caret"></span></button>
-
-			<ul class="dropdown-menu size-dropdown">
-
-				<li  ng-disabled="true">choose size</li>
-				<li ng-repeat="s in sizes" ng-click="changeDropdownSelected(s)">{{s}}</li>
-
-			  </ul>
-
-		</div>
-
-	</div>
-
-	<div>
-		<span class="cart-btn generic-button-mobile-default" -click="exportProduct()"  ng-hide="loading">Add to Cart</span>
-  		<span ng-show="loading">Adding</i></span>
 	</div>
 
 </div>
 
+<div class="shop-content-mobile-rightbar-map-holder" ng-controller="RouteCtrl">
+
+	<h2>Coordinates</h2>
+
+	<h3>{{currentCoordinates.lat}}</h3>
+	<h3>{{currentCoordinates.lng}}</h3>
+
+	<p class="generic-button-mobile-default" ui-sref="map" ui-sref-active="active">map</p>
+
+</div>
+
+<div class="shop-content-mobile-rightbar-size-holder">
+
+	<p>Size</p>
+
+	<div class="dropdown">
+
+		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{sizeDefault}}
+		<span class="caret"></span></button>
+
+		<ul class="dropdown-menu size-dropdown">
+
+			<li  ng-disabled="true">choose size</li>
+			<li ng-repeat="s in sizes" ng-click="changeDropdownSelected(s)">{{s}}</li>
+
+		  </ul>
+
+	</div>
+
+</div>
+
+<div class="shop-content-mobile-rightbar-map-holder">
+	<p class="cart-btn-mobile generic-button-mobile-default" ng-click="exportProduct()"  ng-hide="loading">Add to Cart</p>
+		<p class="cart-btn-mobile generic-button-mobile-default" ng-show="loading">Adding</i></p>
+	</div>

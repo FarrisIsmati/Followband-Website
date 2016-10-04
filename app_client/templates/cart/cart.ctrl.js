@@ -6,6 +6,8 @@ var app = angular.module("CartCtrl", []);
 
 app.controller('CartCtrl', function($scope, $http, $window, $location, $rootScope, $state, cartService, dataService, authService){
 
+    $scope.cartview = ['/templates/cart/cart.view.mobile.html', '/templates/cart/cart.view.html']
+
 	var token = authService.getToken();
 
     // Resolve getCart promise

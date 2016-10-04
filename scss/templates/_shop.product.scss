@@ -22,7 +22,7 @@
 
 	}
 	&-image{
-  		max-height: 30%;
+  		max-height: 100%;
   		max-width: 100%;
 	}
 }
@@ -128,25 +128,31 @@
 	&-map-holder h2{
 		word-wrap: break-word;
 		font-size: 2.3em;
-		@include fontSelect(Halis R, sans-serif);
+		@include fontSelect(Roboto, sans-serif);
     	font-weight: 500;
     	color: $gunMetal;
 	}
 	&-map-holder h3{
 		margin-top: 5px;
-		@include fontSelect(Halis R, sans-serif);
+		@include fontSelect(Roboto, sans-serif);
 	    font-weight: 300;
 		font-size: 1.1em;
     	color: $gunMetal;
 	}
 	&-map-holder p{
 		margin-top: 15px;
+		@include fontSelect(Roboto, sans-serif);
+	    font-weight: 300;
+		font-size: 1.5em;
 	}
 
 }
 
 .cart-btn{
 	margin-top: 20px;
+	@include fontSelect(Roboto, sans-serif);
+    font-weight: 300;
+	font-size: 1.5em;
 }
 
 
@@ -255,23 +261,22 @@
 		&-map-holder h2{
 			word-wrap: break-word;
 			font-size: 1.9em;
-			@include fontSelect(Halis R, sans-serif);
-	    	font-weight: 500;
 	    	color: $gunMetal;
 		}
 		&-map-holder h3{
 			margin-top: 5px;
-			@include fontSelect(Halis R, sans-serif);
-		    font-weight: 300;
 			font-size: 1em;
 	    	color: $gunMetal;
 		}
 		&-map-holder p{
-			margin-top: 15px;
+			font-size: 1.2em;
 		}
 
 	}
 
+	.cart-btn{
+		font-size: 1.2em;
+	}
 }
 
 @media (max-width: 1100px){
@@ -356,7 +361,7 @@
 		&-size-selector{
 			text-align: center;
 			vertical-align: middle;
-			@include fontSelect(Halis R, sans-serif);
+			@include fontSelect(Roboto, sans-serif);
 		    font-weight: 400;
 			font-size: .9em;
 			margin: 3px;
@@ -375,25 +380,21 @@
 			margin-top: 20px;
 		}
 		&-map-holder h2{
-			word-wrap: break-word;
 			font-size: 1.4em;
-			@include fontSelect(Halis R, sans-serif);
-	    	font-weight: 500;
-	    	color: $gunMetal;
 		}
 		&-map-holder h3{
 			margin-top: 5px;
-			@include fontSelect(Halis R, sans-serif);
-		    font-weight: 300;
 			font-size: .9em;
-	    	color: $gunMetal;
 		}
 		&-map-holder p{
-			margin-top: 15px;
+			font-size: 1.2em;
 		}
 
 	}
 
+	.cart-btn{
+		font-size: 1.2em;
+	}
 }
 
 /* ------------------ MOBILE -----------------------*/
@@ -411,8 +412,6 @@
 		width: 25%;
 	}
 	&-holder p{
-		@include fontSelect(Halis R, sans-serif);
-		font-weight: 300;
 		color: $gunMetal;
     }
     &-description-holder{
@@ -420,19 +419,21 @@
 	}
 	&-description-object{
 		font-size: 2em;
-		@include fontSelect(Halis R, sans-serif);
+		@include fontSelect(Roboto, sans-serif);
     	font-weight: 500;
 	}
 	&-description-details{
 		word-wrap: break-word;
 		table-layout:fixed;
+		@include fontSelect(Roboto, sans-serif);
+	    font-weight: 400;
 		font-size: 1.2em;
-		@include fontSelect(Halis R, sans-serif);
-    	font-weight: 300;
 	}
 	&-price{
+		@include fontSelect(Roboto, sans-serif);
+	    font-weight: 600;
 		margin-top: 10px;
-		font-size: 1.2em;
+		font-size: 2em;
 	}
 	&-size-holder {
 		&{
@@ -441,7 +442,7 @@
 		& div button{
 			color: $gunMetal;
 			border-color: $gunMetal;
-			@include fontSelect(Halis R, sans-serif);
+			@include fontSelect(Roboto, sans-serif);
 		    font-weight: 400;
 			font-size: 1em;
 			border-radius: 2px;
@@ -460,7 +461,7 @@
 			left: 0;
 		}
 		& .dropdown-menu li{
-			@include fontSelect(Halis R, sans-serif);
+			@include fontSelect(Roboto, sans-serif);
 		    font-weight: 400;
 			font-size: 1em;
 			color: $gunMetal;
@@ -476,8 +477,8 @@
 
 	&-size-holder p{
 		font-size: 2em;
-		@include fontSelect(Halis R, sans-serif);
-    	font-weight: 500;
+		@include fontSelect(Roboto, sans-serif);
+    	font-weight: 600;
     	color: $gunMetal;
 	}
 
@@ -488,7 +489,7 @@
 	&-size-selector{
 		text-align: center;
 		vertical-align: middle;
-		@include fontSelect(Halis R, sans-serif);
+		@include fontSelect(Roboto, sans-serif);
 	    font-weight: 400;
 		font-size: 1.2em;
 		margin: 3px;
@@ -507,25 +508,28 @@
 		margin-top: 20px;
 	}
 	&-map-holder h2{
-		word-wrap: break-word;
+		@include fontSelect(Roboto, sans-serif);
+	    font-weight: 600;
 		font-size: 2em;
-		@include fontSelect(Halis R, sans-serif);
-    	font-weight: 500;
-    	color: $gunMetal;
 	}
 	&-map-holder h3{
-		margin-top: 5px;
-		@include fontSelect(Halis R, sans-serif);
-	    font-weight: 300;
-		font-size: 1.1em;
-    	color: $gunMetal;
+		@include fontSelect(Roboto, sans-serif);
+	    font-weight: 400;
+		font-size: 1.2em;
 	}
 	&-map-holder p{
 		margin-top: 15px;
+		@include fontSelect(Roboto, sans-serif);
+	    font-weight: 400;
+		font-size: 2em;
 	}
 
 }
 
-.cart-btn{
+.cart-btn-mobile{
 	margin-top: 20px;
+	@include fontSelect(Roboto, sans-serif);
+    font-weight: 400;
+	font-size: 2em;
 }
+

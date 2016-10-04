@@ -50,7 +50,7 @@ app.controller('ShopCtrl', ['$scope', '$state', '$rootScope', '$stateParams','da
 	// Set the reference for current selected product
 	$scope.setProduct = function(product) {
 		dataService.storeToLocal('currentProduct', product);
-
+	
 		// Need to fix the URL Parmeters here so they actually work
 		$state.go('shop.product', { obj: JSON.stringify(product.name) } )
 	}

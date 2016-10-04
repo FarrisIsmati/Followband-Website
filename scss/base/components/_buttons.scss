@@ -369,9 +369,6 @@
 
 .generic-button-default{
   &{  
-    font-size: 1.6em;
-    @include fontSelect(Halis R, sans-serif);
-    font-weight: 300 !important;
     border-radius: 2px;
     background-color: rgb(24,166,183);
     color: white !important;
@@ -424,14 +421,14 @@
 @media (max-width: 1325px){
 
   .generic-button-default{
-    font-size: 1.4em !important;
+
   }
 
 }
 
 @media (max-width: 1100px){
   .generic-button-default{
-    font-size: 1em !important;
+
   }
 }
 
@@ -439,9 +436,6 @@
 
 .generic-button-mobile-default{
   &{  
-    font-size: 1.4em;
-    @include fontSelect(Halis R, sans-serif);
-    font-weight: 300 !important;
     border-radius: 2px;
     background-color: rgb(24,166,183);
     color: white !important;

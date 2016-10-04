@@ -14,7 +14,7 @@
 
 		// Set the size of the size dropdown menu
 		if ($scope.currentSelectedProduct && $scope.currentSelectedProduct.size){
-			$scope.sizes = $scope.currentSelectedProduct.size.split(',');
+			$scope.sizes = ['small','medium','large'];
 		} else {
 			alert('There is an error')
 		}
@@ -31,9 +31,10 @@
 		$scope.exportProduct = function(){
 			var lineItem = {
 				lineItemID : $scope.sizeDefault + $scope.currentSelectedProduct._id + $scope.currentCoordinates.lat + $scope.currentCoordinates.lng,
-				productImg: $scope.currentSelectedProduct.imgLink,
-				productId: $scope.currentSelectedProduct._id,
-				productName: $scope.currentSelectedProduct.name,
+				imgLink: $scope.currentSelectedProduct.imgLink,
+				_id: $scope.currentSelectedProduct._id,
+				description: $scope.currentSelectedProduct.description,
+				name: $scope.currentSelectedProduct.name,
 				price: $scope.currentSelectedProduct.price,
 				size: $scope.sizeDefault,
 				quantity: 1,

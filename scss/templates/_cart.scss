@@ -59,11 +59,18 @@
 			border: 0;
 			width: 10%;
 		}
+		&:hover{
+			cursor:pointer;
+		}
 	}
 
 	&-product{
 		&Name{
 			border: 0;
+		}
+		&Name:hover{
+			cursor:pointer;
+			color: $icon;
 		}
 		&Coord{
 			border: 0;
@@ -140,4 +147,67 @@
 			margin-top: 15px;
 		}
 	}
+}
+
+/* ------------------ MEDIA QUERIES ----------------*/
+
+@media (max-width: 1300px){
+
+.cart-content {
+
+
+	& table{
+		& thead {
+			font-size: 1.5em;
+		}
+		& tbody td {
+			font-size: 1em;
+		}
+	}
+
+	&-img{
+		&{
+			padding: 12px 12px 12px 12px;
+			max-width: 100%;
+		}
+	}
+
+	&-holder-totals{
+		&{
+			width: 40%;
+			font-size: 1.5em;
+		}
+	}
+}
+
+}
+
+@media (max-width: 750px){
+
+.cart-content {
+
+	& table{
+		& thead {
+			font-size: 1.2em;
+		}
+		& tbody td {
+			font-size: .8em;
+		}
+	}
+
+	&-img{
+		&{
+			padding: 8px 8px 8px 8px;
+			max-width: 100%;
+		}
+	}
+
+	&-holder-totals{
+		&{
+			width: 50%;
+			font-size: 1.2em;
+		}
+	}
+}
+
 }

@@ -80,7 +80,7 @@
         url: '/cart',
         views: {
           "mainView": {
-            templateUrl: '/templates/cart/cart.view.html',
+            template: '<templatehold templates="cartview"></templatehold>',
             controller: 'CartCtrl'
           }
         }
