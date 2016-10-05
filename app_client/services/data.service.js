@@ -13,7 +13,7 @@
     var getProfile = function () {
       return $http.get('/follow/profile', {
         headers: {
-          Authorization: 'Bearer '+ auth.getToken()
+          Authorization: 'Bearer '+ authService.getToken()
         }
       });
     };

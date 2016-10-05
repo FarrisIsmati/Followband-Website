@@ -46,3 +46,11 @@
 	}
 	
 }
+
+body > div > div > div:nth-child(1) > form > p{
+	display: inline-block;
+}
+
+body > div > div > div:nth-child(2) > form > p{
+	display: inline-block;
+}

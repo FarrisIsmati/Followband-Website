@@ -7,7 +7,8 @@
   function footer () {
     return {
       restrict: 'EA',
-      templateUrl: 'templates/footer/footer.view.html',
+      template: '<templatehold templates="footerview"></templatehold>',
+      controller: 'FooterCtrl',
     };
   }
 

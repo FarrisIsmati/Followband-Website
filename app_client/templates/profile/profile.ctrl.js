@@ -44,44 +44,41 @@ app.controller('ProfileCtrl', function($scope, $http, $window, $location, $state
     };
 
     $scope.onSubmitRegister = function () {
+       $scope.lock = false;
+
       if ($scope.credentialsReg.password != $scope.credentialsReg.passwordconfirm) {
-        console.log('passwords dont match');
+        $scope.lock = true;
+        $timeout(function() {
+           $scope.loginBtn = "generic-button-default";
+           $scope.lock = false;
+        }, 3000);    
         return
       } 
       if (authService.passwordCompatible($scope.credentialsReg.password)){
         console.log('Submitting registration');
         authService.register($scope.credentialsReg)
           .error(function(err){
-            $scope.regBtn = "generic-button-danger"
-            $timeout(function() {
-               $scope.regBtn = "generic-button-default";
-            }, 3000);    
+            alert('Dude sorry!!! There was an error during your registration.');  
         })
         .then(function(){
           $location.path('/regSuccess');
         });
       } else {
-        console.log('password doesnt meet requirements');
+        alert('Hey! Try harder. Password length must be greater than 6 and must contain at least one uppercase letter, one lowercase letter, and a number.'); 
         return 
       }
     };
 
-    var history = [];
-
-    $rootScope.$on('$stateChangeSuccess', function() {
-        //if length of history > 5 then remove
-        history.push($location.$$path);
-        if (history.length > 5){
-          history.shift();
-        }
-    });
-
     $scope.onSubmitLogin = function (form) {
+      $scope.lock = false;
+
       authService.login($scope.credentialsLog)
       .error(function(err){
         $scope.loginBtn = "generic-button-danger"
+        $scope.lock = true;
         $timeout(function() {
            $scope.loginBtn = "generic-button-default";
+           $scope.lock = false;
         }, 3000);        
         return err.problem;
       })

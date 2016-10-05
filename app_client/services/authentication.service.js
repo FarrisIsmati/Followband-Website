@@ -73,10 +73,12 @@ var app = angular.module("AuthService", []);
       console.log(re_num);
       console.log(re_low);
       console.log(re_up);
-      if ((password.indexOf(' ') <= 0) && (re_num) && (re_low) && (re_up) && (password.length > 6)){
+      // if ((password.indexOf(' ') <= 0) && (re_num) && (re_low) && (re_up) && (password.length > 6)){
+      //   return true;
+      // }
+      if ((re_num) && (re_low) && (password.length > 6)) {
         return true;
-      }
-      console.log('passwrodfailed')
+      };
     };
 
     return {

@@ -9,14 +9,13 @@ app.controller('RegSuccessCtrl', function($scope, $location, $timeout, dataServi
 
     // Get data
     dataService.getProfile()
-      .success(function(data) {
+      .then(function(data) {
         $scope.user = data
 
         $timeout(function() {
            $location.path('/main');
         }, 5000);        
-      })
-      .error(function (e) {
+      }, function (e) {
         $location.path('/main');
         console.log(e);
       });
